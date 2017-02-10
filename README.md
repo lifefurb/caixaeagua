@@ -1,4 +1,4 @@
-![caixa e-água](http://4.bp.blogspot.com/-y9W6oPLO_JA/V1TglGpFn-I/AAAAAAAAAQk/Z3icbBaRmcAhEH3jHMvNOqatMR5gB9wigCK4B/s1600/banner-site-grande.jpg)
+![caixa e-água](https://raw.githubusercontent.com/lifefurb/caixaeagua/master/Imagens/LogoCaixa-e-Agua.jpg)
 # Projeto Caixa de Areia Interativa - Universidade Regional de Blumenau (FURB)
 
 ## Sobre o Projeto
@@ -6,7 +6,7 @@
 As informações completas sobre este projeto podem ser encontradas em nosso blog: [caixae-agua.blogspot.com.br](http://caixae-agua.blogspot.com.br/)
 
 ### Este Projeto utiliza como base: ___The Augmented Reality Sandbox___
-![KeckCAVESLogo](https://arsandbox.ucdavis.edu/wp-content/uploads/2016/04/KeckCAVESLogoSideways.png)
+![KeckCAVESLogo](https://raw.githubusercontent.com/lifefurb/caixaeagua/master/Imagens/KeckCAVESLogoSideways.png)
 
 The Augmented Reality Sandbox was developed by the UC Davis W.M. Keck Center for Active Visualization in the Earth Sciences (KeckCAVES, http://www.keckcaves.org), supported by the National Science Foundation under Grant No. DRL 1114663.
 For more information, please visit https://arsandbox.ucdavis.edu.
