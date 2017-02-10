@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( ValidarMarcadores )
+find_package( OpenCV REQUIRED )
+add_executable( ValidarMarcadores thinning.cpp ConversaoEscalas.cpp SaveHeadwaters.cpp EncontrarCirculos.cpp SelecionarApp.cpp ValidarMarcadores.cpp)
+target_link_libraries( ValidarMarcadores ${OpenCV_LIBS} )

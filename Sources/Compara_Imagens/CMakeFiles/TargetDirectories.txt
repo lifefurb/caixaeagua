@@ -1,0 +1,1 @@
+/home/mint/repositorios/furb-arsandbox/Qt/Compara_Imagens/CMakeFiles/ComparaImagens.dir

@@ -1,0 +1,9 @@
+./SARndbox -wo 20.0 -ws 3.0 30
+./SARndbox -wo 20.0 -ws 3.0 30 -rs 0.1
+./SARndbox -wo 20.0 -ws 3.0 30 -rs 0.1 -evr -0.002
+
+wo => tamanho do escoamento ou viscosidade
+ws => velocidade da água
+rs => volume de água no escoamento
+
+evr = 0.001 * n_nascentes
