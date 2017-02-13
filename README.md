@@ -16,9 +16,9 @@ For more information, please visit https://arsandbox.ucdavis.edu.
 1. Faça o download do arquivo de instalação [aqui](https://github.com/lifefurb/caixaeagua/releases/download/v0.9/instalacao-caixa-e-agua.tar.gz).
 2. Descompacte o arquivo para a pasta do seu usuário (Pasta pessoal de... ).
 3. Entre na pasta **instalacao-caixa-e-agua**.
-4. Clique com o botão direito do mouse em uma **"área branca"** sem selecionar nehum item.
+4. Clique com o botão direito do mouse em uma **"área branca"** sem selecionar nenhum item.
 5. No menu de contexto selecione a opção **abrir no terminal**.
-6. Copie e cole os seguintes comandos no terminhal: 
+6. Copie e cole os seguintes comandos no terminal: 
 
   ### 1. Para instalar o Vrui:
 
