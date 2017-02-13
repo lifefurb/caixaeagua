@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46311999-0DE9-C44B-C159-211427FA6ED6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>5.5.0f3</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VIDEO;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_32;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_VSTU;CROSS_PLATFORM_INPUT;MOBILE_INPUT;VUFORIA_SAMPLE_ORIENTATION_SETTINGS;VUFORIA_ANDROID_SETTINGS</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VIDEO;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_32;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_VSTU;CROSS_PLATFORM_INPUT;MOBILE_INPUT;VUFORIA_SAMPLE_ORIENTATION_SETTINGS;VUFORIA_ANDROID_SETTINGS</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PlaymodeTestsRunner">
+      <HintPath>Library\UnityAssemblies\UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Vuforia.UnityExtensions">
+      <HintPath>Assets\Vuforia\Scripts\Internal\Vuforia.UnityExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Common\CameraSettings.cs" />
+    <Compile Include="Assets\Common\InitErrorHandler.cs" />
+    <Compile Include="Assets\Common\MenuAnimator.cs" />
+    <Compile Include="Assets\Common\MenuOptions.cs" />
+    <Compile Include="Assets\Common\SplashAbout\AboutScreen.cs" />
+    <Compile Include="Assets\Common\SplashAbout\AsyncSceneLoader.cs" />
+    <Compile Include="Assets\Common\SplashAbout\LoadingScreen.cs" />
+    <Compile Include="Assets\Common\TapHandler.cs" />
+    <Compile Include="Assets\Common\TrackableSettings.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\AbstractTargetFollower.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\AutoCam.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\FreeLookCam.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\HandHeldCam.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\LookatTarget.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\PivotBasedCameraRig.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
+    <Compile Include="Assets\SampleAssets\Cameras\Scripts\TargetFieldOfView.cs" />
+    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
+    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
+    <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
+    <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
+    <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\LevelReset.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\AmbientObscurance.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\AntialiasingAsPostEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Bloom.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\BloomAndLensFlares.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Blur.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\BlurEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\CameraInfo.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\CameraMotionBlur.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ColorCorrectionCurves.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ColorCorrectionEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ColorCorrectionLut.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ContrastEnhance.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ContrastStretchEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Crease.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\DepthOfField34.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\DepthOfFieldScatter.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\EdgeDetectEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\EdgeDetectEffectNormals.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Fisheye.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\GlobalFog.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\GlowEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\GrayscaleEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ImageEffectBase.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ImageEffects.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\MotionBlur.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\NoiseAndGrain.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\NoiseEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\PostEffectsHelper.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Quads.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\SSAOEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\ScreenOverlay.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\SepiaToneEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\SunShafts.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\TiltShift.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\TiltShiftHdr.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Tonemapping.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Triangles.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\TwirlEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Vignetting.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\VortexEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\LightShafts\Scripts\LightShafts.Resources.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\LightShafts\Scripts\LightShafts.Utils.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\LightShafts\Scripts\LightShafts.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\AfterburnerPhysicsForce.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\ExplosionFireAndDebris.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\ExplosionPhysicsForce.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\Explosive.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\ExtinguishableParticleSystem.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\FireLight.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\Hose.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\ParticleSystemMultiplier.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\SmokeParticles.cs" />
+    <Compile Include="Assets\SampleAssets\Effects\ParticleSystems\scripts\WaterHoseParticles.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\Displace.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\Water.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\SampleAssets\Environment\Water (Pro Only)\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\SampleAssets\SampleScenes\Scripts\Clouds.cs" />
+    <Compile Include="Assets\SampleAssets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+    <Compile Include="Assets\SampleAssets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+    <Compile Include="Assets\SampleAssets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\ActivateTrigger.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\AutoMobileShaderSwitch.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\AutoMoveAndRotate.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\CameraRefocus.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\CurveControlledBob.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\DragRigidbody.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\DynamicShadowSettings.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\FOVKick.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\FollowTarget.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\ForcedReset.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\LerpControlledBob.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\ObjectResetter.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\ParticleSystemDestroyer.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\PlatformSpecificContent.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\SimpleActivatorMenu.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\SimpleMouseRotator.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\TimedObjectActivator.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\TimedObjectDestructor.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\WaypointCircuit.cs" />
+    <Compile Include="Assets\SampleAssets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\AeroplaneAiControl.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\AeroplaneAudio.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\AeroplaneControlSurfaceAnimator.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\AeroplaneController.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\AeroplanePropellerAnimator.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\AeroplaneUserControl2Axis.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\AeroplaneUserControl4Axis.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\JetParticleEffect.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Aircraft\Scripts\LandingGear.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\BrakeLight.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\CarAIControl.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\CarAudio.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\CarController.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\CarSelfRighting.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\CarUserControl.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\Mudguard.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\SkidTrail.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\Suspension.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\Car\Scripts\Wheel.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\RollerBall\Scripts\Ball.cs" />
+    <Compile Include="Assets\SampleAssets\Vehicles\RollerBall\Scripts\BallUserControl.cs" />
+    <Compile Include="Assets\SamplesResources\CloudReco\Scripts\CloudRecoEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\CloudReco\Scripts\CloudRecoTrackableEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\CloudReco\Scripts\ContentManager.cs" />
+    <Compile Include="Assets\SamplesResources\CloudReco\Scripts\ScanLine.cs" />
+    <Compile Include="Assets\SamplesResources\CylinderTargets\Scripts\RotateAroundCylinder.cs" />
+    <Compile Include="Assets\SamplesResources\ImageTargets\Scripts\ModelSwap.cs" />
+    <Compile Include="Assets\SamplesResources\MultiTargets\Scripts\RotateAround.cs" />
+    <Compile Include="Assets\SamplesResources\ObjectReco\Scripts\DatabaseCheck.cs" />
+    <Compile Include="Assets\SamplesResources\SmartTerrain\Scripts\STEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\SmartTerrain\Scripts\STMenuOptions.cs" />
+    <Compile Include="Assets\SamplesResources\TextReco\Scripts\ObbComparison.cs" />
+    <Compile Include="Assets\SamplesResources\TextReco\Scripts\TextEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\UserDefinedTargets\Scripts\QualityDialog.cs" />
+    <Compile Include="Assets\SamplesResources\UserDefinedTargets\Scripts\TargetBuilderUIHandler.cs" />
+    <Compile Include="Assets\SamplesResources\UserDefinedTargets\Scripts\UDTEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\UserDefinedTargets\Scripts\UDTSettings.cs" />
+    <Compile Include="Assets\SamplesResources\VirtualButtons\Scripts\VBMenuOptions.cs" />
+    <Compile Include="Assets\SamplesResources\VirtualButtons\Scripts\VBSoccerballEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\VirtualButtons\Scripts\VirtualButtonEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\VuMark\Scripts\PanelShowHide.cs" />
+    <Compile Include="Assets\SamplesResources\VuMark\Scripts\VuMarkEventHandler.cs" />
+    <Compile Include="Assets\SamplesResources\VuMark\Scripts\VuMarkHandler.cs" />
+    <Compile Include="Assets\SamplesResources\VuMark\Scripts\VuMarkTapHandler.cs" />
+    <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Scripts\SamplesAboutScreenInfo.cs" />
+    <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Scripts\SamplesConfigUI.cs" />
+    <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Scripts\SamplesLoadingScreen.cs" />
+    <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Scripts\SamplesMainMenu.cs" />
+    <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Scripts\SamplesNavigationHandler.cs" />
+    <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Scripts\SamplesTapHandler.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\DatabaseLoadBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\DefaultSmartTerrainEventHandler.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\DeviceTrackerBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\DigitalEyewearBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\GLErrorHandler.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\HideExcessAreaBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\ImageTargetBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\Internal\AndroidUnityPlayer.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\Internal\ComponentFactoryStarterBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\Internal\IOSUnityPlayer.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\Internal\VuforiaBehaviourComponentFactory.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\Internal\WSAUnityPlayer.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\KeepAliveBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\MarkerBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\MaskOutBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\MultiTargetBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\ObjectTargetBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\PropBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\ReconstructionBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\ReconstructionFromTargetBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\SmartTerrainTrackerBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\SurfaceBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\TextRecoBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\TurnOffBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\TurnOffWordBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\UserDefinedTargetBuildingBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\Utilities\VRIntegrationHelper.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\VideoBackgroundBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\VideoBackgroundManager.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\VirtualButtonBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\VuMarkBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\VuforiaBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\WebCamBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
+    <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
+    <Compile Include="Assets\_Main\Scripts\Answer.cs" />
+    <Compile Include="Assets\_Main\Scripts\ButtonAnswer.cs" />
+    <Compile Include="Assets\_Main\Scripts\FPS.cs" />
+    <Compile Include="Assets\_Main\Scripts\GCCamera.cs" />
+    <Compile Include="Assets\_Main\Scripts\Game.cs" />
+    <Compile Include="Assets\_Main\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\_Main\Scripts\MoveOffSet.cs" />
+    <Compile Include="Assets\_Main\Scripts\QualquerCoisa.cs" />
+    <Compile Include="Assets\_Main\Scripts\Question.cs" />
+    <Compile Include="Assets\_Main\Scripts\UIManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Editor\Vuforia\Vuforia\authoringinfo.xml" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\SampleAssets\Cameras\CameraGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\SampleAssets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlendModesOverlay.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlurEffectConeTaps.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\CameraMotionBlur.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\CameraMotionBlurDX11.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ChromaticAberrationShader.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrection3DLut.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrectionCurves.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrectionCurvesSimple.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrectionEffect.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrectionSelective.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastComposite.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastStretch\Adaptation.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastStretch\Apply.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastStretch\Luminance.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastStretch\MinMaxReduction.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ConvertDepth.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\CreaseApply.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\EdgeDetectNormals.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\EdgeDetectX.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\FisheyeShader.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\FragAO.cginc" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GlobalFog.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GlowCompose.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GlowConeTap.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GlowEffectDownsample.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GrayscaleEffect.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\MotionBlur.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\MotionBlurClear.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\NoiseAndGrain.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\NoiseAndGrainDX11.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\NoiseEffectShaderRGB.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\NoiseEffectShaderYUV.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\PrepareSunShaftsBlur.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\RadialBlur.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\SSAOShader.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ScreenSpaceAmbientObscurance.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\SepiaToneEffect.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ShowAlphaChannel.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\SimpleClear.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\SunShaftsComposite.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\Tonemapper.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\TwirlEffect.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\VignettingShader.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\VortexEffect.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\DLAA.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAA2.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAA3Console.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAAPreset2.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAAPreset3.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\NFAA.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\SSAA.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\Blend.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\MobileBlur.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\VignetteShader.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\Bokeh34.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\DepthOfField34.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\SeparableBlur.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\TiltShift.shader" />
+    <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\LightShaftsGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\ColorFilter.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\Coord.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\Depth.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\DepthBreaks.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\FinalInterpolation.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\InterpolateAlongRays.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\Raymarch.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\SamplePositions.shader" />
+    <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\Shared.cginc" />
+    <None Include="Assets\SampleAssets\Effects\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Effects\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\SampleAssets\Effects\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+    <None Include="Assets\SampleAssets\Effects\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\SampleAssets\Effects\Projectors\ProjectorGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Effects\Projectors\Shaders\ProjectorAdditive.shader" />
+    <None Include="Assets\SampleAssets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\SampleAssets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\SampleAssets\Effects\Shaders\MobileSpec.shader" />
+    <None Include="Assets\SampleAssets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\SampleAssets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\SampleAssets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\SampleAssets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\SampleAssets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\SampleAssets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\SampleAssets\Environment\Skyboxes\SkyboxGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\FXWaterV4Pro.shader" />
+    <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\FXWaterV4Simple.shader" />
+    <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\SampleAssets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
+    <None Include="Assets\SampleAssets\Vehicles\Aircraft\AircraftGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Vehicles\Car\CarGuidelines.txt" />
+    <None Include="Assets\SampleAssets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
+    <None Include="Assets\SampleAssets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
+    <None Include="Assets\SampleAssets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\SampleAssets\Vehicles\RollerBall\RollerBallGuidelines.txt" />
+    <None Include="Assets\SamplesResources\CloudReco\Shaders\CR_Custom_TransparentUnlit.shader" />
+    <None Include="Assets\SamplesResources\ObjectReco\Shaders\ObjectReco_Custom_Outline.shader" />
+    <None Include="Assets\SamplesResources\VuMark\Shaders\VuMark_Custom_OverlayMesh.shader" />
+    <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_Vuforia.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_VuforiaFull.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\FlakesBox.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\StonesAndChips.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\StonesAndWood.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\Tarmac.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\sodacan.xml" />
+    <None Include="Assets\StreamingAssets\Vuforia\Vuforia.xml" />
+    <None Include="Assets\Vuforia\Editor\Scripts\Vuforia.UnityExtensions.Editor.XML" />
+    <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
+    <None Include="Assets\Vuforia\Scripts\Internal\Vuforia.UnityExtensions.XML" />
+    <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
+    <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
+    <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
+    <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
+    <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
+    <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
+    <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
+    <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+    <None Include="Assets\license_3rdpartynotice.txt" />
+    <None Include="Assets\link.xml" />
+    <None Include="Assets\readme_SDK.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+</Project>

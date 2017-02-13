@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonecoFinalFinal.CSharp", "BonecoFinalFinal.CSharp.csproj", "{D92E4C1B-3CD5-3237-0B64-0E6133ACFDF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonecoFinalFinal.CSharp.Editor", "BonecoFinalFinal.CSharp.Editor.csproj", "{5CA4C840-286D-E79C-3C75-D7E9BBC5BB69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D92E4C1B-3CD5-3237-0B64-0E6133ACFDF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92E4C1B-3CD5-3237-0B64-0E6133ACFDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92E4C1B-3CD5-3237-0B64-0E6133ACFDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92E4C1B-3CD5-3237-0B64-0E6133ACFDF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA4C840-286D-E79C-3C75-D7E9BBC5BB69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA4C840-286D-E79C-3C75-D7E9BBC5BB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA4C840-286D-E79C-3C75-D7E9BBC5BB69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA4C840-286D-E79C-3C75-D7E9BBC5BB69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

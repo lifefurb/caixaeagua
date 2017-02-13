@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonecoSkatista.CSharp", "BonecoSkatista.CSharp.csproj", "{46311999-0DE9-C44B-C159-211427FA6ED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonecoSkatista.CSharp.Editor", "BonecoSkatista.CSharp.Editor.csproj", "{9423A020-132A-9BF7-1E7A-857BD9D01971}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46311999-0DE9-C44B-C159-211427FA6ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46311999-0DE9-C44B-C159-211427FA6ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46311999-0DE9-C44B-C159-211427FA6ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46311999-0DE9-C44B-C159-211427FA6ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9423A020-132A-9BF7-1E7A-857BD9D01971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9423A020-132A-9BF7-1E7A-857BD9D01971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9423A020-132A-9BF7-1E7A-857BD9D01971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9423A020-132A-9BF7-1E7A-857BD9D01971}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

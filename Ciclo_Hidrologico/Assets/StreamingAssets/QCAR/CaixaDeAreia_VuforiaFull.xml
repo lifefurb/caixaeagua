@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="caixaeaguamenor" size="110.000000 86.000000" />
+    <ImageTarget name="caixaeagua" size="512.000000 536.000000" />
+    <ImageTarget name="modelo_1" size="1024.000000 768.000000" />
+    <ImageTarget name="chips_DirInf" size="512.000000 403.000000" />
+    <ImageTarget name="chips_DirSup" size="512.000000 403.000000" />
+    <ImageTarget name="chips_EsqInf" size="512.000000 403.000000" />
+    <ImageTarget name="chips_EsqSup" size="512.000000 403.000000" />
+    <ImageTarget name="stones_DirInf" size="512.000000 403.000000" />
+    <ImageTarget name="stones_DirSup" size="512.000000 403.000000" />
+    <ImageTarget name="stones_EsqInf" size="512.000000 403.000000" />
+    <ImageTarget name="stones_EsqSup" size="512.000000 403.000000" />
+  </Tracking>
+</QCARConfig>
