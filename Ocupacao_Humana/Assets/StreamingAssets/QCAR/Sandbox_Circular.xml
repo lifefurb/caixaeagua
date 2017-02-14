@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="stones_EsqSup_Cir" size="472.000000 472.000000" />
+    <ImageTarget name="stones_EsqInf_Cir" size="472.000000 472.000000" />
+    <ImageTarget name="stones_DirSup_Cir" size="472.000000 472.000000" />
+    <ImageTarget name="stones_DirInf_Cir" size="472.000000 472.000000" />
+    <ImageTarget name="chips_EsqSup_Cir" size="472.000000 472.000000" />
+    <ImageTarget name="chips_EsqInf_Cir" size="472.000000 472.000000" />
+    <ImageTarget name="chips_DirSup_Cir" size="472.000000 472.000000" />
+    <ImageTarget name="chips_DirInf_Cir" size="472.000000 472.000000" />
+  </Tracking>
+</QCARConfig>
