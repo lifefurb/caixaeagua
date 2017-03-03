@@ -1,5 +1,5 @@
-﻿//Classe responsável pelo gerenciamento dos elementos UI da Main Scene
-//E do gerenciamento das perguntas apresentadas
+﻿//Responsável pelo gerenciamento dos elementos UI da Main Scene
+//e do gerenciamento das perguntas apresentadas
 //Está inserido no gameObject ThirdPersonCharacter
 
 using UnityEngine;
@@ -44,6 +44,7 @@ public class Game : MonoBehaviour
     public Text m_textRightFinalScore;
     public Text m_textWrongFinalScore;
     public GameObject m_MobileSingleStickControlRig;
+	public float m_score;			//armazena a pontuação do jogador. Utilizada na classe ScoreBar 
     //fim elementos do canvasFinal
 
     //armezena os colliders das perguntas
@@ -71,17 +72,16 @@ public class Game : MonoBehaviour
     private int index;
     private int randomAlternative;
 
-    /*
-    void Awake() {
-        m_question1 = GameObject.Find("Question1");
-        m_question2 = GameObject.Find("Question2");
-        m_question3 = GameObject.Find("Question3");
-        m_question4 = GameObject.Find("Question4");
-        m_question5 = GameObject.Find("Question5");
-        m_question6 = GameObject.Find("Question6");
-        m_question7 = GameObject.Find("Question7");
-        m_question8 = GameObject.Find("Question8");
-    }*/
+	void Awake() {
+
+		m_score = 0f;
+		m_rightHits = 0;
+
+		m_canvasFinal.gameObject.SetActive(false);
+		m_canvasQuestions.gameObject.SetActive (false);
+		m_canvasMain.gameObject.SetActive(true);
+		m_MobileSingleStickControlRig.gameObject.SetActive(true);
+	}
 
     void Update()
     {
@@ -104,11 +104,11 @@ public class Game : MonoBehaviour
                 m_textFinalAnswer.text = "";
         }
 
-        m_textRightFinalScore.text = "" + m_rightHits;
-        m_textWrongFinalScore.text = "" + m_wrongHits;
+		m_textRightHits.text = "Pontos: " + m_score;
+
     }
 
-    //ao entrar no colldier
+    //ao entrar no collider
     void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.tag == "Question")          //só faz as acoes abaixo se o gameObject colidido ter a tag "Question"
         {
@@ -200,11 +200,6 @@ public class Game : MonoBehaviour
                     QuestionAux(m_randomCurrentQuestion);
                     break;
             }
-
-            /*if (collider.gameObject == m_question1) {
-                QuestionAux(m_currentQuestion[m_randomCurrentQuestion]);
-                //m_currentQuestion++;
-            }*/
         }
         else
         {
@@ -275,7 +270,9 @@ public class Game : MonoBehaviour
             m_clicked = true;                               //ao receber true faz com que as perguntas e alternativas desapareçam da tela
             m_pocas--;
             m_rightHits++;
-            m_textRightHits.text = "Acertos: " + m_rightHits;
+			m_score += 50f;
+            //m_textRightHits.text = "Acertos: " + m_rightHits;
+			m_textRightFinalScore.text = "" + m_rightHits;
 
             //só toca a musica de acerto e imprime a imagem na tela se o numero de acertos for menor do que o numero de perguntas
             if (m_rightHits < 8)
@@ -284,12 +281,13 @@ public class Game : MonoBehaviour
                 m_textFinalAnswer.text = "Você acertou!\n Faltam " + m_pocas + " poças.";
                 m_answerAudio.clip = m_rightAnswerAudio;        //faz a variavel m_answerAudio receber o audio clip da resposta correta
             }
-            else    //se o numero de acertos for igual o numero de perguntas toca a musica de vitoria e ativa o canvasFinal
+			else   //se o numero de acertos for igual o numero de perguntas toca a musica de vitoria e ativa o canvasFinal
             {
-                m_canvasMain.gameObject.SetActive(false);
+                /*m_canvasMain.gameObject.SetActive(false);
                 m_MobileSingleStickControlRig.gameObject.SetActive(false);
                 m_canvasFinal.gameObject.SetActive(true);
-                m_answerAudio.clip = m_winAudio;
+                m_answerAudio.clip = m_winAudio;*/
+				WinPanel ();
             }
             m_boolRightAnswer = true;
         }
@@ -297,6 +295,8 @@ public class Game : MonoBehaviour
         { //e se estiver errada a m_respostaFinal informa "Você errou!" em vermelho
             m_clicked = true;
             m_wrongHits++;
+			m_textWrongFinalScore.text = "" + m_wrongHits;
+			m_score -= 10f;
             m_textFinalAnswer.GetComponent<Text>().color = Color.red;
             m_textFinalAnswer.text = "Você errou!\n Tente novamente.";
             m_answerAudio.clip = m_wrongAnswerAudio;        //faz a variavel m_answerAudio receber o audio clip da resposta errada
@@ -343,22 +343,26 @@ public class Game : MonoBehaviour
     private void DestroyQuestionAux(GameObject question) {
         if ((m_textAnswerA.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-            Destroy(question);
+			question.gameObject.SetActive(false);
+            //Destroy(question);
             ActivateQuestions();
         }
         else if ((m_textAnswerB.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-            Destroy(question);
+			question.gameObject.SetActive(false);
+            //Destroy(question);
             ActivateQuestions();
         }
         else if ((m_textAnswerC.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-            Destroy(question);
+			question.gameObject.SetActive(false);
+            //Destroy(question);
             ActivateQuestions();
         }
         else if ((m_textAnswerD.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-            Destroy(question);
+			question.gameObject.SetActive(false);
+            //Destroy(question);
             ActivateQuestions();
         }
     }
@@ -439,4 +443,12 @@ public class Game : MonoBehaviour
         //Debug.Log("Saiu = " + saiu);
         return novoArray;
     }
+
+
+	public void WinPanel(){
+		m_canvasMain.gameObject.SetActive(false);
+		m_MobileSingleStickControlRig.gameObject.SetActive(false);
+		m_canvasFinal.gameObject.SetActive(true);
+		m_answerAudio.clip = m_winAudio;
+	}
 }

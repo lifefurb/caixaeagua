@@ -1,4 +1,4 @@
-﻿//Classe responsável por fazer o cenário se movimentar
+﻿//Responsável por fazer o cenário da scene MainMenu se movimentar
 //o material precisa estar com uma texture com a opção Repeat ativada
 
 using UnityEngine;
