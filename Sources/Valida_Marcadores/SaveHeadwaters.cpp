@@ -9,7 +9,7 @@ void saveHeadwaterToSandbox(vector<Circle> circles)
 	stringstream sstm;
 
 	// Definindo as escalas das imagens
-	Scale origin(Point2f(0, 0), Point2f(border.width, border.height));
+	Scale origin(Point(border.width, border.height), Point(0, 0));
 	Scale destiny(boxLayout[0], boxLayout[1]);
 	
 	// Convertendo os pontos da escala da imagem de entrada para o mundo do SARdbox
@@ -98,8 +98,6 @@ vector<Point2f> readFileBoxLayout()
 	string file_name  = getenv("HOME");
 	file_name.append("/src/SARndbox-1.6/etc/SARndbox-1.6/BoxLayout.txt");
 
-	cout << "file_name: " << file_name << endl;
-
 	fileBoxLayout.open(file_name.c_str());
 	// ignorando a primeira linha
     getline(fileBoxLayout, line);
@@ -121,8 +119,15 @@ vector<Point2f> readFileBoxLayout()
         }
 	}
 
-    float xMin = (points_x[0] + points_x[2])/2;
+	/*
+	float xMin = (points_x[0] + points_x[2])/2;
     float xMax = (points_x[1] + points_x[3])/2;
+    float yMin = (points_y[0] + points_y[1])/2;
+    float yMax = (points_y[2] + points_y[3])/2;
+	*/
+
+    float xMin = (points_x[1] + points_x[3])/2;
+    float xMax = (points_x[0] + points_x[2])/2;
     float yMin = (points_y[0] + points_y[1])/2;
     float yMax = (points_y[2] + points_y[3])/2;
 

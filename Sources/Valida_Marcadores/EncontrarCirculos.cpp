@@ -50,7 +50,6 @@ Rect getBorderOfTheBox()
 			y = atof(number);
 			points.push_back(x);
 			points.push_back(y);
-
 		}
 	}
 
@@ -166,6 +165,11 @@ vector<Circle> getCirclesRealTime() {
 	char key = waitKey(1);
 
 	while(key != 27) {
+		circles_original.clear();
+		circles_median.clear();
+		all_circles.clear();
+		circles.clear();
+		
 		for (;;)
 		{
 			cap >> frame;
