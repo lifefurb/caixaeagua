@@ -29,11 +29,11 @@ void saveHeadwaterToSandbox(vector<Circle> circles);
 /// Salva as nascentes para exibicao no Selecionar APP
 void saveHeadwaterToSelecionarAPP(vector<Circle> circles);
 
-/// função para retornar um vector com os dados do arquivo lados.txt
+/// funcao para retornar um vector com os dados do arquivo lados.txt
 vector<Point> readFileLados();
 
-/// função para retornar um vector com os dados do arquivo myBoxLayout.txt
-vector<Point2f> readFileMyBoxLayout();
+/// funcao para retornar um vector com os dados do arquivo BoxLayout.txt
+vector<Point2f> readFileBoxLayout();
 
-/// função para escrever uma string em um arquivo
+/// funcao para escrever uma string em um arquivo
 void writeInFile(string file_name, string data);

@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mint/repositorios/furb-arsandbox/Qt/Calibrar_Mundo
+CMAKE_SOURCE_DIR = /home/bruce/repositorio/caixa-e-agua/Sources/Calibrar_Mundo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mint/repositorios/furb-arsandbox/Qt/Calibrar_Mundo
+CMAKE_BINARY_DIR = /home/bruce/repositorio/caixa-e-agua/Sources/Calibrar_Mundo
 
 #=============================================================================
 # Target rules for target CMakeFiles/CalibrarMundo.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/mint/repositorios/furb-arsandbox/Qt/Calibrar_Mundo
 CMakeFiles/CalibrarMundo.dir/all:
 	$(MAKE) -f CMakeFiles/CalibrarMundo.dir/build.make CMakeFiles/CalibrarMundo.dir/depend
 	$(MAKE) -f CMakeFiles/CalibrarMundo.dir/build.make CMakeFiles/CalibrarMundo.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mint/repositorios/furb-arsandbox/Qt/Calibrar_Mundo/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bruce/repositorio/caixa-e-agua/Sources/Calibrar_Mundo/CMakeFiles  1
 	@echo "Built target CalibrarMundo"
 .PHONY : CMakeFiles/CalibrarMundo.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/CalibrarMundo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CalibrarMundo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mint/repositorios/furb-arsandbox/Qt/Calibrar_Mundo/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruce/repositorio/caixa-e-agua/Sources/Calibrar_Mundo/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CalibrarMundo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mint/repositorios/furb-arsandbox/Qt/Calibrar_Mundo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruce/repositorio/caixa-e-agua/Sources/Calibrar_Mundo/CMakeFiles 0
 .PHONY : CMakeFiles/CalibrarMundo.dir/rule
 
 # Convenience name for target.

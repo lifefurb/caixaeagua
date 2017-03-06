@@ -302,6 +302,5 @@ int main(int argc, char** argv) {
 		return aula4();
 	} else if (acao == "aula3") {
 		return aula3();
-	}
-	
+	}	
 }

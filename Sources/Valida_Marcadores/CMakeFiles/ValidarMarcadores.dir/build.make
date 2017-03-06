@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores
+CMAKE_SOURCE_DIR = /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores
+CMAKE_BINARY_DIR = /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ValidarMarcadores.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/ValidarMarcadores.dir/flags.make
 
 CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o: CMakeFiles/ValidarMarcadores.dir/flags.make
 CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o: thinning.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o -c /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/thinning.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o -c /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/thinning.cpp
 
 CMakeFiles/ValidarMarcadores.dir/thinning.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ValidarMarcadores.dir/thinning.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/thinning.cpp > CMakeFiles/ValidarMarcadores.dir/thinning.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/thinning.cpp > CMakeFiles/ValidarMarcadores.dir/thinning.cpp.i
 
 CMakeFiles/ValidarMarcadores.dir/thinning.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ValidarMarcadores.dir/thinning.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/thinning.cpp -o CMakeFiles/ValidarMarcadores.dir/thinning.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/thinning.cpp -o CMakeFiles/ValidarMarcadores.dir/thinning.cpp.s
 
 CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o.requires:
 .PHONY : CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o.requires
@@ -74,17 +74,17 @@ CMakeFiles/ValidarMarcadores.dir/thinning.cpp.o.provides.build: CMakeFiles/Valid
 
 CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o: CMakeFiles/ValidarMarcadores.dir/flags.make
 CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o: ConversaoEscalas.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o -c /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/ConversaoEscalas.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o -c /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/ConversaoEscalas.cpp
 
 CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/ConversaoEscalas.cpp > CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/ConversaoEscalas.cpp > CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.i
 
 CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/ConversaoEscalas.cpp -o CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/ConversaoEscalas.cpp -o CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.s
 
 CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o.requires:
 .PHONY : CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o.requires
@@ -97,17 +97,17 @@ CMakeFiles/ValidarMarcadores.dir/ConversaoEscalas.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o: CMakeFiles/ValidarMarcadores.dir/flags.make
 CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o: SaveHeadwaters.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o -c /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/SaveHeadwaters.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o -c /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/SaveHeadwaters.cpp
 
 CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/SaveHeadwaters.cpp > CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/SaveHeadwaters.cpp > CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.i
 
 CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/SaveHeadwaters.cpp -o CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/SaveHeadwaters.cpp -o CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.s
 
 CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o.requires:
 .PHONY : CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o.requires
@@ -120,17 +120,17 @@ CMakeFiles/ValidarMarcadores.dir/SaveHeadwaters.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o: CMakeFiles/ValidarMarcadores.dir/flags.make
 CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o: EncontrarCirculos.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o -c /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/EncontrarCirculos.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o -c /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/EncontrarCirculos.cpp
 
 CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/EncontrarCirculos.cpp > CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/EncontrarCirculos.cpp > CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.i
 
 CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/EncontrarCirculos.cpp -o CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/EncontrarCirculos.cpp -o CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.s
 
 CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o.requires:
 .PHONY : CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o.requires
@@ -143,17 +143,17 @@ CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o: CMakeFiles/ValidarMarcadores.dir/flags.make
 CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o: SelecionarApp.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o -c /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/SelecionarApp.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o -c /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/SelecionarApp.cpp
 
 CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/SelecionarApp.cpp > CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/SelecionarApp.cpp > CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.i
 
 CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/SelecionarApp.cpp -o CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/SelecionarApp.cpp -o CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.s
 
 CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o.requires:
 .PHONY : CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o.requires
@@ -166,17 +166,17 @@ CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o: CMakeFiles/ValidarMarcadores.dir/flags.make
 CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o: ValidarMarcadores.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o -c /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/ValidarMarcadores.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o -c /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/ValidarMarcadores.cpp
 
 CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/ValidarMarcadores.cpp > CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/ValidarMarcadores.cpp > CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.i
 
 CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/ValidarMarcadores.cpp -o CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/ValidarMarcadores.cpp -o CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.s
 
 CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o.requires:
 .PHONY : CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o.requires
@@ -206,31 +206,34 @@ ValidarMarcadores: CMakeFiles/ValidarMarcadores.dir/EncontrarCirculos.cpp.o
 ValidarMarcadores: CMakeFiles/ValidarMarcadores.dir/SelecionarApp.cpp.o
 ValidarMarcadores: CMakeFiles/ValidarMarcadores.dir/ValidarMarcadores.cpp.o
 ValidarMarcadores: CMakeFiles/ValidarMarcadores.dir/build.make
-ValidarMarcadores: /usr/local/lib/libopencv_videostab.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_videoio.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_video.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_superres.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_stitching.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_shape.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_photo.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_objdetect.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_ml.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_imgproc.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_imgcodecs.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_highgui.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_flann.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_features2d.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_core.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_calib3d.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_features2d.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_ml.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_highgui.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_videoio.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_imgcodecs.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_flann.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_video.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_imgproc.so.3.1.0
-ValidarMarcadores: /usr/local/lib/libopencv_core.so.3.1.0
+ValidarMarcadores: /usr/local/lib/libopencv_calib3d.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_core.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_features2d.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_flann.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_highgui.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_imgcodecs.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_imgproc.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_ml.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_objdetect.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_photo.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_shape.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_stitching.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_superres.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_video.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_videoio.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_videostab.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_objdetect.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_calib3d.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_features2d.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_flann.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_highgui.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_ml.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_photo.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_video.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_videoio.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_imgcodecs.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_imgproc.so.3.2.0
+ValidarMarcadores: /usr/local/lib/libopencv_core.so.3.2.0
 ValidarMarcadores: CMakeFiles/ValidarMarcadores.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ValidarMarcadores"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ValidarMarcadores.dir/link.txt --verbose=$(VERBOSE)
@@ -252,6 +255,6 @@ CMakeFiles/ValidarMarcadores.dir/clean:
 .PHONY : CMakeFiles/ValidarMarcadores.dir/clean
 
 CMakeFiles/ValidarMarcadores.dir/depend:
-	cd /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores /home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles/ValidarMarcadores.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores /home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles/ValidarMarcadores.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ValidarMarcadores.dir/depend
 

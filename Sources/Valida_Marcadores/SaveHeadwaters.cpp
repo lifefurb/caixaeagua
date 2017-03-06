@@ -4,15 +4,15 @@
 void saveHeadwaterToSandbox(vector<Circle> circles)
 {
 	Rect border = getBorderOfTheBox();
-	vector<Point2f> myBoxLayout = readFileMyBoxLayout();
+	vector<Point2f> boxLayout = readFileBoxLayout();
 
 	stringstream sstm;
 
 	// Definindo as escalas das imagens
 	Scale origin(Point2f(0, 0), Point2f(border.width, border.height));
-	Scale destiny(myBoxLayout[0], myBoxLayout[1]);
+	Scale destiny(boxLayout[0], boxLayout[1]);
 	
-	// Convertendo os pontos da escala da imagem de entrada para a imagem da APP
+	// Convertendo os pontos da escala da imagem de entrada para o mundo do SARdbox
 	for (int i = 0; i < circles.size(); i++) {
 		Point2f p = convertTof(origin, destiny, circles[i].center);
         sstm << p.x << "," << p.y << "\n";
@@ -82,27 +82,52 @@ vector<Point> readFileLados()
 }
 
 /// função para retornar um vector com os dados do arquivo myBoxLayout.txt
-vector<Point2f> readFileMyBoxLayout()
+vector<Point2f> readFileBoxLayout()
 {
 	string line;
-	ifstream fileMyBoxLayout;
-	vector<float> points;
+	ifstream fileBoxLayout;
+	vector<float> points_x;
+    vector<float> points_y;
 	vector<Point2f> returnPoints;
 
-	string file_name = "../config/myBoxLayout.txt";
-	
-	fileMyBoxLayout.open(file_name.c_str());
-	while (!fileMyBoxLayout.eof())
+    string numberRaw;
+    char str_line[128];
+    float x = 0.0f;
+    float y = 0.0f;
+
+	string file_name  = getenv("HOME");
+	file_name.append("/src/SARndbox-1.6/etc/SARndbox-1.6/BoxLayout.txt");
+
+	cout << "file_name: " << file_name << endl;
+
+	fileBoxLayout.open(file_name.c_str());
+	// ignorando a primeira linha
+    getline(fileBoxLayout, line);
+
+	while (!fileBoxLayout.eof())
 	{
-		getline(fileMyBoxLayout, line);
-		if (line.compare("") != 0)
-		{
-			points.push_back(atof(line.c_str()));
-		}
+		getline(fileBoxLayout, line);
+        if (line.compare("") != 0) {
+            strcpy(str_line, line.c_str());
+            numberRaw = strtok(str_line, ",");
+            numberRaw.erase(remove(numberRaw.begin(), numberRaw.end(), ' '), numberRaw.end());
+            numberRaw.erase(remove(numberRaw.begin(), numberRaw.end(), '('), numberRaw.end());
+            x = atof(numberRaw.c_str());
+            points_x.push_back(x);
+            numberRaw = strtok(NULL, ",");
+            numberRaw.erase(remove(numberRaw.begin(), numberRaw.end(), ' '), numberRaw.end());
+            y = atof(numberRaw.c_str());
+            points_y.push_back(y);
+        }
 	}
 
-	returnPoints.push_back(Point2f(points[0], points[2]));
-	returnPoints.push_back(Point2f(points[1], points[3]));
+    float xMin = (points_x[0] + points_x[2])/2;
+    float xMax = (points_x[1] + points_x[3])/2;
+    float yMin = (points_y[0] + points_y[1])/2;
+    float yMax = (points_y[2] + points_y[3])/2;
+
+	returnPoints.push_back(Point2f(xMin, yMin));
+	returnPoints.push_back(Point2f(xMax, yMax));
 	return returnPoints;
 }
 

@@ -1,1 +1,1 @@
-/home/mint/repositorios/furb-arsandbox/Qt/Compara_Imagens/CMakeFiles/ComparaImagens.dir
+/home/bruce/repositorio/caixa-e-agua/Sources/Compara_Imagens/CMakeFiles/ComparaImagens.dir

@@ -1,1 +1,1 @@
-/home/mint/repositorios/furb-arsandbox/Qt/Batcave/Valida_Marcadores/CMakeFiles/ValidarMarcadores.dir
+/home/bruce/repositorio/caixa-e-agua/Sources/Valida_Marcadores/CMakeFiles/ValidarMarcadores.dir

@@ -1,1 +1,1 @@
-/home/mint/repositorios/furb-arsandbox/Qt/Calibrar_Mundo/CMakeFiles/CalibrarMundo.dir
+/home/bruce/repositorio/caixa-e-agua/Sources/Calibrar_Mundo/CMakeFiles/CalibrarMundo.dir
