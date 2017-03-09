@@ -1,1 +1,1 @@
-/home/bruce/repositorio/caixa-e-agua/Sources/Compara_Imagens/CMakeFiles/ComparaImagens.dir
+/home/bruce/Documentos/repositorio/caixaeagua/Sources/Compara_Imagens/CMakeFiles/ComparaImagens.dir

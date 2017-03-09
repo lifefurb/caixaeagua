@@ -1,5 +1,3 @@
-#include "opencv2/imgcodecs.hpp"
-
 #include "ConversaoEscalas.h"
 
 cv::Point convertTo(Scale origin, Scale destiny, cv::Point point) {

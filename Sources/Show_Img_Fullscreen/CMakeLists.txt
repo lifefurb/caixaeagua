@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( showFullScreen )
+find_package( OpenCV REQUIRED )
+add_executable( showFullScreen showFullScreen.cpp )
+target_link_libraries( showFullScreen ${OpenCV_LIBS} )

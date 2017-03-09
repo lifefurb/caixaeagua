@@ -1,4 +1,4 @@
-# Install script for directory: /home/bruce/repositorio/caixa-e-agua/Sources/Compara_Imagens
+# Install script for directory: /home/bruce/Documentos/repositorio/caixaeagua/Sources/Compara_Imagens
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/bruce/repositorio/caixa-e-agua/Sources/Compara_Imagens/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/bruce/Documentos/repositorio/caixaeagua/Sources/Compara_Imagens/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/bruce/repositorio/caixa-e-agua/Sources/Compara_Imagens/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/bruce/Documentos/repositorio/caixaeagua/Sources/Compara_Imagens/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
