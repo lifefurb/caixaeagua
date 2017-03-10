@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -19,10 +20,11 @@ public class Game : MonoBehaviour
     public GameObject m_canvasMain;         //armazena o canvasMain
     public GameObject m_panelMessege;       //mensagem inicial que aparece ao iniciar o aplicativo
     public GameObject m_panelPressButton;   //mensagem que aparece ao entrar no collider Question dizendo para apertar o botao R
-    public Text m_textRightHits;            //armazena a pontuação do jogador (calculado no metodo Resposta)
+	public GameObject m_panelScore;
+	public Text m_textRightHits;            //armazena a pontuação do jogador (calculado no metodo Resposta)
     public Button m_buttonShowQuestions;    //armazena o botão R que chama o canvasQuestions
     public Text m_textFinalAnswer;          //armazena a mensagem "Você acertou!" ou "Você errou!" dependendo da resposta
-    //fim elementos do canvasMain
+	//fim elementos do canvasMain
 
     //inicio elementos canvasQuestions
     public GameObject m_canvasQuestions;    //armazena o objeto Canvas para poder ativar ou desativar
@@ -57,11 +59,13 @@ public class Game : MonoBehaviour
     public GameObject m_question7;
     public GameObject m_question8;
 
+	public Scene m_currentScene;
+
     private int m_pocas = 8;
     private float m_rightHits;                  //conta a quantidade de respostas certas
     private float m_wrongHits;                  //conta a quantidade de respostas erradas
     private bool m_clicked = false;             //utilizada para ver se o botao foi pressionado ou nao
-    private float m_time = 10f;                 //armazena o tempo maximo que o titulo vai permanecer na tela
+    private float m_time = 0f;                 //armazena o tempo maximo que o titulo vai permanecer na tela
     private float m_timeFinalAnswer = 5f;       //armazena o tempo maximo que a mensagem de acerto ou erro vai permanecer na tela
     //private int m_currentQuestion = 0;          //recebe o número da questão, que será referenciado no vetor respostas[]
     private int[] m_currentQuestion = new int[8] {0, 1, 2, 3, 4, 5, 6, 7};
@@ -71,6 +75,10 @@ public class Game : MonoBehaviour
     private int m_positionQuestion;
     private int index;
     private int randomAlternative;
+	private bool m_IncrementScore = false;
+	private bool m_DecrementScore = false;
+	private int m_Less;
+	private int m_More;
 
 	void Awake() {
 
@@ -83,26 +91,31 @@ public class Game : MonoBehaviour
 		m_MobileSingleStickControlRig.gameObject.SetActive(true);
 	}
 
+	void Start(){
+		m_currentScene = SceneManager.GetActiveScene ();
+		//ScoreTextManager.Instance.CreateText (m_panelScore.transform.position, "+" + m_More.ToString(), Color.green);
+		//ScoreTextManager.Instance.CreateText (m_panelScore.transform.position, "-" + m_Less.ToString() + " ", Color.red);
+	}
+
     void Update()
     {
-        //faz com que a mensagem inicial desapareça após 10 segundos
-        if (m_time > 0)
-        {
-            m_time -= Time.deltaTime;
-            m_panelMessege.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_panelMessege.gameObject.SetActive(false);
-        }
-
         //faz com que a mensagem de acerto ou erro desapareça após 5 segundos
-        if (m_clicked == true && m_timeFinalAnswer > 0)
-        {
+        if (m_clicked == true && m_timeFinalAnswer > 0){
             m_timeFinalAnswer -= Time.deltaTime;
             if (m_timeFinalAnswer <= 0)
                 m_textFinalAnswer.text = "";
         }
+
+		//instancia o texto de quantos pontos o jogador ganhou ou perdeu
+		if(m_DecrementScore){
+			ScoreTextManager.Instance.CreateText (m_panelScore.transform.position, "-" + m_Less.ToString() + " ", Color.red);
+			m_DecrementScore = false;
+		}
+
+		if(m_IncrementScore){
+			ScoreTextManager.Instance.CreateText (m_panelScore.transform.position, "+" + m_More.ToString(), Color.green);
+			m_IncrementScore = false;
+		}
 
 		m_textRightHits.text = "Pontos: " + m_score;
 
@@ -116,7 +129,8 @@ public class Game : MonoBehaviour
             m_clicked = false;                              //garante que sempre que entrar do collider a m_clicou seja falsa para que assim as perguntas possam sempre aparecer ao entrar novamente
             m_timeFinalAnswer = 5;                          //o tempo que a resposta de acerto/erro aparece na tela volta a ser 5 para poder decrescer até 0 novamente
             m_textFinalAnswer.text = "";                    //garante que a resposta de Certo e Errado inicie em branco
-            m_panelPressButton.gameObject.SetActive(true);
+			m_panelMessege.gameObject.SetActive(false);
+			m_panelPressButton.gameObject.SetActive(true);
             m_buttonShowQuestions.interactable = true;      //torna o buttonPergunta interativo
 
             System.Random random = new System.Random();
@@ -140,7 +154,7 @@ public class Game : MonoBehaviour
     //ao sair do collider
     void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.tag == "Question")          //só faz as acoes abaixo se o gameObject colidido ter a tag "Question"
+        if (collider.gameObject.tag == "Question")          	//só faz as acoes abaixo se o gameObject colidido ter a tag "Question"
         {
             m_canvasQuestions.gameObject.SetActive(false);      //desliga novamente o canvas da pergunta e dos botões (caso o jogador saia do collider sem responder a pergunta)
             m_buttonShowQuestions.interactable = false;         //quando o avatar sai do collider o buttonPergunta deixa de ser interativo novamente
@@ -270,15 +284,17 @@ public class Game : MonoBehaviour
             m_clicked = true;                               //ao receber true faz com que as perguntas e alternativas desapareçam da tela
             m_pocas--;
             m_rightHits++;
-			m_score += 50f;
+			RightScoreManager ();
+			//m_score += 50f;
             //m_textRightHits.text = "Acertos: " + m_rightHits;
 			m_textRightFinalScore.text = "" + m_rightHits;
 
             //só toca a musica de acerto e imprime a imagem na tela se o numero de acertos for menor do que o numero de perguntas
             if (m_rightHits < 8)
             {
-                m_textFinalAnswer.GetComponent<Text>().color = Color.green;
-                m_textFinalAnswer.text = "Você acertou!\n Faltam " + m_pocas + " poças.";
+                //m_textFinalAnswer.GetComponent<Text>().color = Color.green;
+				m_textFinalAnswer.color = new Color(18f/255f, 218f/255f, 0);
+				m_textFinalAnswer.text = "Você acertou!\n Faltam " + m_pocas + " poças.";
                 m_answerAudio.clip = m_rightAnswerAudio;        //faz a variavel m_answerAudio receber o audio clip da resposta correta
             }
 			else   //se o numero de acertos for igual o numero de perguntas toca a musica de vitoria e ativa o canvasFinal
@@ -296,9 +312,11 @@ public class Game : MonoBehaviour
             m_clicked = true;
             m_wrongHits++;
 			m_textWrongFinalScore.text = "" + m_wrongHits;
-			m_score -= 10f;
-            m_textFinalAnswer.GetComponent<Text>().color = Color.red;
-            m_textFinalAnswer.text = "Você errou!\n Tente novamente.";
+			WrongScoreManager();
+
+            //m_textFinalAnswer.GetComponent<Text>().color = Color.red;
+			m_textFinalAnswer.color = new Color(227f/255f, 8f/255f, 8f/255f);
+			m_textFinalAnswer.text = "Você errou!\n Tente novamente.";
             m_answerAudio.clip = m_wrongAnswerAudio;        //faz a variavel m_answerAudio receber o audio clip da resposta errada
             m_buttonShowQuestions.interactable = true;      //torna o buttonPergunta interativo
 
@@ -343,26 +361,22 @@ public class Game : MonoBehaviour
     private void DestroyQuestionAux(GameObject question) {
         if ((m_textAnswerA.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-			question.gameObject.SetActive(false);
-            //Destroy(question);
+			Destroy(question);
             ActivateQuestions();
         }
         else if ((m_textAnswerB.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-			question.gameObject.SetActive(false);
-            //Destroy(question);
+			Destroy(question);
             ActivateQuestions();
         }
         else if ((m_textAnswerC.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-			question.gameObject.SetActive(false);
-            //Destroy(question);
+			Destroy(question);
             ActivateQuestions();
         }
         else if ((m_textAnswerD.text == m_rightAnswers[m_randomCurrentQuestion]) && (m_boolRightAnswer == true))
         {
-			question.gameObject.SetActive(false);
-            //Destroy(question);
+			Destroy(question);
             ActivateQuestions();
         }
     }
@@ -444,11 +458,37 @@ public class Game : MonoBehaviour
         return novoArray;
     }
 
-
 	public void WinPanel(){
 		m_canvasMain.gameObject.SetActive(false);
 		m_MobileSingleStickControlRig.gameObject.SetActive(false);
 		m_canvasFinal.gameObject.SetActive(true);
 		m_answerAudio.clip = m_winAudio;
 	}
+		
+	public void RightScoreManager(){
+		if(m_currentScene.name == "MainScene_Easy"){
+			m_More = 10;
+		}else if(m_currentScene.name == "MainScene_Medium"){
+			m_More = 30;
+		}else if(m_currentScene.name == "MainScene_Hard"){
+			m_More = 50;
+		}
+		m_score += m_More;
+		m_IncrementScore = true;
+	}
+
+	public void WrongScoreManager(){
+		if(m_score > 0){
+			if(m_currentScene.name == "MainScene_Easy"){
+				m_Less = 2;
+			}else if(m_currentScene.name == "MainScene_Medium"){
+				m_Less = 5;
+			}else if(m_currentScene.name == "MainScene_Hard"){
+				m_Less = 10;
+			}
+			m_score -= m_Less;
+			m_DecrementScore = true;
+		}
+	}
+
 }

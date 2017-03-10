@@ -14,21 +14,22 @@ public class MainMenu : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //apenas garante que a primeira tela apresentada seja a do menu principal
-        //m_canvasMainMenu.gameObject.SetActive(true);
-        m_canvasInstructions.gameObject.SetActive(false);
-		m_canvasDiffuculty.gameObject.SetActive(false);
+        m_canvasMainMenu.SetActive(true);
+        m_canvasInstructions.SetActive(false);
+		m_canvasDiffuculty.SetActive(false);
     }
 
     //chamado no metodo OnClick do buttonPlay.
     public void Play() {
-		m_canvasMainMenu.gameObject.SetActive(false);
-		m_canvasDiffuculty.gameObject.SetActive(true);
+		m_canvasInstructions.SetActive(false);
+		m_canvasMainMenu.SetActive(false);
+		m_canvasDiffuculty.SetActive(true);
     }
 
     //chamado no metodo Onclick do buttonInstruction.
     public void Instructions() {
-        m_canvasMainMenu.gameObject.SetActive(false);
-        m_canvasInstructions.gameObject.SetActive(true);
+        m_canvasMainMenu.SetActive(false);
+        m_canvasInstructions.SetActive(true);
     }
     
 

@@ -7,22 +7,21 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour {
 
-    //public GameObject m_arrow;
+    public GameObject m_arrow;
 
     private GameObject m_ref;
 	private Vector3 v;
 
-	/*
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Question")
-            m_arrow.gameObject.SetActive(false);        
+            m_arrow.SetActive(false);        
     }
 
     void OnTriggerExit(Collider other) {
-        if (other.gameObject.tag == "Question")
-            m_arrow.gameObject.SetActive(true);
+		if (other.gameObject.tag == "Question") {
+			m_arrow.SetActive (true);
+		}
     }
-	*/
 
     void Update() {
 

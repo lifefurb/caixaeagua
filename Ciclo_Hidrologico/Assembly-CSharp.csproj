@@ -246,10 +246,14 @@
      <Compile Include="Assets\_Main\Scripts\GCCamera.cs" />
      <Compile Include="Assets\_Main\Scripts\Game.cs" />
      <Compile Include="Assets\_Main\Scripts\GameManager.cs" />
+     <Compile Include="Assets\_Main\Scripts\Game_Easy.cs" />
      <Compile Include="Assets\_Main\Scripts\MainMenu.cs" />
      <Compile Include="Assets\_Main\Scripts\MoveOffSet.cs" />
      <Compile Include="Assets\_Main\Scripts\MyDefaultTrackableEventHandler.cs" />
+     <Compile Include="Assets\_Main\Scripts\QuestionsManager.cs" />
      <Compile Include="Assets\_Main\Scripts\ScoreBar.cs" />
+     <Compile Include="Assets\_Main\Scripts\ScoreText.cs" />
+     <Compile Include="Assets\_Main\Scripts\ScoreTextManager.cs" />
      <Compile Include="Assets\_Main\Scripts\Timer.cs" />
      <None Include="Assets\SampleAssets\Effects\Projectors\ProjectorGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
