@@ -93,7 +93,7 @@ int aula4() {
 	if (!img.data) {
 		cout << "Could not open or find the image" << endl;
 		return -1 ;
-	}	
+	}
 
 	// ---------------------------------------------------------------------------------------
 	// ## Melhorar (repete o mesmo processo da aula 5)... Validando os pontos de APP 
@@ -286,15 +286,22 @@ int main(int argc, char** argv) {
 	waitKey(1000);
 	system("killall SARndbox");
 
+	cout << "Depois do Kill" << endl;
+
 	// Para poder capturar a foto com um fundo preto
 	Mat img_fullscreen = imread("../resources/fundo_preto.png", 1);
+	cout << "Depois de ler a imagem" << endl;
 	namedWindow("imagem_fullscreeen", CV_WINDOW_NORMAL);
 	setWindowProperty("imagem_fullscreeen", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
 	imshow("imagem_fullscreeen", img_fullscreen);
-	
+
+	cout << "Depois do imshow" << endl;	
+
 	// Aguardar para liberar a camera e exibir a imagem preta de fundo
 	waitKey(1000);
 	
+	cout << "Depois do waitkey" << endl;
+
 	if (acao == "aula5") {	
 		return aula5();
 	} else if (acao == "aula4") {
