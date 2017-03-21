@@ -8,11 +8,6 @@ public class ScoreText : MonoBehaviour {
 	private float m_Speed;
 	private Vector3 m_Direction;
 	private float m_FadeTime;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {

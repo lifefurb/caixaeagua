@@ -27,6 +27,11 @@ public class Arrow : MonoBehaviour {
 
         m_ref = GameObject.FindGameObjectWithTag("Question");
 
+        if (Game.m_Flag) {
+            m_arrow.SetActive(true);
+            Game.m_Flag = false;
+        }
+
         v = m_ref.transform.position;
         v.y = 0;
 

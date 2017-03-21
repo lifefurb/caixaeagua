@@ -7,7 +7,8 @@ public class ScoreTextManager : MonoBehaviour {
 
 
 	public GameObject m_TextPrefab;
-	public RectTransform m_CanvasMain;
+    public RectTransform m_CanvasMain;
+    //public RectTransform m_PanelScoreText;
 	public float m_Speed;
 	//public Vector3 m_Direction;
 	public float m_FadeTime;
@@ -32,5 +33,5 @@ public class ScoreTextManager : MonoBehaviour {
 		scoreText.GetComponent<ScoreText> ().Inicialize (m_Speed, m_Direction, m_FadeTime);
 		scoreText.GetComponent<Text> ().text = text;
 		scoreText.GetComponent<Text> ().color = color;
-	}
+    }
 }

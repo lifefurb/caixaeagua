@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour {
 			m_Seconds = (m_Time % 60).ToString ("00");
 			m_TimerText.text = m_Minutes + ":" + m_Seconds;
 		} else {
-			m_Game.WinPanel();
+            m_Game.WinPanel();
 		}
 
 		m_SubtractTime++;

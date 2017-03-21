@@ -11,7 +11,7 @@ public class ScoreBar : MonoBehaviour {
 
 	public Transform m_LoadingBar;
 	public Transform m_TextIndicator;
-	public Game_Easy m_Game_Easy;
+	public Game m_Game;
 
 	private float m_CurrentScore;
 	private float m_CurrentTime;
@@ -20,15 +20,12 @@ public class ScoreBar : MonoBehaviour {
 	private float m_Count = 0f;
 
 	void Start(){
-		//m_CurrentScore = 0f;
-		//m_CurrentTime = 0f;
-		//m_Count = 0;
 
-		if(m_Game_Easy.m_currentScene.name == "MainScene_Easy"){
+		if(m_Game.m_currentScene.name == "MainScene_Easy"){
 			m_FullScore = 80; //pontuação por acerto * o número de perguntas
-		}else if(m_Game_Easy.m_currentScene.name == "MainScene_Medium"){
+		}else if(m_Game.m_currentScene.name == "MainScene_Medium"){
 			m_FullScore = 240;
-		}else if(m_Game_Easy.m_currentScene.name == "MainScene_Hard"){
+		}else if(m_Game.m_currentScene.name == "MainScene_Hard"){
 			m_FullScore = 400;
 		}
 
@@ -36,7 +33,7 @@ public class ScoreBar : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		m_CurrentScore = m_Game_Easy.m_score;			//variavel da classe Game que é incrementada/decrementada a cada acerto/erro
+		m_CurrentScore = m_Game.m_score;			//variavel da classe Game que é incrementada/decrementada a cada acerto/erro
 
 		m_CurrentTime += m_Speed * Time.deltaTime;
 		//m_CurrentTime += m_Speed * m_Count;
