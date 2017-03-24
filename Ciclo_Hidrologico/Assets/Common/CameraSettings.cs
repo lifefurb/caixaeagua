@@ -23,7 +23,7 @@ public class CameraSettings : MonoBehaviour
     #region MONOBEHAVIOUR_METHODS
     void Start () 
     {
-        VuforiaAbstractBehaviour vuforia = FindObjectOfType<VuforiaAbstractBehaviour>();
+        VuforiaARController vuforia = VuforiaARController.Instance;
         vuforia.RegisterVuforiaStartedCallback(OnVuforiaStarted);
         vuforia.RegisterOnPauseCallback(OnPaused);
     }

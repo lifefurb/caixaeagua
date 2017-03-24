@@ -82,7 +82,7 @@ public class Game : MonoBehaviour
 
 	void Start(){
 		m_currentScene = SceneManager.GetActiveScene ();
-        ScoreTextManager.Instance.CreateText(m_PanelScoreText.transform.position, "+" + m_More.ToString(), Color.green);
+        //ScoreTextManager.Instance.CreateText(m_PanelScoreText.transform.position, "+" + m_More.ToString(), Color.green);
     }
 
     void Update() {
@@ -329,6 +329,45 @@ public class Game : MonoBehaviour
 		m_answerAudio.clip = m_winAudio;         
 	}
 
+    public void RightScoreManager()
+    {
+        if (m_currentScene.name == "MainScene_Easy")
+        {
+            m_More = 10;
+        }
+        else if (m_currentScene.name == "MainScene_Medium")
+        {
+            m_More = 30;
+        }
+        else if (m_currentScene.name == "MainScene_Hard")
+        {
+            m_More = 50;
+        }
+        m_score += m_More;
+        m_IncrementScore = true;
+    }
+
+    public void WrongScoreManager()
+    {
+        if (m_score > 0)
+        {
+            if (m_currentScene.name == "MainScene_Easy")
+            {
+                m_Less = 2;
+            }
+            else if (m_currentScene.name == "MainScene_Medium")
+            {
+                m_Less = 5;
+            }
+            else if (m_currentScene.name == "MainScene_Hard")
+            {
+                m_Less = 10;
+            }
+            m_score -= m_Less;
+            m_DecrementScore = true;
+        }
+    }
+
     public InputField m_PlayerName;
     private List<string> Nomes = new List<string>();
     private List<string> EnviosPendentes = new List<string>();
@@ -389,30 +428,4 @@ public class Game : MonoBehaviour
         m_canvasMessege.SetActive(false);
         m_canvasFinal.SetActive(true);
     }
-
-    public void RightScoreManager(){
-		if(m_currentScene.name == "MainScene_Easy"){
-			m_More = 10;
-		}else if(m_currentScene.name == "MainScene_Medium"){
-			m_More = 30;
-		}else if(m_currentScene.name == "MainScene_Hard"){
-			m_More = 50;
-		}
-		m_score += m_More;
-        m_IncrementScore = true;
-    }
-
-	public void WrongScoreManager(){
-		if(m_score > 0){
-			if(m_currentScene.name == "MainScene_Easy"){
-				m_Less = 2;
-			}else if(m_currentScene.name == "MainScene_Medium"){
-				m_Less = 5;
-			}else if(m_currentScene.name == "MainScene_Hard"){
-				m_Less = 10;
-			}
-			m_score -= m_Less;
-            m_DecrementScore = true;
-        }
-	}
 }

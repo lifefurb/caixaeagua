@@ -21,7 +21,7 @@ public class InitErrorHandler : MonoBehaviour
     void Awake () 
     {
         VuforiaAbstractBehaviour vuforia = FindObjectOfType<VuforiaAbstractBehaviour>();
-        vuforia.RegisterVuforiaInitErrorCallback(OnInitError);
+        //vuforia.RegisterVuforiaInitErrorCallback(OnInitError);
 
         // Get the UI Canvas that contains (parent of) the error text box
         if (errorText)

@@ -1,9 +1,9 @@
-Vuforia SDK v6.0.117
+Vuforia SDK v6.2.10
 PTC Inc.
 =============================================================
 
 This Readme file contains certain notices of software components
-included with the Vuforia SDK v6.0.117 that 
+included with the Vuforia SDK v6.2.10 that 
 PTC Inc. is required to provide you. Notwithstanding anything in the
  notices in this file, your use of these software components together
 with the Vuforia SDK is subject to the terms of your license from 

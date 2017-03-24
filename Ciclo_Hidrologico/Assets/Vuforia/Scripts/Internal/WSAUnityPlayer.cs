@@ -1,15 +1,30 @@
 /*==============================================================================
-Copyright (c) 2013-2014 Qualcomm Connected Experiences, Inc.
-All Rights Reserved.
+Copyright (c) 2016 PTC Inc. All Rights Reserved.
+
 Confidential and Proprietary - Protected under copyright and other laws.
+Vuforia is a trademark of PTC Inc., registered in the United States and other
+countries.
 ==============================================================================*/
 
+#if ENABLE_HOLOLENS_MODULE_API || UNITY_5_5_OR_NEWER
+#if UNITY_WSA_10_0
+#define HOLOLENS_API_AVAILABLE
+#endif
+#endif
+
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+#if HOLOLENS_API_AVAILABLE
+using UnityEngine.VR.WSA;
+#endif
+
 
 namespace Vuforia
 {
+    using TrackableIdPair = VuforiaManager.TrackableIdPair;
+
     /// <summary>
     /// This class encapsulates functionality to detect various surface events
     /// (size, orientation changed) and delegate this to native.
@@ -17,6 +32,96 @@ namespace Vuforia
     /// </summary>
     class WSAUnityPlayer : IUnityPlayer
     {
+#if HOLOLENS_API_AVAILABLE
+        #region NESTED
+
+        private class HoloLensApiImplementation : IHoloLensApiAbstraction
+        {
+            private Dictionary<TrackableIdPair, WorldAnchor> mWorldAnchors = 
+                new Dictionary<TrackableIdPair, WorldAnchor>();
+            private Action<TrackableIdPair, bool> mHoloLensTrackingCallback = null;
+ 
+            public void SetFocusPoint(Vector3 point, Vector3 normal)
+            {
+                // use HL specific API to set the focus point
+                HolographicSettings.SetFocusPointForFrame(point, normal);
+            }
+
+            public void SetWorldAnchor(TrackableBehaviour trackableBehaviour, TrackableIdPair trackableID)
+            {
+                // add a world anchor to the given trackablebehaviour
+                WorldAnchor wa = trackableBehaviour.gameObject.AddComponent<WorldAnchor>();
+                mWorldAnchors[trackableID] = wa;
+                // register for callbacks
+                wa.OnTrackingChanged += OnWorldAnchorTrackingChanged;
+            }
+
+            public void DeleteWorldAnchor(TrackableIdPair trackableID)
+            {
+                // delete an existing world anchor
+                if (mWorldAnchors.ContainsKey(trackableID))
+                {
+                    WorldAnchor wa = mWorldAnchors[trackableID];
+                    mWorldAnchors.Remove(trackableID);
+
+                    InternalDeleteWA(wa);
+                }
+            }
+
+            public void DeleteWorldAnchor(TrackableBehaviour trackableBehaviour)
+            {
+                WorldAnchor wa = trackableBehaviour.GetComponent<WorldAnchor>();
+                if (wa != null)
+                {
+                    if (mWorldAnchors.ContainsValue(wa))
+                    {
+                        // find all occurrences of that world anchor and remove them from the dict:
+                        List<TrackableIdPair> idsToRemove = new List<TrackableIdPair>();
+                        foreach (KeyValuePair<TrackableIdPair, WorldAnchor> kvp in mWorldAnchors)
+                            if (kvp.Value == wa)
+                                idsToRemove.Add(kvp.Key);
+
+                        foreach (TrackableIdPair trackableIdPair in idsToRemove)
+                            mWorldAnchors.Remove(trackableIdPair);
+                    }
+
+                    InternalDeleteWA(wa);
+                }
+            }
+
+            private void InternalDeleteWA(WorldAnchor wa)
+            {
+                    // unregister for callbacks first
+                    wa.OnTrackingChanged -= OnWorldAnchorTrackingChanged;
+                    GameObject.DestroyImmediate(wa);
+            }
+
+            public void SetSpatialAnchorTrackingCallback(Action<TrackableIdPair, bool> trackingCallback)
+            {
+                mHoloLensTrackingCallback = trackingCallback;
+            }
+
+            private void OnWorldAnchorTrackingChanged(WorldAnchor wa, bool tracked)
+            {
+                if (mHoloLensTrackingCallback != null)
+                {
+                    // translate from world anchor to trackable behaviour
+                    foreach (KeyValuePair<TrackableIdPair, WorldAnchor> worldAnchor in mWorldAnchors)
+                    {
+                        if (worldAnchor.Value == wa)
+                        {
+                            mHoloLensTrackingCallback(worldAnchor.Key, tracked);
+                        }
+                    }
+                }
+            }
+        }
+
+        #endregion // NESTED
+
+        private static string UNITY_HOLOLENS_IDENTIFIER = "HoloLens";
+#endif
+
         private ScreenOrientation mScreenOrientation = ScreenOrientation.Unknown;
 
         /// <summary>
@@ -35,14 +140,46 @@ namespace Vuforia
         }
 
         /// <summary>
-        /// Initializes Vuforia; called from Start
+        /// Initializes Vuforia
         /// </summary>
-        public VuforiaUnity.InitError Start(string licenseKey)
+        public VuforiaUnity.InitError InitializeVuforia(string licenseKey)
         {
             int errorCode = initVuforiaWSA(licenseKey);
             if (errorCode >= 0)
+            {
                 InitializeSurface();
+
+#if HOLOLENS_API_AVAILABLE
+                // This determines if we are starting on a holographic device
+                if (UnityEngine.VR.VRSettings.loadedDeviceName.Equals(UNITY_HOLOLENS_IDENTIFIER)
+                    && UnityEngine.VR.VRDevice.isPresent)
+                {
+                    // set the focus point setter implementation
+                    VuforiaUnity.SetHoloLensApiAbstraction(new HoloLensApiImplementation());
+
+                    Debug.Log("Detected Holographic Device");
+                }
+#endif
+            }
             return (VuforiaUnity.InitError)errorCode;
+        }
+
+        /// <summary>
+        /// Called on start each time a new scene is loaded
+        /// </summary>
+        public void StartScene()
+        {
+#if HOLOLENS_API_AVAILABLE
+                // This determines if we are starting on a holographic device
+                if (UnityEngine.VR.VRSettings.loadedDeviceName.Equals(UNITY_HOLOLENS_IDENTIFIER)
+                    && UnityEngine.VR.VRDevice.isPresent)
+                {
+                    if (!VuforiaUnity.SetHolographicAppCoordinateSystem(WorldManager.GetNativeISpatialCoordinateSystemPtr()))
+                    {
+                        Debug.LogError("Failed to set holographic coordinate system pointer!");
+                    }
+                }
+#endif
         }
 
         /// <summary>
