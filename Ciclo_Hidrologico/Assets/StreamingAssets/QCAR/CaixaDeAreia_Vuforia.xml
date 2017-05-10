@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="caixaeaguamenor" size="110.000000 86.000000" />
-    <ImageTarget name="caixaeagua" size="512.000000 536.000000" />
-    <ImageTarget name="modelo_1" size="1024.000000 768.000000" />
+    <ImageTarget name="marcador_livro3" size="421.000000 595.000000" />
+    <ImageTarget name="marcador_livro2" size="2480.000000 3508.000000" />
     <ImageTarget name="chips_DirInf" size="512.000000 403.000000" />
     <ImageTarget name="chips_DirSup" size="512.000000 403.000000" />
     <ImageTarget name="chips_EsqInf" size="512.000000 403.000000" />

@@ -69,17 +69,15 @@
      <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Editor\Water (Pro Only)\WaterBaseEditor.cs" />
      <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Editor\Water (Pro Only)\WaterEditorUtility.cs" />
      <Compile Include="Assets\SampleAssets\Effects\LightShafts\Editor\LightShaftsEditor.cs" />
-     <Compile Include="Assets\SamplesResources\CloudReco\Editor\CloudRecoEventHandlerEditor.cs" />
-     <Compile Include="Assets\SamplesResources\UserDefinedTargets\Editor\UDTEventHandlerEditor.cs" />
-     <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Editor\SamplesConfigUIEditor.cs" />
-     <Compile Include="Assets\SamplesResources\VuforiaSamplesUI\Editor\VuforiaLicense.cs" />
      <Compile Include="Assets\Vuforia\Editor\Scripts\ComponentFactoryStarter\ComponentFactoryStarter.cs" />
      <Compile Include="Assets\Vuforia\Editor\Scripts\ExtensionImport.cs" />
      <Compile Include="Assets\Vuforia\Editor\Scripts\PostProcessBuildPlayer.cs" />
      <Compile Include="Assets\Vuforia\Editor\Scripts\Unzipper\SharpZipLibUnzipper.cs" />
+     <Compile Include="Assets\Vuforia\Editor\Scripts\VuforiaConfigurationEditor.cs" />
      <None Include="Assets\SampleAssets\Effects\Projectors\ProjectorGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\MobileBlur.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
@@ -90,14 +88,12 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GlowConeTap.shader" />
      <None Include="Assets\SampleAssets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\StreamingAssets\QCAR\sodacan.xml" />
-     <None Include="Assets\SamplesResources\CloudReco\Shaders\CR_Custom_TransparentUnlit.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\SamplePositions.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\NFAA.shader" />
-     <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
@@ -111,6 +107,7 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\StreamingAssets\QCAR\StonesAndWood.xml" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\RadialBlur.shader" />
+     <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastComposite.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAAPreset3.shader" />
@@ -120,7 +117,6 @@
      <None Include="Assets\SampleAssets\Effects\Projectors\Shaders\ProjectorAdditive.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\FragAO.cginc" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
-     <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\InterpolateAlongRays.shader" />
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\DepthBreaks.shader" />
      <None Include="Assets\SampleAssets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
@@ -128,6 +124,7 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\StreamingAssets\QCAR\StonesAndChips.xml" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\TiltShift.shader" />
+     <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\StreamingAssets\Vuforia\Vuforia.xml" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\SSAOShader.shader" />
      <None Include="Assets\SampleAssets\Effects\ParticleSystems\ParticleSystemsGuidelines.txt" />
@@ -150,7 +147,6 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\StreamingAssets\QCAR\FlakesBox.xml" />
-     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\StreamingAssets\QCAR\Tarmac.xml" />
@@ -163,12 +159,12 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\MotionBlurClear.shader" />
-     <None Include="Assets\SamplesResources\ObjectReco\Shaders\ObjectReco_Custom_Outline.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrectionEffect.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GrayscaleEffect.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\SepiaToneEffect.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\TwirlEffect.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\VortexEffect.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_Vuforia.xml" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastStretch\Adaptation.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\NoiseAndGrain.shader" />
      <None Include="Assets\SampleAssets\Effects\Shaders\MobileSpec.shader" />
@@ -178,7 +174,6 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\Tonemapper.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
-     <None Include="Assets\SamplesResources\VuMark\Shaders\VuMark_Custom_OverlayMesh.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\SampleAssets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrection3DLut.shader" />
@@ -204,7 +199,6 @@
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\ColorFilter.shader" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ScreenSpaceAmbientObscurance.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_Vuforia.xml" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendForBloom.shader" />

@@ -1,0 +1,84 @@
+{
+	"m_ArrayQuestions":[
+		{
+			"m_QuestionText": "A água é o elemento mais presente na superfície da Terra. Você sabe qual a porcentagem de água no chamado Planeta Azul?",
+			"m_Alternatives":[
+				"A água cobre cerca de 71% da superfície da Terra.",
+				"A água cobre cerca de 54% da superfície da Terra.",
+				"A água cobre cerca de 63% da superfície da Terra.",
+				"Água cobre cerca de 91% da superfície da Terra."
+			],
+			"m_Tip": ""
+		}, 
+		{
+			"m_QuestionText": "Qual o outro nome para a chuva, que é o retorno da água à Terra?",
+			"m_Alternatives":[
+				"Transpiração.",
+				"Granizo.",
+				"Condensação.",
+				"Precipitação."
+			],
+			"m_Tip": ""
+		},
+		{
+			"m_QuestionText": "Quais os estados físicos da água?",
+			"m_Alternatives":[
+				"Sólido, líquido e gasoso.",
+				"Gelo, nuvens e chuva.",
+				"Oceanos, rios e lagos.",
+				"Chuva, neve e granizo."
+			],
+			"m_Tip": ""
+		},
+		{
+			"m_QuestionText": "Em que consiste o ciclo da água?",
+			"m_Alternatives":[
+				"Circulação da água na Natureza.",
+				"Passagem da água desde as nascentes até nossa casa.",
+				"Passagem da água do estado gasoso a líquido e deste novamente a gasoso.",
+				"Passagem da água do estado gasoso a líquido e deste ao estado sólido."
+			],
+			"m_Tip": ""
+		},
+		{
+			"m_QuestionText": "A água salobra é:",
+			"m_Alternatives":[
+				"Imprópria para consumo.",
+				"Própria para consumo.",
+				"Aquela que contém muito sal.",
+				"Aquela que não contém sal."
+			],
+			"m_Tip": ""
+		},
+		{
+			"m_QuestionText": "No nosso planeta, a água é um recurso:",
+			"m_Alternatives":[
+				"Renovável.",
+				"Mineral.",
+				"Termal.",
+				"Não Renovável."
+			],
+			"m_Tip": ""
+		},
+		{
+			"m_QuestionText": "Água à temperatura ambiente é:",
+			"m_Alternatives":[
+				"Líquida.",
+				"Sólida.",
+				"Gasosa.",
+				"Plasma."
+			],
+			"m_Tip": ""
+		},
+		{
+			"m_QuestionText": "A Terra é conhecida como o planeta azul por causa da presença de(a,o)",
+			"m_Alternatives":[
+				"Água.",
+				"Atmosfera.",
+				"Massas.",
+				"Céu."
+			],
+			"m_Tip": ""
+		}
+	]
+}

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Main/Scenes/MainScene_Medium.unity
+- path: Assets/_Scenes/Livro_Apostila.unity
   isLoaded: 1
   isActive: 1

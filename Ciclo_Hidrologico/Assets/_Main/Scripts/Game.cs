@@ -18,10 +18,8 @@ public class Game : MonoBehaviour
     public AudioClip m_winAudio;            //armazena o AudioClip que é reproduzido quando o jogador finaliza o jogo (responde todas as perguntas)
 
     //inicio elementos do canvasMain
-    public GameObject m_canvasMain;         
-    public GameObject m_panelMessege;       
-    public GameObject m_panelPressButton;   
-	//public GameObject m_panelScore;
+    public GameObject m_canvasMain;     
+    public GameObject m_panelPressButton;
     public RectTransform m_PanelScoreText;
 	public Text m_textRightHits;            
     public Button m_buttonShowQuestions;    
@@ -48,8 +46,10 @@ public class Game : MonoBehaviour
     public GameObject m_canvasMessege;
     public Text m_messege;
 
-	public Scene m_currentScene;    
-	public Question[] m_Questions = new Question[8];    //armazena todas as perguntas (cada objeto Question possui um script Question)
+	public Scene m_currentScene;
+    public int m_randomCurrentQuestion = 0;
+    //public Question[] m_Questions = new Question[8];    //armazena todas as perguntas (cada objeto Question possui um script Question)
+    public List<Question> m_Questions = new List<Question>();
 
     private int m_pocas = 8;
     private float m_rightHits;                  //conta a quantidade de respostas certas
@@ -57,7 +57,6 @@ public class Game : MonoBehaviour
     private bool m_clicked = false;             //utilizada para ver se o botao foi pressionado ou nao
     private float m_timeFinalAnswer = 5f;       //armazena o tempo maximo que a mensagem de acerto ou erro vai permanecer na tela
     private int[] m_currentQuestion = new int[8] {0, 1, 2, 3, 4, 5, 6, 7};
-    private int m_randomCurrentQuestion = 0;
     private int m_answeredQuestions;            //conta o numero de perguntas respondidas corretamente
     private bool m_boolRightAnswer = false;     //recebe true quando a resposta selecionada for a correta     
     private int m_positionQuestion;
@@ -73,16 +72,10 @@ public class Game : MonoBehaviour
 	void Awake() {
 		m_score = 0;
 		m_rightHits = 0;
-        
-		//m_canvasFinal.gameObject.SetActive(false);
-		//m_canvasQuestions.gameObject.SetActive (false);
-		//m_canvasMain.gameObject.SetActive(true);
-		//m_MobileSingleStickControlRig.gameObject.SetActive(true);
 	}
 
 	void Start(){
 		m_currentScene = SceneManager.GetActiveScene ();
-        //ScoreTextManager.Instance.CreateText(m_PanelScoreText.transform.position, "+" + m_More.ToString(), Color.green);
     }
 
     void Update() {
@@ -114,7 +107,6 @@ public class Game : MonoBehaviour
             m_clicked = false;                              //garante que sempre que entrar do collider a m_clicou seja falsa para que assim as perguntas possam sempre aparecer ao entrar novamente
             m_timeFinalAnswer = 5;                          //o tempo que a resposta de acerto/erro aparece na tela volta a ser 5 para poder decrescer até 0 novamente
             m_textFinalAnswer.text = "";                    //garante que a resposta de Certo e Errado inicie em branco
-			m_panelMessege.gameObject.SetActive(false);
 			m_panelPressButton.gameObject.SetActive(true);
             m_buttonShowQuestions.interactable = true;      //torna o buttonPergunta interativo
 
@@ -152,23 +144,38 @@ public class Game : MonoBehaviour
         //as perguntas e alternativas só aparecem se o jogador não tiver clicado em nenhuma alternativa 
         if (m_clicked == false) {
             foreach (Question p in m_Questions) {
-                if (p.m_QuestionName == collider.gameObject.name) {
+                if (p.gameObject.name == collider.gameObject.name) {
                     m_positionQuestion = p.m_Id;
-                    QuestionAux();
+
+                    m_textQuestion.text = m_Questions[m_randomCurrentQuestion].m_Question;
+                    List<string> randomAlternative = new List<string>();
+
+                    randomAlternative.Add(m_Questions[m_randomCurrentQuestion].m_AnswerA);
+                    randomAlternative.Add(m_Questions[m_randomCurrentQuestion].m_AnswerB);
+                    randomAlternative.Add(m_Questions[m_randomCurrentQuestion].m_AnswerC);
+                    randomAlternative.Add(m_Questions[m_randomCurrentQuestion].m_AnswerD);
+
+                    randomAlternative.Sort();
+
+                    m_textAnswerA.text = randomAlternative[0];
+                    m_textAnswerB.text = randomAlternative[1];
+                    m_textAnswerC.text = randomAlternative[2];
+                    m_textAnswerD.text = randomAlternative[3];
+
+                    //QuestionAux();
                 }
             }
         }else{
             m_canvasQuestions.gameObject.SetActive(false);
         }
     }
-    
+
     //Método que gerencia as perguntas. Chamado no Questions()
+    //faz com que as alternativas apareçam em ordem ""aleatória""
+    
     private void QuestionAux(){
-
-        m_textQuestion.text = m_Questions[m_randomCurrentQuestion].m_Question;
-
         //faz com que as alternativas apareçam em ordem ""aleatória""
-        switch (m_randomAlternative){
+        /*switch (m_randomAlternative){
             case 1:
 			    m_textAnswerA.text = m_Questions[m_randomCurrentQuestion].m_AnswerA;
 			    m_textAnswerB.text = m_Questions[m_randomCurrentQuestion].m_AnswerB;
@@ -193,33 +200,42 @@ public class Game : MonoBehaviour
 			    m_textAnswerC.text = m_Questions[m_randomCurrentQuestion].m_AnswerB;
 			    m_textAnswerD.text = m_Questions[m_randomCurrentQuestion].m_AnswerC;
                 break;
-        }
+        }*/
     }
 
     //método chamado no OnClick() dos 4 botões de alternativas de resposta (ao chamar o método é preciso passar a string dos cases no unity)
     public void Answer(string answer){
         switch (answer) {
-            case "A":
-                RightWrongAnswer(m_textAnswerA.text);
+            case "A": RightWrongAnswer(m_textAnswerA.text, m_Questions[m_randomCurrentQuestion].m_RightAnswer);
                 break;
-            case "B":
-                RightWrongAnswer(m_textAnswerB.text);
+            case "B": RightWrongAnswer(m_textAnswerB.text, m_Questions[m_randomCurrentQuestion].m_RightAnswer);
                 break;
-            case "C":
-                RightWrongAnswer(m_textAnswerC.text);
+            case "C": RightWrongAnswer(m_textAnswerC.text, m_Questions[m_randomCurrentQuestion].m_RightAnswer);
                 break;
-            case "D":
-                RightWrongAnswer(m_textAnswerD.text);
+            case "D": RightWrongAnswer(m_textAnswerD.text, m_Questions[m_randomCurrentQuestion].m_RightAnswer);
                 break;
         }
         m_answerAudio.Play();       //toca o som de resposta
     }
 
     //metodo que verifica se a resposta esta certa ou errada. Recebe o vetor da pergunta como parametro
-    private void RightWrongAnswer(string answer) {
+    private void RightWrongAnswer(string answer, string alternative) {
+
+        string letter = "";
+        switch (alternative) {
+            case "A": letter = m_Questions[m_randomCurrentQuestion].m_AnswerA;
+                break;
+            case "B": letter = m_Questions[m_randomCurrentQuestion].m_AnswerB;
+                break;
+            case "C": letter = m_Questions[m_randomCurrentQuestion].m_AnswerC;
+                break;
+            case "D": letter = m_Questions[m_randomCurrentQuestion].m_AnswerD;
+                break;
+        }
 
         //se a resposta selecionada estiver certa a variavel m_hits é implementada e a m_respostaFinal informa "Você acertou!" em verde	
-        if (answer == m_Questions[m_randomCurrentQuestion].m_RightAnswer){
+        if (answer == letter/*m_Questions[m_randomCurrentQuestion].m_RightAnswer*/)
+        {
             m_clicked = true;       //ao receber true faz com que as perguntas e alternativas desapareçam da tela
             m_pocas--;
             m_rightHits++;
@@ -246,8 +262,9 @@ public class Game : MonoBehaviour
             m_answerAudio.clip = m_wrongAnswerAudio;        //faz a variavel m_answerAudio receber o audio clip da resposta errada
             m_buttonShowQuestions.interactable = true;      //torna o buttonPergunta interativo
 
-            System.Random random = new System.Random();
-            m_randomAlternative = random.Next(1, 4);
+            //System.Random random = new System.Random();
+            //m_randomAlternative = random.Next(1, 4);
+            
         }
     }
 
@@ -255,8 +272,8 @@ public class Game : MonoBehaviour
     //verifica em qual pergunta o personagem esta para depois destrui-la se a resposta estiver correta
     private void DestroyQuestion(Collider collider){
 
-        for (byte i = 0; i <= m_Questions.Length; i++) {
-            if (m_Questions[i].m_QuestionName == collider.gameObject.name) {
+        for (byte i = 0; i < m_Questions.Count; i++) {
+            if (m_Questions[i].gameObject.name == collider.gameObject.name) {
                 if ((m_textAnswerA.text == m_Questions[m_randomCurrentQuestion].m_RightAnswer) && (m_boolRightAnswer == true)) {
                     Destroy(m_Questions[i].gameObject);
                     ActivateQuestions();
@@ -298,7 +315,7 @@ public class Game : MonoBehaviour
             m_randomCurrentQuestion = m_currentQuestion[0];
         }
         
-        for (byte i = 0; i < m_Questions.Length; i++) {
+        for (byte i = 0; i < m_Questions.Count; i++) {
             if (i == m_positionQuestion) {
                 m_Questions[i+1].gameObject.SetActive(true);
             }
@@ -376,36 +393,54 @@ public class Game : MonoBehaviour
         //string text = File.ReadAllText(Application.streamingAssetsPath + "/users");
         //Nomes = text.Split(';').ToList();
 
-        if ((m_PlayerName.text != "") && (!Nomes.Contains(m_PlayerName.text))) {
+        if ((m_PlayerName.text != "") && !(Nomes.Contains(m_PlayerName.text))) {
             
             m_Player = new Player();
-            m_Player.setScore(m_score);
+            m_Player.setScore(50);
             m_Player.setPlayerName(m_PlayerName.text);
             string json = JsonUtility.ToJson(m_Player);
             Debug.Log(json);
 
+            StartCoroutine(SendScore.saveScore(json, CallBackSaveScore));
+            
             //File.AppendAllText(Application.streamingAssetsPath + "/users", m_PlayerName.text + ';');
 
             Nomes.Add(m_PlayerName.text);
 
-            VerificarErro(null, json);
+            //CallBackSaveScore(null, json);
         }
         else {
             Messege("Nome inválido. Tente novamente");
         }
     }
     
-    public int VerificarErro(string erro, string data){
-        if (erro != null) {
-            EnviosPendentes.Add(data);
-            Messege("Dados não enviados");
-            if (erro == "erro1") {
-                Debug.Log("Erro");
-            }
+    public int CallBackSaveScore(string err, string resultStr){
+
+        ResultServer result = new ResultServer();
+        JsonUtility.FromJsonOverwrite(resultStr, result);
+
+        if (err != null) {
+            EnviosPendentes.Add(resultStr);
+            Messege(result.msg);
+            Debug.Log(result.msg);
+            Debug.Log(result.err);
         }
         else {
-            Messege("Dados enviados com sucesso");
+            Messege(result.msg);
+            Debug.Log(result.msg);
+            m_Player.id = result.idUser;
         }   
+        return 0;
+    }
+
+    public int CallBackRequestQuestion(string err, string resultStr) {
+
+        List<Question> result = new List<Question>();
+        JsonUtility.FromJsonOverwrite(resultStr, result);
+
+        if (err == null) {
+            m_Questions = result;
+        }
         return 0;
     }
 
@@ -417,8 +452,7 @@ public class Game : MonoBehaviour
 
     public GameObject m_CanvasSendScore;
     public Text m_TextScoreValue;
-    public void SendPanelButtom()
-    {
+    public void SendPanelButtom() {
         m_TextScoreValue.text = m_score.ToString();
         m_canvasFinal.SetActive(false);
         m_CanvasSendScore.SetActive(true);

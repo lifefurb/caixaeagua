@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 
     public string name;
     public int points;
-    public string id = "1";
+    public string id = "";
 
     public void setScore(int score) {
         this.points = score;

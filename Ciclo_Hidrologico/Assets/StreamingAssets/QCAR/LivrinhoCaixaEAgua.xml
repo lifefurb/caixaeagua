@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="paginaDireita2" size="11.000000 17.002403" />
+    <ImageTarget name="paginaCapa" size="11.000000 17.002403" />
+    <ImageTarget name="paginaDireita" size="11.000000 17.002403" />
+    <ImageTarget name="paginaEsquerda" size="11.000000 17.002403" />
+  </Tracking>
+</QCARConfig>

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Question : MonoBehaviour{
 
@@ -10,7 +8,7 @@ public class Question : MonoBehaviour{
 	public string m_AnswerC;
 	public string m_AnswerD;
 	public string m_RightAnswer;
-    public string m_QuestionName;
-	public int m_Id;
+    public string m_Tip;
+    public int m_Id;
 
 }

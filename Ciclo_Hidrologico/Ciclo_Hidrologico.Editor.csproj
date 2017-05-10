@@ -171,6 +171,7 @@
     <None Include="Assets\Editor\Vuforia\Vuforia\authoringinfo.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
+    <None Include="Assets\Resources\QuestionsJson.txt" />
     <None Include="Assets\SampleAssets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\SampleAssets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
@@ -280,6 +281,7 @@
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_Vuforia.xml" />
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_VuforiaFull.xml" />
     <None Include="Assets\StreamingAssets\QCAR\FlakesBox.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\LivrinhoCaixaEAgua.xml" />
     <None Include="Assets\StreamingAssets\QCAR\StonesAndChips.xml" />
     <None Include="Assets\StreamingAssets\QCAR\StonesAndWood.xml" />
     <None Include="Assets\StreamingAssets\QCAR\Tarmac.xml" />
@@ -296,6 +298,7 @@
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
     <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+    <None Include="Assets\_Main\Resources\questionsList.txt" />
     <None Include="Assets\license_3rdpartynotice.txt" />
     <None Include="Assets\link.xml" />
     <None Include="Assets\readme_SDK.txt" />

@@ -4,6 +4,9 @@ using Vuforia;
 
 public class MyDefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler {
 
+    //public GameObject m_Character;
+    public GameObject m_CanvasQuestions;
+
     private bool m_newTrack = false;
     #region PRIVATE_MEMBER_VARIABLES
 
@@ -12,6 +15,11 @@ public class MyDefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHand
     #endregion // PRIVATE_MEMBER_VARIABLES
 
 
+
+    void Awake() {
+        //m_Character = GameObject.Find("ThirdPersonCharacter");
+        //m_CanvasQuestions = GameObject.Find("CanvasQuestions");
+    }
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -81,6 +89,9 @@ public class MyDefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHand
             component.enabled = true;
         }
 
+        //m_Character.SetActive(true);
+        m_CanvasQuestions.SetActive(false);
+
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
     }
 
@@ -101,7 +112,7 @@ public class MyDefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHand
         {
             component.enabled = false;
         }
-
+        
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
 
