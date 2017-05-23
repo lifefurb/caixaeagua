@@ -13,9 +13,5 @@ public class QuestionSingleTonTeste: MonoBehaviour {
             p.m_RightAlternative = p.m_Alternatives[0];
             m_Questions.Add(p);
         }
-        /*
-        foreach (Question p in m_Questions) {
-            Debug.Log(p.m_QuestionText);
-        }*/
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior: MonoBehaviour{
 
-    public PlayerTeste m_Player;
+    public PlayerTeste m_Player = new PlayerTeste();
 
     public void IncrementScore() {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -13,6 +13,9 @@ public class PlayerBehavior: MonoBehaviour{
             case "Normal":  m_Player.m_Score += 30;
                 break;
             case "Hard":  m_Player.m_Score += 50;
+                break;
+            case "Teste":
+                m_Player.m_Score += 50;
                 break;
         }
     }
@@ -26,6 +29,9 @@ public class PlayerBehavior: MonoBehaviour{
             case "Normal": m_Player.m_Score -= 5;
                 break;
             case "Hard": m_Player.m_Score -= 10;
+                break;
+            case "Teste":
+                m_Player.m_Score -= 10;
                 break;
         }
     }

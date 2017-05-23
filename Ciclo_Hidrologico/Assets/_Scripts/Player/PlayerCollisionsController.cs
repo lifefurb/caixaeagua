@@ -9,15 +9,16 @@ public class PlayerCollisionsController : MonoBehaviour {
     
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Question") {
-            m_ScreenBehavior.EnableMainPanel(false);
             m_ScreenBehavior.EnableQuestionPanel(true);
-            m_QuestionBehavior.ShowQuestion();            
+            m_QuestionBehavior.ShowQuestion();
+            m_ScreenBehavior.EraseAnswerMessege();       
         }
     }
 
     void OnTriggerExit(Collider other) {
         if (other.tag == "Question")
             m_ScreenBehavior.EnableQuestionPanel(false);
+
     }
 
 }

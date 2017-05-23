@@ -260,7 +260,9 @@
     <Compile Include="Assets\_Main\Scripts\Timer.cs" />
     <Compile Include="Assets\_Main\Scripts\VirtualButtonController.cs" />
     <Compile Include="Assets\_Main\Scripts\VirtualButtonHelp.cs" />
-    <Compile Include="Assets\_Scripts\BookController.cs" />
+    <Compile Include="Assets\_Scripts\AudioManager.cs" />
+    <Compile Include="Assets\_Scripts\Book\BookController.cs" />
+    <Compile Include="Assets\_Scripts\Book\TurnPage.cs" />
     <Compile Include="Assets\_Scripts\IObserver.cs" />
     <Compile Include="Assets\_Scripts\ISubject.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerBehavior.cs" />
@@ -271,7 +273,6 @@
     <Compile Include="Assets\_Scripts\Question\QuestionScreenBehavior.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionSingleTonTeste.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionTeste.cs" />
-    <Compile Include="Assets\_Scripts\TurnPage.cs" />
     <Compile Include="Assets\_Scripts\UpdateData.cs" />
   </ItemGroup>
   <ItemGroup>
