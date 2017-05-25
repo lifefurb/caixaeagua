@@ -8,9 +8,7 @@ public class ScoreTextManager : MonoBehaviour {
 
 	public GameObject m_TextPrefab;
     public RectTransform m_CanvasMain;
-    //public RectTransform m_PanelScoreText;
 	public float m_Speed;
-	//public Vector3 m_Direction;
 	public float m_FadeTime;
 
 	private static ScoreTextManager instance;

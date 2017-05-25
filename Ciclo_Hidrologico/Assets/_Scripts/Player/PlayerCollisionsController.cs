@@ -1,24 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCollisionsController : MonoBehaviour {
 
-    public QuestionBehavior m_QuestionBehavior;
-    public QuestionScreenBehavior m_ScreenBehavior;
+    public Quiz m_QuestionBehavior;
+    public QuestionScreenBehavior m_QuestionScreenBehavior;
     
+
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Question") {
-            m_ScreenBehavior.EnableQuestionPanel(true);
-            m_QuestionBehavior.ShowQuestion();
-            m_ScreenBehavior.EraseAnswerMessege();       
+            m_QuestionScreenBehavior.EraseAnswerMessege();
+            m_QuestionScreenBehavior.EnablePressButtonPanel(true);
+            m_QuestionScreenBehavior.EnableButtonQ(true);
         }
     }
 
     void OnTriggerExit(Collider other) {
-        if (other.tag == "Question")
-            m_ScreenBehavior.EnableQuestionPanel(false);
-
+        if (other.tag == "Question") {
+            m_QuestionScreenBehavior.EnableQuestionPanel(false);
+            m_QuestionScreenBehavior.EnablePressButtonPanel(false);
+            m_QuestionScreenBehavior.EnableButtonQ(false);
+        }
     }
 
 }

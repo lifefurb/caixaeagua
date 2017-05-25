@@ -6,7 +6,7 @@ using Vuforia;
 public class VirtualButtonController : MonoBehaviour, IVirtualButtonEventHandler {
 
     public Text m_Tip;
-    public Game m_Game;
+    //public Game m_Game;
 
     //private GameObject m_VirtualButtonNext;
     //private GameObject m_VirtualButtonBack;
@@ -33,7 +33,7 @@ public class VirtualButtonController : MonoBehaviour, IVirtualButtonEventHandler
     }
 
     void Update() {
-        m_Text = m_Game.m_Questions[m_Game.m_randomCurrentQuestion].m_Tip;
+        //m_Text = m_Game.m_Questions[m_Game.m_randomCurrentQuestion].m_Tip;
 
         m_Pages = SplitInPages(m_Text, 110);
         m_Tip.text = m_Pages[m_Index];

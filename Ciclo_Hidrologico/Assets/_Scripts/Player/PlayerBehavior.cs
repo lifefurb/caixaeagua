@@ -3,19 +3,39 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior: MonoBehaviour{
 
-    public PlayerTeste m_Player = new PlayerTeste();
+    public Player m_Player;
+    public QuestionScreenBehavior m_QuestionScreenBehavior;
+
+    void Awake() {
+        m_Player = new Player();
+    }
 
     public void IncrementScore() {
         Scene currentScene = SceneManager.GetActiveScene();
         switch (currentScene.name) {
-            case "Easy": m_Player.m_Score += 10;
+            case "MainScene_Easy":
+                m_Player.points += 10;
+                m_QuestionScreenBehavior.ShowAddScoreAnimation(10);
                 break;
-            case "Normal":  m_Player.m_Score += 30;
+            case "MainScene_Normal":
+                m_Player.points += 30;
+                m_QuestionScreenBehavior.ShowAddScoreAnimation(30);
                 break;
-            case "Hard":  m_Player.m_Score += 50;
+            case "MainScene_Hard":
+                m_Player.points += 50;
+                m_QuestionScreenBehavior.ShowAddScoreAnimation(50);
                 break;
-            case "Teste":
-                m_Player.m_Score += 50;
+            case "Teste_Easy":
+                m_Player.points += 10;
+                m_QuestionScreenBehavior.ShowAddScoreAnimation(10);
+                break;
+            case "Teste_Normal":
+                m_Player.points += 30;
+                m_QuestionScreenBehavior.ShowAddScoreAnimation(30);
+                break;
+            case "Teste_Hard":
+                m_Player.points += 50;
+                m_QuestionScreenBehavior.ShowAddScoreAnimation(50);
                 break;
         }
     }
@@ -24,14 +44,29 @@ public class PlayerBehavior: MonoBehaviour{
         Scene currentScene = SceneManager.GetActiveScene();
         switch (currentScene.name)
         {
-            case "Easy": m_Player.m_Score -= 2;
+            case "MainScene_Easy":
+                m_Player.points -= 2;
+                m_QuestionScreenBehavior.ShowSubScoreAnimation(2);
                 break;
-            case "Normal": m_Player.m_Score -= 5;
+            case "MainScene_Normal":
+                m_Player.points -= 5;
+                m_QuestionScreenBehavior.ShowSubScoreAnimation(5);
                 break;
-            case "Hard": m_Player.m_Score -= 10;
+            case "MainScene_Hard":
+                m_Player.points -= 10;
+                m_QuestionScreenBehavior.ShowSubScoreAnimation(10);
                 break;
-            case "Teste":
-                m_Player.m_Score -= 10;
+            case "Teste_Easy":
+                m_Player.points -= 2;
+                m_QuestionScreenBehavior.ShowSubScoreAnimation(2);
+                break;
+            case "Teste_Normal":
+                m_Player.points -= 5;
+                m_QuestionScreenBehavior.ShowSubScoreAnimation(5);
+                break;
+            case "Teste_Hard":
+                m_Player.points -= 10;
+                m_QuestionScreenBehavior.ShowSubScoreAnimation(10);
                 break;
         }
     }

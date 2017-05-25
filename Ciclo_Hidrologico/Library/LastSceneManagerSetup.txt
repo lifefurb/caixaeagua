@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Livro_Apostila.unity
+- path: Assets/_Scenes/Teste_Hard.unity
   isLoaded: 1
   isActive: 1

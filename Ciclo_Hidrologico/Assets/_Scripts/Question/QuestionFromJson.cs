@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class QuestionFromJson {
 
-    public QuestionTeste[] m_ArrayQuestions;
+    public Question[] m_ArrayQuestions;
 
     public QuestionFromJson() { }
 

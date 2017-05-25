@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -66,6 +69,9 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -238,42 +244,39 @@
     <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-    <Compile Include="Assets\_Main\Scripts\Arrow.cs" />
     <Compile Include="Assets\_Main\Scripts\Book.cs" />
-    <Compile Include="Assets\_Main\Scripts\FPS.cs" />
     <Compile Include="Assets\_Main\Scripts\GCCamera.cs" />
-    <Compile Include="Assets\_Main\Scripts\Game.cs" />
     <Compile Include="Assets\_Main\Scripts\GameManager.cs" />
-    <Compile Include="Assets\_Main\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\_Main\Scripts\MoveOffSet.cs" />
     <Compile Include="Assets\_Main\Scripts\MyDefaultTrackableEventHandler.cs" />
-    <Compile Include="Assets\_Main\Scripts\Player.cs" />
-    <Compile Include="Assets\_Main\Scripts\Question.cs" />
     <Compile Include="Assets\_Main\Scripts\QuestionController.cs" />
     <Compile Include="Assets\_Main\Scripts\QuestionSingleTon.cs" />
-    <Compile Include="Assets\_Main\Scripts\ResultServer.cs" />
     <Compile Include="Assets\_Main\Scripts\Score.cs" />
-    <Compile Include="Assets\_Main\Scripts\ScoreBar.cs" />
-    <Compile Include="Assets\_Main\Scripts\ScoreText.cs" />
-    <Compile Include="Assets\_Main\Scripts\ScoreTextManager.cs" />
-    <Compile Include="Assets\_Main\Scripts\SendScore.cs" />
-    <Compile Include="Assets\_Main\Scripts\Timer.cs" />
     <Compile Include="Assets\_Main\Scripts\VirtualButtonController.cs" />
     <Compile Include="Assets\_Main\Scripts\VirtualButtonHelp.cs" />
-    <Compile Include="Assets\_Scripts\AudioManager.cs" />
     <Compile Include="Assets\_Scripts\Book\BookController.cs" />
+    <Compile Include="Assets\_Scripts\Book\IObserver.cs" />
+    <Compile Include="Assets\_Scripts\Book\ISubject.cs" />
     <Compile Include="Assets\_Scripts\Book\TurnPage.cs" />
-    <Compile Include="Assets\_Scripts\IObserver.cs" />
-    <Compile Include="Assets\_Scripts\ISubject.cs" />
+    <Compile Include="Assets\_Scripts\Book\UpdateData.cs" />
+    <Compile Include="Assets\_Scripts\MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\_Scripts\MainMenu\MoveOffSet.cs" />
+    <Compile Include="Assets\_Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerBehavior.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerCollisionsController.cs" />
-    <Compile Include="Assets\_Scripts\Player\PlayerTeste.cs" />
-    <Compile Include="Assets\_Scripts\Question\QuestionBehavior.cs" />
+    <Compile Include="Assets\_Scripts\Question\Question.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionFromJson.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionScreenBehavior.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionSingleTonTeste.cs" />
-    <Compile Include="Assets\_Scripts\Question\QuestionTeste.cs" />
-    <Compile Include="Assets\_Scripts\UpdateData.cs" />
+    <Compile Include="Assets\_Scripts\Question\Quiz.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\Arrow.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\AudioManager.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\FPS.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\ResultServer.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\ScoreBar.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\ScoreText.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\ScoreTextManager.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\SendScore.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\Vuforia\Vuforia\authoringinfo.xml" />

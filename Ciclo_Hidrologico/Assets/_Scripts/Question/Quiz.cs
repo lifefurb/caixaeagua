@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class QuestionBehavior : MonoBehaviour {
+public class Quiz : MonoBehaviour {
     
     public Text m_QuestionText;
     public Text[] m_AlternativesText = new Text[4];
@@ -12,13 +13,19 @@ public class QuestionBehavior : MonoBehaviour {
     public PlayerBehavior m_PlayerBehavior = new PlayerBehavior();
     public AudioManager m_AudioManager;
 
-    private List<QuestionTeste> mQuestions;
+    public static bool m_FlagArrow = false;
+
+    private List<Question> mQuestions;
     private int mQuestionAmount;
+    private int mRightQuestionsCount = 0;
+    private int mWrongQuestionsCount = 0;
 
     void Awake() {
         mQuestions = QuestionSingleTonTeste.m_Questions;
-        mQuestionAmount = mQuestions.Count - 1;
+        mQuestionAmount = mQuestions.Count - 1;        
+    }
 
+    void Start() {
         InstantiateQuestion();
     }
 
@@ -48,13 +55,14 @@ public class QuestionBehavior : MonoBehaviour {
             WrongAnswer();
 
         m_QuestionScreenBehavior.EnableQuestionPanel(false);
+        m_QuestionScreenBehavior.ShowQuestionsScore(mRightQuestionsCount, mWrongQuestionsCount);
     }
 
     public void ShowQuestion() {
 
         //randomiza as perguntas da lista m_Questions
         for (int i = 0; i < mQuestions.Count; i++) {
-            QuestionTeste temp = mQuestions[i];
+            Question temp = mQuestions[i];
             int randomIndex = Random.Range(i, mQuestions.Count);
             mQuestions[i] = mQuestions[randomIndex];
             mQuestions[randomIndex] = temp;
@@ -81,15 +89,20 @@ public class QuestionBehavior : MonoBehaviour {
     }
     
     private void RightAnswer() {
-        m_PlayerBehavior.IncrementScore();
         mQuestions.Remove(mQuestions[mQuestionAmount]);
         mQuestionAmount--;
+        mRightQuestionsCount++;
 
+        m_PlayerBehavior.IncrementScore();
         m_AudioManager.PlayRightAnswerAudio();
+
         m_QuestionScreenBehavior.ShowRightAnswerMessege(mQuestions.Count);
-        m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.m_Score);
+        m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.points);
+        m_QuestionScreenBehavior.EnablePressButtonPanel(false);
+        m_QuestionScreenBehavior.EnableButtonQ(false);
 
         Destroy(GameObject.Find("Question(Clone)"));
+        m_FlagArrow = true;
 
         if (mQuestions.Count > 0) {
             InstantiateQuestion();
@@ -97,14 +110,17 @@ public class QuestionBehavior : MonoBehaviour {
             m_AudioManager.PlayWinAudio();
             m_QuestionScreenBehavior.EnableMainPanel(false);
             m_QuestionScreenBehavior.EnableFinalPanel(true);
+            m_QuestionScreenBehavior.ShowTextScoreValue(m_PlayerBehavior.m_Player.points);
         }            
     }
 
     private void WrongAnswer() {
+        mWrongQuestionsCount++;
+
         m_PlayerBehavior.DecrementScore();
         m_AudioManager.PlayWrongAnswerAudio();
         m_QuestionScreenBehavior.ShowWrongAnswerMessege();
-        m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.m_Score);
+        m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.points);
     }
 
     private void InstantiateQuestion() {
@@ -119,5 +135,63 @@ public class QuestionBehavior : MonoBehaviour {
         GameObject temp = Instantiate(m_QuestionPrefab, new Vector3(randomPositionX, 0, randomPositionZ), Quaternion.identity);
         temp.transform.parent = m_ImageTarget.transform;
         temp.transform.localScale = new Vector3(0.5f, 0.01f, 0.5f);
+    }
+
+    public void ButtonQ() {
+        m_QuestionScreenBehavior.EraseAnswerMessege();
+        m_QuestionScreenBehavior.EnableQuestionPanel(true);
+        m_QuestionScreenBehavior.EnablePressButtonPanel(false);
+        ShowQuestion();
+    }
+
+    public InputField m_PlayerName;
+    private List<string> mNames = new List<string>();
+    private List<string> mNotSent = new List<string>();
+
+    public void SendButtom() {
+        
+        if ((m_PlayerName.text != "") && !(mNames.Contains(m_PlayerName.text))) {
+            
+            m_PlayerBehavior.m_Player.name = m_PlayerName.text;
+            string json = JsonUtility.ToJson(m_PlayerBehavior.m_Player);
+            Debug.Log(json);
+
+            StartCoroutine(SendScore.saveScore(json, CallBackSaveScore));
+            
+            mNames.Add(m_PlayerName.text);
+            
+        }
+        else {
+            m_QuestionScreenBehavior.EnableMessegePanel("Nome inválido. Tente novamente!");
+        }
+    }
+
+    public int CallBackSaveScore(string err, string resultStr) {
+
+        ResultServer result = new ResultServer();
+        JsonUtility.FromJsonOverwrite(resultStr, result);
+
+        if (err != null) {
+            mNotSent.Add(resultStr);
+            m_QuestionScreenBehavior.EnableMessegePanel(result.msg);
+            Debug.Log(result.msg);
+            Debug.Log(result.err);
+        }else {
+            m_QuestionScreenBehavior.EnableMessegePanel(result.msg);
+            Debug.Log(result.msg);
+            m_PlayerBehavior.m_Player.id = result.idUser;
+        }
+        return 0;
+    }
+
+    public int CallBackRequestQuestion(string err, string resultStr) {
+
+        List<Question> result = new List<Question>();
+        JsonUtility.FromJsonOverwrite(resultStr, result);
+
+        if (err == null) {
+            mQuestions = result;
+        }
+        return 0;
     }
 }

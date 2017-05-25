@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Book : MonoBehaviour {
 
-    public Game m_Game;
+    public Quiz m_Quiz;
     public Text m_Text;
     public int m_Max;
 
@@ -19,7 +19,7 @@ public class Book : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        m_Tip = m_Game.m_Questions[m_Game.m_randomCurrentQuestion].m_Tip;
+        //m_Tip = m_Quiz.m_Questions[m_Quiz.m_randomCurrentQuestion].m_Tip;
         m_Page = m_Tip.Split();
         
         while (m_Index <= m_Max) {

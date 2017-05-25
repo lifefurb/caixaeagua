@@ -1,7 +1,7 @@
 ﻿using System;
 
 [Serializable]
-public class QuestionTeste {
+public class Question {
 
     public string m_QuestionText;
     public string[] m_Alternatives = new string[4];
