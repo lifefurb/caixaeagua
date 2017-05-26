@@ -96,7 +96,7 @@ public class Quiz : MonoBehaviour {
         m_PlayerBehavior.IncrementScore();
         m_AudioManager.PlayRightAnswerAudio();
 
-        m_QuestionScreenBehavior.ShowRightAnswerMessege(mQuestions.Count);
+        m_QuestionScreenBehavior.ShowRightAnswerMessege(mQuestionAmount + 1);
         m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.points);
         m_QuestionScreenBehavior.EnablePressButtonPanel(false);
         m_QuestionScreenBehavior.EnableButtonQ(false);

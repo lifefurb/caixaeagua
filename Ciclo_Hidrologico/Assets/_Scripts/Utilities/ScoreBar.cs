@@ -20,17 +20,11 @@ public class ScoreBar : MonoBehaviour {
 	void Start(){
         Scene currentScene = SceneManager.GetActiveScene();
         switch (currentScene.name) {
-            case "MainScene_Easy": mFullScore = 80;
+            case "Scene_Easy": mFullScore = 80;
                 break;
-            case "MainScene_Normal": mFullScore = 240;
+            case "Scene_Normal": mFullScore = 240;
                 break;
-            case "MainScene_Hard": mFullScore = 400;
-                break;
-            case "Teste_Easy": mFullScore = 80;
-                break;
-            case "Teste_Normal": mFullScore = 240;
-                break;
-            case "Teste_Hard": mFullScore = 400;
+            case "Scene_Hard": mFullScore = 400;
                 break;
         }
 

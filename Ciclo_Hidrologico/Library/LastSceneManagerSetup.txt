@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Teste_Hard.unity
+- path: Assets/_Scenes/Scene_Easy.unity
   isLoaded: 1
   isActive: 1

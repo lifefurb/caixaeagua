@@ -13,27 +13,15 @@ public class PlayerBehavior: MonoBehaviour{
     public void IncrementScore() {
         Scene currentScene = SceneManager.GetActiveScene();
         switch (currentScene.name) {
-            case "MainScene_Easy":
+            case "Scene_Easy":
                 m_Player.points += 10;
                 m_QuestionScreenBehavior.ShowAddScoreAnimation(10);
                 break;
-            case "MainScene_Normal":
+            case "Scene_Normal":
                 m_Player.points += 30;
                 m_QuestionScreenBehavior.ShowAddScoreAnimation(30);
                 break;
-            case "MainScene_Hard":
-                m_Player.points += 50;
-                m_QuestionScreenBehavior.ShowAddScoreAnimation(50);
-                break;
-            case "Teste_Easy":
-                m_Player.points += 10;
-                m_QuestionScreenBehavior.ShowAddScoreAnimation(10);
-                break;
-            case "Teste_Normal":
-                m_Player.points += 30;
-                m_QuestionScreenBehavior.ShowAddScoreAnimation(30);
-                break;
-            case "Teste_Hard":
+            case "Scene_Hard":
                 m_Player.points += 50;
                 m_QuestionScreenBehavior.ShowAddScoreAnimation(50);
                 break;
@@ -44,27 +32,15 @@ public class PlayerBehavior: MonoBehaviour{
         Scene currentScene = SceneManager.GetActiveScene();
         switch (currentScene.name)
         {
-            case "MainScene_Easy":
+            case "Scene_Easy":
                 m_Player.points -= 2;
                 m_QuestionScreenBehavior.ShowSubScoreAnimation(2);
                 break;
-            case "MainScene_Normal":
+            case "Scene_Normal":
                 m_Player.points -= 5;
                 m_QuestionScreenBehavior.ShowSubScoreAnimation(5);
                 break;
-            case "MainScene_Hard":
-                m_Player.points -= 10;
-                m_QuestionScreenBehavior.ShowSubScoreAnimation(10);
-                break;
-            case "Teste_Easy":
-                m_Player.points -= 2;
-                m_QuestionScreenBehavior.ShowSubScoreAnimation(2);
-                break;
-            case "Teste_Normal":
-                m_Player.points -= 5;
-                m_QuestionScreenBehavior.ShowSubScoreAnimation(5);
-                break;
-            case "Teste_Hard":
+            case "Scene_Hard":
                 m_Player.points -= 10;
                 m_QuestionScreenBehavior.ShowSubScoreAnimation(10);
                 break;

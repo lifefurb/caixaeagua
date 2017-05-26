@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -69,9 +66,6 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -244,15 +238,6 @@
     <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-    <Compile Include="Assets\_Main\Scripts\Book.cs" />
-    <Compile Include="Assets\_Main\Scripts\GCCamera.cs" />
-    <Compile Include="Assets\_Main\Scripts\GameManager.cs" />
-    <Compile Include="Assets\_Main\Scripts\MyDefaultTrackableEventHandler.cs" />
-    <Compile Include="Assets\_Main\Scripts\QuestionController.cs" />
-    <Compile Include="Assets\_Main\Scripts\QuestionSingleTon.cs" />
-    <Compile Include="Assets\_Main\Scripts\Score.cs" />
-    <Compile Include="Assets\_Main\Scripts\VirtualButtonController.cs" />
-    <Compile Include="Assets\_Main\Scripts\VirtualButtonHelp.cs" />
     <Compile Include="Assets\_Scripts\Book\BookController.cs" />
     <Compile Include="Assets\_Scripts\Book\IObserver.cs" />
     <Compile Include="Assets\_Scripts\Book\ISubject.cs" />
@@ -270,6 +255,7 @@
     <Compile Include="Assets\_Scripts\Question\Quiz.cs" />
     <Compile Include="Assets\_Scripts\Utilities\Arrow.cs" />
     <Compile Include="Assets\_Scripts\Utilities\AudioManager.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\Book.cs" />
     <Compile Include="Assets\_Scripts\Utilities\FPS.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ResultServer.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreBar.cs" />
@@ -409,7 +395,6 @@
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
     <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
-    <None Include="Assets\_Main\Resources\questionsList.txt" />
     <None Include="Assets\license_3rdpartynotice.txt" />
     <None Include="Assets\link.xml" />
     <None Include="Assets\readme_SDK.txt" />

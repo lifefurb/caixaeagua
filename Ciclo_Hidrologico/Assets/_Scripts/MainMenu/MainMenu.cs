@@ -24,10 +24,6 @@ public class MainMenu : MonoBehaviour {
         m_InstructionsPanel.SetActive(true);
     }
 
-    public void Teste() {
-        SceneManager.LoadScene("Teste_Normal");
-    }
-
     public void Apostila() {
         SceneManager.LoadScene("Apostila");
     }
@@ -41,14 +37,14 @@ public class MainMenu : MonoBehaviour {
     }
 
 	public void Easy() {
-		SceneManager.LoadScene("MainScene_Easy");
+		SceneManager.LoadScene("Scene_Easy");
 	}
 
 	public void Medium() {
-		SceneManager.LoadScene("MainScene_Medium");
+		SceneManager.LoadScene("Scene_Normal");
 	}
 
 	public void Hard() {
-		SceneManager.LoadScene("MainScene_Hard");
+		SceneManager.LoadScene("Scene_Hard");
 	}
 }
