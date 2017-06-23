@@ -1,7 +1,4 @@
-﻿//Responsável pelo cronômetro da scene MainSene_Hard.
-//Utilizaddo no objeto _gameManager da scene MainSecene_Hard
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
@@ -17,7 +14,7 @@ public class Timer : MonoBehaviour {
 	private float m_Speed = 0.017f;
 
 	void Awake(){
-		m_StartTime = 60f;		//armazena o valor inicial do cronômetro em segundos
+		m_StartTime = 120f;		//armazena o valor inicial do cronômetro em segundos
 		m_Time = 0f;
 	}
 
@@ -37,5 +34,9 @@ public class Timer : MonoBehaviour {
 		}
 
 		m_SubtractTime++;
-	}
+
+        if (Quiz.m_GameOver)
+            gameObject.SetActive(false);
+
+    }
 }

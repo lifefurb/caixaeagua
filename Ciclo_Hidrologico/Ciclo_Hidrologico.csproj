@@ -78,6 +78,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Ciclo_Hidrologico.Plugins.csproj">
+      <Project>{1551EE26-F399-291F-69BC-23ADDAF26601}</Project>
+      <Name>Ciclo_Hidrologico.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Common\CameraSettings.cs" />
     <Compile Include="Assets\Common\InitErrorHandler.cs" />
     <Compile Include="Assets\Common\MenuAnimator.cs" />
@@ -95,26 +101,6 @@
     <Compile Include="Assets\SampleAssets\Cameras\Scripts\PivotBasedCameraRig.cs" />
     <Compile Include="Assets\SampleAssets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
     <Compile Include="Assets\SampleAssets\Cameras\Scripts\TargetFieldOfView.cs" />
-    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
-    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
-    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
-    <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
-    <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
-    <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
-    <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\CameraSwitch.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\Joystick.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\LevelReset.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\TiltInput.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\TouchPad.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\AmbientObscurance.cs" />
     <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\AntialiasingAsPostEffect.cs" />
     <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Bloom.cs" />
@@ -243,16 +229,22 @@
     <Compile Include="Assets\_Scripts\Book\ISubject.cs" />
     <Compile Include="Assets\_Scripts\Book\TurnPage.cs" />
     <Compile Include="Assets\_Scripts\Book\UpdateData.cs" />
+    <Compile Include="Assets\_Scripts\MainMenu\ButtonQuestionPreview.cs" />
+    <Compile Include="Assets\_Scripts\MainMenu\ListOfQuestions.cs" />
     <Compile Include="Assets\_Scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\_Scripts\MainMenu\MoveOffSet.cs" />
+    <Compile Include="Assets\_Scripts\Player\MyDefaultTrackableEventHandler.cs" />
     <Compile Include="Assets\_Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerBehavior.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerCollisionsController.cs" />
     <Compile Include="Assets\_Scripts\Question\Question.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionFromJson.cs" />
+    <Compile Include="Assets\_Scripts\Question\QuestionPreview.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionScreenBehavior.cs" />
-    <Compile Include="Assets\_Scripts\Question\QuestionSingleTonTeste.cs" />
-    <Compile Include="Assets\_Scripts\Question\Quiz.cs" />
+    <Compile Include="Assets\_Scripts\Question\QuestionSingleTon.cs" />
+    <Compile Include="Assets\_Scripts\Quiz.cs" />
+    <Compile Include="Assets\_Scripts\TipBook.cs" />
+    <Compile Include="Assets\_Scripts\TurnPageTip.cs" />
     <Compile Include="Assets\_Scripts\Utilities\Arrow.cs" />
     <Compile Include="Assets\_Scripts\Utilities\AudioManager.cs" />
     <Compile Include="Assets\_Scripts\Utilities\Book.cs" />
@@ -266,13 +258,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\Vuforia\Vuforia\authoringinfo.xml" />
+    <None Include="Assets\Note about Editor Folder.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
+    <None Include="Assets\Resources\AllQuestions.txt" />
+    <None Include="Assets\Resources\ListOfQuestionsJson.txt" />
     <None Include="Assets\Resources\QuestionsJson.txt" />
     <None Include="Assets\SampleAssets\Cameras\CameraGuidelines.txt" />
-    <None Include="Assets\SampleAssets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-    <None Include="Assets\SampleAssets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlurEffectConeTaps.shader" />
@@ -375,6 +367,8 @@
     <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\FXWaterV4Simple.shader" />
     <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\WaterInclude.cginc" />
     <None Include="Assets\SampleAssets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
+    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_Vuforia.xml" />
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_VuforiaFull.xml" />
     <None Include="Assets\StreamingAssets\QCAR\FlakesBox.xml" />

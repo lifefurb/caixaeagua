@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciclo_Hidrologico.Plugins", "Ciclo_Hidrologico.Plugins.csproj", "{1551EE26-F399-291F-69BC-23ADDAF26601}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciclo_Hidrologico", "Ciclo_Hidrologico.csproj", "{A44592CB-66B7-A5D8-4E5F-310E7032932B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciclo_Hidrologico.Editor", "Ciclo_Hidrologico.Editor.csproj", "{7D01E415-EEBE-D656-BD1A-A81151C8957F}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1551EE26-F399-291F-69BC-23ADDAF26601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1551EE26-F399-291F-69BC-23ADDAF26601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1551EE26-F399-291F-69BC-23ADDAF26601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1551EE26-F399-291F-69BC-23ADDAF26601}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A44592CB-66B7-A5D8-4E5F-310E7032932B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A44592CB-66B7-A5D8-4E5F-310E7032932B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A44592CB-66B7-A5D8-4E5F-310E7032932B}.Release|Any CPU.ActiveCfg = Release|Any CPU

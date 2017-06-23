@@ -10,10 +10,10 @@ public class TurnPage : MonoBehaviour, ITrackableEventHandler, IObserver {
     public GameObject m_Page;
     public BookController m_BookController;
     public List<Button> m_Links = new List<Button>();
+    public int m_Count;
     #region PRIVATE_MEMBER_VARIABLES
 
     private TrackableBehaviour mTrackableBehaviour;
-    private int mCount;
     private bool mShow = false;
     private bool mFirstFound;
     #endregion // PRIVATE_MEMBER_VARIABLES
@@ -32,7 +32,7 @@ public class TurnPage : MonoBehaviour, ITrackableEventHandler, IObserver {
         }
 
         m_BookController.addObserver(this);
-        mCount = 0;
+        m_Count = 0;
     }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -53,9 +53,9 @@ public class TurnPage : MonoBehaviour, ITrackableEventHandler, IObserver {
         {
             mShow = true;
             OnTrackingFound();
-            if (mFirstFound) {
+            if (mFirstFound) 
                 m_BookController.FoundPage();
-            }
+            
             mFirstFound = true;
         }
         else
@@ -73,7 +73,7 @@ public class TurnPage : MonoBehaviour, ITrackableEventHandler, IObserver {
     #region PRIVATE_METHODS
 
     private void OnTrackingFound() {
-        m_Page.GetComponent<Renderer>().material = m_BookPages[mCount];
+        m_Page.GetComponent<Renderer>().material = m_BookPages[m_Count];
         m_Page.GetComponent<Renderer>().enabled = true;
         ShowLink();
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
@@ -82,19 +82,6 @@ public class TurnPage : MonoBehaviour, ITrackableEventHandler, IObserver {
     private void OnTrackingLost() {
         m_Page.GetComponent<Renderer>().enabled = false;
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
-        
-    }
-
-    public void update(UpdateData update) {
-        if ((mCount + update.Page) >= 0 && (mCount + update.Page) < m_BookPages.Count) {
-            if (mShow) {
-                OnTrackingLost();
-            }
-            mCount += update.Page;
-        }
-        if (mShow) {
-            OnTrackingFound();
-        }
     }
 
     public void ShowLink() {
@@ -104,10 +91,21 @@ public class TurnPage : MonoBehaviour, ITrackableEventHandler, IObserver {
         }
 
         foreach (Button bt in m_Links) {
-            if (bt.name == m_BookPages[mCount].name) {
-                bt.gameObject.SetActive(true);
-            }
+            if (bt.name == m_BookPages[m_Count].name)
+                bt.gameObject.SetActive(true);            
         }
+        
+    }
+
+    public void update(UpdateData update) {
+        if ((m_Count + update.Page) >= 0 && (m_Count + update.Page) < m_BookPages.Count) {
+            if (mShow)
+                OnTrackingLost();
+            
+            m_Count += update.Page;
+        }
+        if (mShow)
+            OnTrackingFound();
         
     }
 

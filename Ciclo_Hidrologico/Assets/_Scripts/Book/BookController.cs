@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum page { RIGHT, LEFT };
 
@@ -10,7 +9,7 @@ public class BookController : MonoBehaviour, ISubject {
     private bool mFound;
     private List<IObserver> observers = new List<IObserver>();
     private UpdateData update = new UpdateData();
-
+    
     void Start() {
         mFound = false;
     }
@@ -19,8 +18,7 @@ public class BookController : MonoBehaviour, ISubject {
         if (mFound) {
             if (mPageLost == page.RIGHT) {
                 update.Page = 1;
-            }
-            else {
+            } else {
                 update.Page = -1;
             }
 

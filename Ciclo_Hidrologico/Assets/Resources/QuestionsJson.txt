@@ -8,7 +8,8 @@
 				"A água cobre cerca de 63% da superfície da Terra.",
 				"Água cobre cerca de 91% da superfície da Terra."
 			],
-			"m_Tip": ""
+			"m_Tip": 2,
+			"m_Id": 0
 		}, 
 		{
 			"m_QuestionText": "Qual o outro nome para a chuva, que é o retorno da água à Terra?",
@@ -18,7 +19,8 @@
 				"Condensação.",
 				"Precipitação."
 			],
-			"m_Tip": ""
+			"m_Tip": 5,
+			"m_Id": 0
 		},
 		{
 			"m_QuestionText": "Quais os estados físicos da água?",
@@ -28,7 +30,8 @@
 				"Oceanos, rios e lagos.",
 				"Chuva, neve e granizo."
 			],
-			"m_Tip": ""
+			"m_Tip": 8,
+			"m_Id": 0
 		},
 		{
 			"m_QuestionText": "Em que consiste o ciclo da água?",
@@ -38,7 +41,8 @@
 				"Passagem da água do estado gasoso a líquido e deste novamente a gasoso.",
 				"Passagem da água do estado gasoso a líquido e deste ao estado sólido."
 			],
-			"m_Tip": ""
+			"m_Tip": 1,
+			"m_Id": 0
 		},
 		{
 			"m_QuestionText": "A água salobra é:",
@@ -48,7 +52,8 @@
 				"Aquela que contém muito sal.",
 				"Aquela que não contém sal."
 			],
-			"m_Tip": ""
+			"m_Tip": 3,
+			"m_Id": 0
 		},
 		{
 			"m_QuestionText": "No nosso planeta, a água é um recurso:",
@@ -58,7 +63,8 @@
 				"Termal.",
 				"Não Renovável."
 			],
-			"m_Tip": ""
+			"m_Tip": 7,
+			"m_Id": 0
 		},
 		{
 			"m_QuestionText": "Água à temperatura ambiente é:",
@@ -68,7 +74,8 @@
 				"Gasosa.",
 				"Plasma."
 			],
-			"m_Tip": ""
+			"m_Tip": 4,
+			"m_Id": 0
 		},
 		{
 			"m_QuestionText": "A Terra é conhecida como o planeta azul por causa da presença de(a,o)",
@@ -78,7 +85,8 @@
 				"Massas.",
 				"Céu."
 			],
-			"m_Tip": ""
+			"m_Tip": 6,
+			"m_Id": 0
 		}
 	]
 }

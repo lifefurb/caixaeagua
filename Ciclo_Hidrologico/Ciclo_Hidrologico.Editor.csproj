@@ -126,15 +126,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Ciclo_Hidrologico.Plugins.csproj">
+      <Project>{1551EE26-F399-291F-69BC-23ADDAF26601}</Project>
+      <Name>Ciclo_Hidrologico.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="Ciclo_Hidrologico.csproj">
       <Project>{A44592CB-66B7-A5D8-4E5F-310E7032932B}</Project>
       <Name>Ciclo_Hidrologico</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\CrossPlatformInputInitialize.cs" />
+    <Compile Include="Assets\Editor\InputAxisScrollbarCI.cs" />
     <Compile Include="Assets\Editor\Vuforia\SampleOrientationSetter.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\Editor\CrossPlatformInputInitialize.cs" />
-    <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\Editor\InputAxisScrollbarCI.cs" />
     <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Editor\ImageEffects\AntialiasingAsPostEffectEditor.cs" />
     <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Editor\ImageEffects\BloomAndLensFlaresEditor.cs" />
     <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Editor\ImageEffects\BloomEditor.cs" />
@@ -163,13 +167,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\Vuforia\Vuforia\authoringinfo.xml" />
+    <None Include="Assets\Note about Editor Folder.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
+    <None Include="Assets\Resources\AllQuestions.txt" />
+    <None Include="Assets\Resources\ListOfQuestionsJson.txt" />
     <None Include="Assets\Resources\QuestionsJson.txt" />
     <None Include="Assets\SampleAssets\Cameras\CameraGuidelines.txt" />
-    <None Include="Assets\SampleAssets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-    <None Include="Assets\SampleAssets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlurEffectConeTaps.shader" />
@@ -272,6 +276,8 @@
     <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\FXWaterV4Simple.shader" />
     <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\WaterInclude.cginc" />
     <None Include="Assets\SampleAssets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
+    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_Vuforia.xml" />
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_VuforiaFull.xml" />
     <None Include="Assets\StreamingAssets\QCAR\FlakesBox.xml" />
