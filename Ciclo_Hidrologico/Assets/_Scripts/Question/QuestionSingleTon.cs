@@ -19,11 +19,11 @@ public class QuestionSingleTon: MonoBehaviour {
         Instance = this;
 
         //Preenche a lista m_Questions com as perguntas do json QuestionsJson
-        mJsonQuestions = QuestionFromJson.CreateQuestionsFromJson();
-        foreach (Question p in mJsonQuestions.m_ArrayQuestions) {
-            p.m_RightAlternative = p.m_Alternatives[0];
-            m_Questions.Add(p);
-        }
+        //mJsonQuestions = QuestionFromJson.CreateQuestionsFromJson();
+        //foreach (Question p in mJsonQuestions.m_ArrayQuestions) {
+        //    p.m_RightAlternative = p.m_Alternatives[0];
+        //    m_Questions.Add(p);
+        //}
 
         //Preenche a lista m_ListOfQuestions com as perguntas do json ListOfQuestionsJson
         mJsonQuestions = QuestionFromJson.CreateListOfQuestionsFromJson();
@@ -36,6 +36,15 @@ public class QuestionSingleTon: MonoBehaviour {
         mJsonQuestions = QuestionFromJson.CreateAllQuestionsFromJson();
         foreach (Question p in mJsonQuestions.m_ArrayAllQuestions) {
             m_AllQuestions.Add(p);
+        }
+
+        //Preenche a lista m_Questions com as perguntas do json QuestionsJson
+        //mJsonQuestions = QuestionFromJson.CreateQuestionsFromJson();
+        foreach (Question p in m_AllQuestions) {
+            if (p.m_Id == 0) {
+                p.m_RightAlternative = p.m_Alternatives[0];
+                m_Questions.Add(p);
+            }
         }
 
         DontDestroyOnLoad(gameObject);

@@ -8,14 +8,18 @@ public class ListOfQuestions : MonoBehaviour {
     public GameObject m_ButtonPrefab;
     public GameObject m_Grid;
 
+    private long mId = 0;
     private static List<GameObject> mButtons = new List<GameObject>();
     
     public void QuestionListButton() {
         m_QuestionsList = QuestionSingleTon.Instance.m_ListOfQuestions;
 
         foreach (QuestionPreview p in m_QuestionsList) {
-            GameObject temp = Instantiate(m_ButtonPrefab, m_Grid.transform);
+            GameObject temp = Instantiate(m_ButtonPrefab);
             temp.GetComponentInChildren<Text>().text = p.m_NamePreview;
+            temp.GetComponent<ButtonQuestionPreview>().m_Id = p.m_IdPreview;
+            temp.GetComponent<RectTransform>().SetParent(m_Grid.transform);
+            p.m_IdPreview++;
 
             mButtons.Add(temp);
         }
