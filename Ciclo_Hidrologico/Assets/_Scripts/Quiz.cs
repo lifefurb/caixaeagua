@@ -37,6 +37,11 @@ public class Quiz : MonoBehaviour {
 
     void Start() {
         InstantiateQuestion();
+
+        foreach (Question p in mQuestions) {
+            Debug.Log("Id: " + p.m_Id + " | Pergunta: " + p.m_QuestionText);
+        }
+
     }
 
     public void CheckAlternative(string alternative) {
@@ -89,12 +94,9 @@ public class Quiz : MonoBehaviour {
             m_AlternativesText[i].text = mQuestions[mQuestionAmount].m_Alternatives[i];
         }
 
-        foreach (Question p in mQuestions) {
-            if (p.m_QuestionText == m_QuestionText.text) {
-                m_TurnPageLeft.m_Count = p.m_Tip;
-                m_TurnPageRight.m_Count = p.m_Tip + 1;
-            }
-        }
+        //Seta a página da apostila para a página onde está a dica da pergunta
+        m_TurnPageLeft.m_Count = mQuestions[mQuestionAmount].m_Tip;
+        m_TurnPageRight.m_Count = mQuestions[mQuestionAmount].m_Tip + 1;
     }
     
     private void RightAnswer() {
@@ -176,6 +178,7 @@ public class Quiz : MonoBehaviour {
         }
     }
 
+    //Envia a pontuação para o servidor
     public int CallBackSaveScore(string err, string resultStr) {
 
         ResultServer result = new ResultServer();
@@ -194,6 +197,7 @@ public class Quiz : MonoBehaviour {
         return 0;
     }
 
+    //Recebe as perguntas do servidor. Incompleto
     public int CallBackRequestQuestion(string err, string resultStr) {
 
         List<Question> result = new List<Question>();

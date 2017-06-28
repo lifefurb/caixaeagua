@@ -1,4 +1,4 @@
-﻿public interface ISubject{
+﻿public interface ISubject {
 
     void addObserver(IObserver observer);
     void removeObserver(IObserver observer);

@@ -7,8 +7,8 @@ public class BookController : MonoBehaviour, ISubject {
     
     private page mPageLost;
     private bool mFound;
-    private List<IObserver> observers = new List<IObserver>();
-    private UpdateData update = new UpdateData();
+    private List<IObserver> mObservers = new List<IObserver>();
+    private UpdateData mUpdate = new UpdateData();
     
     void Start() {
         mFound = false;
@@ -16,12 +16,11 @@ public class BookController : MonoBehaviour, ISubject {
 
     public void FoundPage() {
         if (mFound) {
-            if (mPageLost == page.RIGHT) {
-                update.Page = 1;
-            } else {
-                update.Page = -1;
-            }
-
+            if (mPageLost == page.RIGHT)
+                mUpdate.Page = 1;
+            else
+                mUpdate.Page = -1;
+            
             mFound = false;
             notify();
         }
@@ -39,16 +38,16 @@ public class BookController : MonoBehaviour, ISubject {
     }
 
     public void addObserver(IObserver observer) {
-        observers.Add(observer);
+        mObservers.Add(observer);
     }
 
     public void removeObserver(IObserver observer) {
-        observers.Remove(observer);
+        mObservers.Remove(observer);
     }
 
     public void notify() {
-        foreach (IObserver observer in observers) {
-            observer.update(update);
+        foreach (IObserver observer in mObservers) {
+            observer.update(mUpdate);
         }
     }
 }

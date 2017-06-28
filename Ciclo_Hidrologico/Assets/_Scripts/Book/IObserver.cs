@@ -1,5 +1,4 @@
-﻿public interface IObserver
-{
-    void update(UpdateData update);
+﻿public interface IObserver {
 
+    void update(UpdateData update);
 }

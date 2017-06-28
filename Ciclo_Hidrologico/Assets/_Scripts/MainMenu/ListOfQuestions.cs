@@ -19,10 +19,8 @@ public class ListOfQuestions : MonoBehaviour {
             temp.GetComponentInChildren<Text>().text = p.m_NamePreview;
             temp.GetComponent<ButtonQuestionPreview>().m_Id = p.m_IdPreview;
             temp.GetComponent<RectTransform>().SetParent(m_Grid.transform);
-            p.m_IdPreview++;
 
             mButtons.Add(temp);
         }
     }
-
 }
