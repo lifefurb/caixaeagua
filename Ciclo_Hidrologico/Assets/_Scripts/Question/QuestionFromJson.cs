@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestionFromJson {
 
     public Question[] m_ArrayQuestions;
-    public QuestionPreview[] m_ArrayQuestionPreview;
+    public QuestionPreview[] m_ArrayQuestionPreview;    //Temporário
 
     public QuestionFromJson() { }
 
@@ -15,6 +15,7 @@ public class QuestionFromJson {
         return JsonUtility.FromJson<QuestionFromJson>(assets.text);
     }
 
+    //Temporário apenas para tentar simular todos os questionários do servidor
     public static QuestionFromJson CreateListOfQuestionsFromJson() {
         TextAsset assets = Resources.Load("ListOfQuestionsJson") as TextAsset;
         return JsonUtility.FromJson<QuestionFromJson>(assets.text);

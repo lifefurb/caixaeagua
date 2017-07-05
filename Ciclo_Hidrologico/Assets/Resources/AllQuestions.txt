@@ -14,10 +14,10 @@
 		{
 			"m_QuestionText": "Qual o outro nome para a chuva, que é o retorno da água à Terra?",
 			"m_Alternatives":[
+				"Precipitação.",
 				"Transpiração.",
 				"Granizo.",
-				"Condensação.",
-				"Precipitação."
+				"Condensação."
 			],
 			"m_Tip": 5,
 			"m_Id": 0
