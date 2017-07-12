@@ -5,14 +5,18 @@ using UnityEngine.UI;
 public class Quiz : MonoBehaviour {
 
     public Text m_QuestionText;
-    public Text[] m_AlternativesText = new Text[4];
+    //public Text[] m_AlternativesText = new Text[4];
+    public Text m_AnswerAText;
+    public Text m_AnswerBText;
+    public Text m_AnswerCText;
+    public Text m_AnswerDText;
     public QuestionScreenBehavior m_QuestionScreenBehavior;
     public GameObject m_QuestionPrefab;
     public GameObject m_ImageTarget;
     public PlayerBehavior m_PlayerBehavior = new PlayerBehavior();
     public AudioManager m_AudioManager;
-    public TurnPage m_TurnPageLeft;
-    public TurnPage m_TurnPageRight;
+    //public TurnPage m_TurnPageLeft;
+    //public TurnPage m_TurnPageRight;
 
     public static List<string> m_TipSplit = new List<string>();
     public static bool m_FlagArrow = false;
@@ -27,32 +31,21 @@ public class Quiz : MonoBehaviour {
     void Awake() {
         mQuestions = QuestionSingleTon.Instance.m_Questions;
         mQuestionAmount = mQuestions.Count - 1;
-
-        foreach (Question p in mQuestions) {
-            Debug.Log("Id: " + p.m_Id + " | Pergunta: " + p.m_QuestionText);
-        }
-        Debug.Log("Tamanho lista: " + mQuestionAmount);
-
     }
 
     void Start() {
         InstantiateQuestion();
-
-        foreach (Question p in mQuestions) {
-            Debug.Log("Id: " + p.m_Id + " | Pergunta: " + p.m_QuestionText);
-        }
-
     }
 
     public void CheckAlternative(string alternative) {
         switch (alternative) {
-            case "A": CheckAnswer(m_AlternativesText[0].text);
+            case "A": CheckAnswer(m_AnswerAText.text);
                 break;
-            case "B": CheckAnswer(m_AlternativesText[1].text);
+            case "B": CheckAnswer(m_AnswerBText.text);
                 break;
-            case "C": CheckAnswer(m_AlternativesText[2].text);
+            case "C": CheckAnswer(m_AnswerCText.text);
                 break;
-            case "D": CheckAnswer(m_AlternativesText[3].text);
+            case "D": CheckAnswer(m_AnswerDText.text);
                 break;
         }
     }
@@ -79,24 +72,35 @@ public class Quiz : MonoBehaviour {
         }
 
         //Randomiza as alternativas da pergunta que está na ultima posição de m_Questions
-        for (int i = 0; i < mQuestions[mQuestionAmount].m_Alternatives.Length; i++) {
-            string temp = mQuestions[mQuestionAmount].m_Alternatives[i];
-            int randomIndex = Random.Range(i, mQuestions[mQuestionAmount].m_Alternatives.Length);
-            mQuestions[mQuestionAmount].m_Alternatives[i] = mQuestions[mQuestionAmount].m_Alternatives[randomIndex];
-            mQuestions[mQuestionAmount].m_Alternatives[randomIndex] = temp;
-        }
+        string[] alternatives = new string[4];
+        alternatives[0] = mQuestions[mQuestionAmount].m_AnswerA;
+        alternatives[1] = mQuestions[mQuestionAmount].m_AnswerB;
+        alternatives[2] = mQuestions[mQuestionAmount].m_AnswerC;
+        alternatives[3] = mQuestions[mQuestionAmount].m_AnswerD;
 
+        for (int i = 0; i < alternatives.Length; i++) {
+            string temp = alternatives[i];
+            int randomIndex = Random.Range(i, alternatives.Length);
+            alternatives[i] = alternatives[randomIndex];
+            alternatives[randomIndex] = temp;
+        }
+        mQuestions[mQuestionAmount].m_AnswerA = alternatives[0];
+        mQuestions[mQuestionAmount].m_AnswerB = alternatives[1];
+        mQuestions[mQuestionAmount].m_AnswerC = alternatives[2];
+        mQuestions[mQuestionAmount].m_AnswerD = alternatives[3];
+        
         //Exibe a pergunta que está na última posição de mQuestions
-        m_QuestionText.text = mQuestions[mQuestionAmount].m_QuestionText;
-
+        m_QuestionText.text = mQuestions[mQuestionAmount].m_Question;
+        
         //Exibe as alternativas da pergunta que está na última posição de mQuestions
-        for (int i = 0; i < m_AlternativesText.Length; i++) {
-            m_AlternativesText[i].text = mQuestions[mQuestionAmount].m_Alternatives[i];
-        }
+        m_AnswerAText.text = mQuestions[mQuestionAmount].m_AnswerA;
+        m_AnswerBText.text = mQuestions[mQuestionAmount].m_AnswerB;
+        m_AnswerCText.text = mQuestions[mQuestionAmount].m_AnswerC;
+        m_AnswerDText.text = mQuestions[mQuestionAmount].m_AnswerD;
 
         //Seta a página da apostila para a página onde está a dica da pergunta
-        m_TurnPageLeft.m_Count = mQuestions[mQuestionAmount].m_Tip;
-        m_TurnPageRight.m_Count = mQuestions[mQuestionAmount].m_Tip + 1;
+        //m_TurnPageLeft.m_Count = mQuestions[mQuestionAmount].m_Tip;
+        //m_TurnPageRight.m_Count = mQuestions[mQuestionAmount].m_Tip + 1;
     }
     
     private void RightAnswer() {
@@ -193,18 +197,6 @@ public class Quiz : MonoBehaviour {
             m_QuestionScreenBehavior.EnableMessegePanel(result.msg);
             Debug.Log(result.msg);
             m_PlayerBehavior.m_Player.id = result.idUser;
-        }
-        return 0;
-    }
-
-    //Recebe as perguntas do servidor. Incompleto
-    public int CallBackRequestQuestion(string err, string resultStr) {
-
-        List<Question> result = new List<Question>();
-        JsonUtility.FromJsonOverwrite(resultStr, result);
-
-        if (err == null) {
-            mQuestions = result;
         }
         return 0;
     }

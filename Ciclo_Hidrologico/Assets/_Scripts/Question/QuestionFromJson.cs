@@ -5,26 +5,25 @@ using UnityEngine;
 public class QuestionFromJson {
 
     public Question[] m_ArrayQuestions;
-    public QuestionPreview[] m_ArrayQuestionPreview;    //Temporário
+    public ResponseToQuestionnaire m_Questionnaire;
 
     public QuestionFromJson() { }
 
     public static QuestionFromJson CreateQuestionsFromJson() {
-        TextAsset assets = Resources.Load("QuestionsJson") as TextAsset;
-        Debug.Log(JsonUtility.FromJson<QuestionFromJson>(assets.text));
-        return JsonUtility.FromJson<QuestionFromJson>(assets.text);
+        string assets = PlayerPrefs.GetString("Questions");
+        return JsonUtility.FromJson<QuestionFromJson>(assets);
     }
 
-    //Temporário apenas para tentar simular todos os questionários do servidor
-    public static QuestionFromJson CreateListOfQuestionsFromJson() {
-        TextAsset assets = Resources.Load("ListOfQuestionsJson") as TextAsset;
-        return JsonUtility.FromJson<QuestionFromJson>(assets.text);
+    public static QuestionFromJson CreateQuestionnaireFromJson() {
+        string assets = PlayerPrefs.GetString("Questionnaire");
+        return JsonUtility.FromJson<QuestionFromJson>(assets);
     }
-
-    //Temporário apenas para tentar simular todas as perguntas do servidor
-    public Question[] m_ArrayAllQuestions;
-    public static QuestionFromJson CreateAllQuestionsFromJson() {
-        TextAsset assets = Resources.Load("AllQuestions") as TextAsset;
-        return JsonUtility.FromJson<QuestionFromJson>(assets.text);
+    
+    public static void LoadPlayerPrefs() {
+        string test = PlayerPrefs.GetString("Questionnaire", "");
+        if (test == "") {
+            string json = Resources.Load("QuestionnaireJson").ToString();
+            PlayerPrefs.SetString("Questionnaire", json);
+        }
     }
 }

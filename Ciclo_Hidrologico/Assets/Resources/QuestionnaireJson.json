@@ -1,0 +1,82 @@
+﻿{
+	"m_Questionnaire":
+	{
+	   "status":"SUCCESS",
+	   "result":
+	   {
+		  "_id":"595fc61d9dccba122073f933",
+		  "code":"Wg42v",
+		  "title":"Ciclo Hidrológico",
+		  "teacherID":"59553fe13cd71e2a747e7f4a",
+		  "description":"Questionário sobre o Ciclo Hidrológico",
+		  "criationDate":"2017-07-07T17:34:21.252Z",
+		  "questions":
+		  [
+			 {
+				"_id":"5963bc76bbfeeb3f9076d101",
+				"m_Question":"A água é o elemento mais presente na superfície da Terra…",
+				"m_AnswerA":"A água cobre cerca de 71% da superfície da Terra.",
+				"m_AnswerB":"A água cobre cerca de 63% da superfície da Terra.",
+				"m_AnswerC":"A água cobre cerca de 54% da superfície da Terra.",
+				"m_AnswerD":"A água cobre cerca de 91% da superfície da Terra."
+			 }, 
+			{
+				"_id": 1,
+				"m_Question": "Qual o outro nome para a chuva, que é o retorno da água à Terra?",
+				"m_AnswerA":"Precipitação.",
+				"m_AnswerB":"Transpiração.",
+				"m_AnswerC":"Granizo.",
+				"m_AnswerD":"Condensação."
+			},
+			{
+				"_id": 2,
+				"m_Question": "Quais os estados físicos da água?",
+				"m_AnswerA":"Sólido, líquido e gasoso.",
+				"m_AnswerB":"Gelo, nuvens e chuva.",
+				"m_AnswerC":"Oceanos, rios e lagos.",
+				"m_AnswerD":"Chuva, neve e granizo."
+			},
+			{
+				"_id": 3,
+				"m_Question": "Em que consiste o ciclo da água?",
+				"m_AnswerA":"Circulação da água na Natureza.",
+				"m_AnswerB":"Passagem da água desde as nascentes até nossa casa.",
+				"m_AnswerC":"Passagem da água do estado gasoso a líquido e deste novamente a gasoso.",
+				"m_AnswerD":"Passagem da água do estado gasoso a líquido e deste ao estado sólido."
+			},
+			{
+				"_id": 4,
+				"m_Question": "A água salobra é:",
+				"m_AnswerA":"Imprópria para consumo.",
+				"m_AnswerB":"Própria para consumo.",
+				"m_AnswerC":"Aquela que contém muito sal.",
+				"m_AnswerD":"Aquela que não contém sal."
+			},
+			{
+				"_id": 5,
+				"m_Question": "No nosso planeta, a água é um recurso:",
+				"m_AnswerA":"Renovável.",
+				"m_AnswerB":"Mineral.",
+				"m_AnswerC":"Termal.",
+				"m_AnswerD":"Não Renovável."
+			},
+			{
+				"_id": 6,
+				"m_Question": "Água à temperatura ambiente é:",
+				"m_AnswerA":"Líquida.",
+				"m_AnswerB":"Sólida.",
+				"m_AnswerC":"Gasosa.",
+				"m_AnswerD":"Plasma."
+			},
+			{
+				"_id": 7,
+				"m_Question": "A Terra é conhecida como o planeta azul por causa da presença de(a,o)",
+				"m_AnswerA":"Água.",
+				"m_AnswerB":"Atmosfera.",
+				"m_AnswerC":"Massas.",
+				"m_AnswerD":"Céu."
+			}
+		  ]
+	  }
+   }
+}

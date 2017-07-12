@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -66,6 +69,9 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -230,7 +236,6 @@
     <Compile Include="Assets\_Scripts\Book\TurnPage.cs" />
     <Compile Include="Assets\_Scripts\Book\UpdateData.cs" />
     <Compile Include="Assets\_Scripts\MainMenu\ButtonQuestionPreview.cs" />
-    <Compile Include="Assets\_Scripts\MainMenu\ListOfQuestions.cs" />
     <Compile Include="Assets\_Scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\_Scripts\MainMenu\MoveOffSet.cs" />
     <Compile Include="Assets\_Scripts\Player\MyDefaultTrackableEventHandler.cs" />
@@ -242,6 +247,8 @@
     <Compile Include="Assets\_Scripts\Question\QuestionPreview.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionScreenBehavior.cs" />
     <Compile Include="Assets\_Scripts\Question\QuestionSingleTon.cs" />
+    <Compile Include="Assets\_Scripts\Questionnaire\Questionnaire.cs" />
+    <Compile Include="Assets\_Scripts\Questionnaire\ResponseToQuestionnaire.cs" />
     <Compile Include="Assets\_Scripts\Quiz.cs" />
     <Compile Include="Assets\_Scripts\TipBook.cs" />
     <Compile Include="Assets\_Scripts\TurnPageTip.cs" />
@@ -261,10 +268,6 @@
     <None Include="Assets\Note about Editor Folder.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
-    <None Include="Assets\Resources\AllListOfQuestionsJson.txt" />
-    <None Include="Assets\Resources\AllQuestions.txt" />
-    <None Include="Assets\Resources\ListOfQuestionsJson.txt" />
-    <None Include="Assets\Resources\QuestionsJson.txt" />
     <None Include="Assets\SampleAssets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlendModesOverlay.shader" />

@@ -1,0 +1,40 @@
+{
+  "m_ArrayQuestions": [
+    {
+      "m_Question": "A água é o elemento mais presente na superfície da Terra. Você sabe qual a porcentagem de água no chamado Planeta Azul?",
+      "m_AnswerA": "A água cobre cerca de 71% da superfície da Terra.",
+      "m_AnswerB": "A água cobre cerca de 54% da superfície da Terra.",
+      "m_AnswerC": "A água cobre cerca de 63% da superfície da Terra.",
+      "m_AnswerD": "Água cobre cerca de 91% da superfície da Terra.",
+      "m_RightAlternative": "A água cobre cerca de 71% da superfície da Terra.",
+      "_id": 0
+    },
+    {
+      "m_Question": "Qual o outro nome para a chuva, que é o retorno da água à Terra?",
+      "m_AnswerA": "Precipitação.",
+      "m_AnswerB": "Transpiração.",
+      "m_AnswerC": "Granizo.",
+      "m_AnswerD": "Condensação.",
+      "m_RightAlternative": "Precipitação.",
+      "_id": 0
+    },
+    {
+      "m_Question": "Quais os estados físicos da água?",
+       "m_AnswerA": "Sólido, líquido e gasoso.",
+       "m_AnswerB": "Gelo, nuvens e chuva.",
+       "m_AnswerC": "Oceanos, rios e lagos.",
+       "m_AnswerD": "Chuva, neve e granizo.",
+      "m_RightAlternative": "Sólido, líquido e gasoso.",
+      "_id": 0
+    },
+    {
+      "m_Question": "Em que consiste o ciclo da água?",
+      "m_AnswerA": "Circulação da água na Natureza.",
+      "m_AnswerB": "Passagem da água desde as nascentes até nossa casa.",
+      "m_AnswerC": "Passagem da água do estado gasoso a líquido e deste novamente a gasoso.",
+      "m_AnswerD": "Passagem da água do estado gasoso a líquido e deste ao estado sólido.",
+      "m_RightAlternative": "Circulação da água na Natureza.",
+      "_id": 0
+    }
+  ]
+}

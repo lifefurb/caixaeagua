@@ -1,8 +1,0 @@
-{
-	"m_ArrayQuestionPreview":[
-		{
-			"m_NamePreview": "Guerra dos Tronos.",
-			"m_IdPreview": 0
-		}
-	]
-}

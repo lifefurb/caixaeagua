@@ -1,0 +1,158 @@
+{
+	"m_ArrayAllQuestions":[
+		{
+			"m_QuestionText": "A água é o elemento mais presente na superfície da Terra. Você sabe qual a porcentagem de água no chamado Planeta Azul?",
+			"m_Alternatives":[
+				"A água cobre cerca de 71% da superfície da Terra.",
+				"A água cobre cerca de 54% da superfície da Terra.",
+				"A água cobre cerca de 63% da superfície da Terra.",
+				"Água cobre cerca de 91% da superfície da Terra."
+			],
+			"m_Tip": 2,
+			"m_Id": 0
+		}, 
+		{
+			"m_QuestionText": "Qual o outro nome para a chuva, que é o retorno da água à Terra?",
+			"m_Alternatives":[
+				"Precipitação.",
+				"Transpiração.",
+				"Granizo.",
+				"Condensação."
+			],
+			"m_Tip": 5,
+			"m_Id": 0
+		},
+		{
+			"m_QuestionText": "Quais os estados físicos da água?",
+			"m_Alternatives":[
+				"Sólido, líquido e gasoso.",
+				"Gelo, nuvens e chuva.",
+				"Oceanos, rios e lagos.",
+				"Chuva, neve e granizo."
+			],
+			"m_Tip": 8,
+			"m_Id": 0
+		},
+		{
+			"m_QuestionText": "Em que consiste o ciclo da água?",
+			"m_Alternatives":[
+				"Circulação da água na Natureza.",
+				"Passagem da água desde as nascentes até nossa casa.",
+				"Passagem da água do estado gasoso a líquido e deste novamente a gasoso.",
+				"Passagem da água do estado gasoso a líquido e deste ao estado sólido."
+			],
+			"m_Tip": 1,
+			"m_Id": 0
+		},
+		{
+			"m_QuestionText": "A água salobra é:",
+			"m_Alternatives":[
+				"Imprópria para consumo.",
+				"Própria para consumo.",
+				"Aquela que contém muito sal.",
+				"Aquela que não contém sal."
+			],
+			"m_Tip": 3,
+			"m_Id": 4
+		},
+		{
+			"m_QuestionText": "No nosso planeta, a água é um recurso:",
+			"m_Alternatives":[
+				"Renovável.",
+				"Mineral.",
+				"Termal.",
+				"Não Renovável."
+			],
+			"m_Tip": 7,
+			"m_Id": 4
+		},
+		{
+			"m_QuestionText": "Água à temperatura ambiente é:",
+			"m_Alternatives":[
+				"Líquida.",
+				"Sólida.",
+				"Gasosa.",
+				"Plasma."
+			],
+			"m_Tip": 4,
+			"m_Id": 3
+		},
+		{
+			"m_QuestionText": "A Terra é conhecida como o planeta azul por causa da presença de(a,o)",
+			"m_Alternatives":[
+				"Água.",
+				"Atmosfera.",
+				"Massas.",
+				"Céu."
+			],
+			"m_Tip": 6,
+			"m_Id": 3
+		},
+		{
+			"m_QuestionText": "Qual o melhor algoritmo da computação?",
+			"m_Alternatives":[
+				"Algoritmo do Avestruz.",
+				"42.",
+				"Num sei.",
+				"Furbot."
+			],
+			"m_Tip": 3,
+			"m_Id": 1
+		},
+		{
+			"m_QuestionText": "Melhor algoritmo da computação?",
+			"m_Alternatives":[
+				"Algoritmo do Avestruz.",
+				"42.",
+				"Num sei.",
+				"Furbot."
+			],
+			"m_Tip": 3,
+			"m_Id": 1
+		},
+		{
+			"m_QuestionText": "Pergunta Extra 1",
+			"m_Alternatives":[
+				"Alternativa Extra 1.1.",
+				"Alternativa Extra 1.2.",
+				"Alternativa Extra 1.3.",
+				"Alternativa Extra 1.4."
+			],
+			"m_Tip": 3,
+			"m_Id": 1
+		},
+		{
+			"m_QuestionText": "Pergunta Extra 2",
+			"m_Alternatives":[
+				"Alternativa Extra 2.1.",
+				"Alternativa Extra 2.2.",
+				"Alternativa Extra 2.3.",
+				"Alternativa Extra 2.4."
+			],
+			"m_Tip": 3,
+			"m_Id": 1
+		},
+		{
+			"m_QuestionText": "Pergunta Extra 3",
+			"m_Alternatives":[
+				"Alternativa Extra 3.1.",
+				"Alternativa Extra 3.2.",
+				"Alternativa Extra 3.3.",
+				"Alternativa Extra 3.4."
+			],
+			"m_Tip": 3,
+			"m_Id": 2
+		},
+		{
+			"m_QuestionText": "Pergunta Extra 4",
+			"m_Alternatives":[
+				"Alternativa Extra 4.1.",
+				"Alternativa Extra 4.2.",
+				"Alternativa Extra 4.3.",
+				"Alternativa Extra 4.4."
+			],
+			"m_Tip": 3,
+			"m_Id": 2
+		}
+	]
+}

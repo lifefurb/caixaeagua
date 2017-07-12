@@ -3,10 +3,13 @@
 [Serializable]
 public class Question {
 
-    public string m_QuestionText;
-    public string[] m_Alternatives = new string[4];
+    public string _id;
+    public string m_Question;
+    public string m_AnswerA;
+    public string m_AnswerB;
+    public string m_AnswerC;
+    public string m_AnswerD;
     public string m_RightAlternative;
-    public int m_Tip;
-    public long m_Id;
+    //public int m_Tip;
     
 }

@@ -29,8 +29,11 @@ public class Arrow : MonoBehaviour {
             Quiz.m_FlagArrow = false;
         }
 
-        v = m_Ref.transform.position;
-        v.y = 0;
+        if (m_Ref != null) {
+            v = m_Ref.transform.position;
+            v.y = 0;
+        }
+        
 
         //arrow always looks forward so it will show correctly to viewer, and world-up changes the rotation
         transform.LookAt(transform.position + transform.forward, v - transform.position);
