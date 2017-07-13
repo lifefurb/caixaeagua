@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,43 +10,58 @@ public class MainMenu : MonoBehaviour {
     public GameObject m_QuestionsListPanel;
     public GameObject m_QuestionnairePanel;
     public GameObject m_MessegePanel;
+    public GameObject m_PlayPanel;
     public InputField m_QuestionnaireCode;
     public Text m_Messege;
-
-    void Start() {
-        m_MainMenuPanel.SetActive(true);
-        m_InstructionsPanel.SetActive(false);
-        m_DiffucultyPanel.SetActive(false);
-    }
-
-    public void Play() {
+    
+    public void EnablePlayPanel() {
         m_InstructionsPanel.SetActive(false);
         m_MainMenuPanel.SetActive(false);
-        m_DiffucultyPanel.SetActive(true);
+        m_PlayPanel.SetActive(true);
     }
 
-    public void Instructions() {
+    public void EnableInstructionsPanel() {
         m_MainMenuPanel.SetActive(false);
         m_InstructionsPanel.SetActive(true);
     }
 
-    public void Questionnaire() {
+    public void EnableDifficultyPanel() {
+        m_MainMenuPanel.SetActive(false);
+        m_DiffucultyPanel.SetActive(true);
+    }
+
+    public void EnableQuestionnairePanel() {
         m_MainMenuPanel.SetActive(false);
         m_QuestionnairePanel.SetActive(true);
     }
 
-    public void QuestionsList() {
+    public void EnableQuestionsListPanel() {
         m_MainMenuPanel.SetActive(false);
         m_QuestionsListPanel.SetActive(true);
     }
 
-    public void BackFromQuestionsList() {
+    public void BackFromQuestionsListPanel() {
         m_QuestionsListPanel.SetActive(false);
         m_MainMenuPanel.SetActive(true);
     }
 
     public void LoadScene(string scene) {
         SceneManager.LoadScene(scene);
+    }
+
+    public void ChooseDifficultyButton(Button bt) {
+        switch (bt.name) {
+            case "ButtonEasy":
+                QuestionSingleTon.Instance.m_Difficulty = Difficulty.EASY;
+                break;
+            case "ButtonNormal":
+                QuestionSingleTon.Instance.m_Difficulty = Difficulty.NORMAL;
+                break;
+            case "ButtonHard":
+                QuestionSingleTon.Instance.m_Difficulty = Difficulty.HARD;
+                break;
+        }
+        SceneManager.LoadScene("Game");
     }
 
     public void Quit() {
@@ -66,6 +80,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void BackToMainMenu(){
+        m_PlayPanel.SetActive(false);
         m_InstructionsPanel.SetActive(false);
         m_DiffucultyPanel.SetActive(false);
         m_QuestionsListPanel.SetActive(false);

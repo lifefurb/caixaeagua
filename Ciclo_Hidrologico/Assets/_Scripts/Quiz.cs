@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class Quiz : MonoBehaviour {
 
     public Text m_QuestionText;
-    //public Text[] m_AlternativesText = new Text[4];
     public Text m_AnswerAText;
     public Text m_AnswerBText;
     public Text m_AnswerCText;
@@ -15,14 +14,16 @@ public class Quiz : MonoBehaviour {
     public GameObject m_ImageTarget;
     public PlayerBehavior m_PlayerBehavior = new PlayerBehavior();
     public AudioManager m_AudioManager;
-    //public TurnPage m_TurnPageLeft;
-    //public TurnPage m_TurnPageRight;
-
     public static List<string> m_TipSplit = new List<string>();
     public static bool m_FlagArrow = false;
     public static bool m_GameOver = false;
+    public GameObject m_Arrow;
+    public GameObject m_Timer;
+    public GameObject m_Canvas;
+    public GameObject m_ThirdPersonCharacter;
+    //public TurnPage m_TurnPageLeft;
+    //public TurnPage m_TurnPageRight;
 
-    private TipBook mTipBook;
     private List<Question> mQuestions;
     private int mQuestionAmount;
     private int mRightQuestionsCount = 0;
@@ -35,6 +36,15 @@ public class Quiz : MonoBehaviour {
 
     void Start() {
         InstantiateQuestion();
+
+        switch (QuestionSingleTon.Instance.m_Difficulty) {
+            case Difficulty.EASY:
+                Instantiate(m_Arrow, new Vector3(0, 110, 0), Quaternion.Euler(90, 0, 0), m_ThirdPersonCharacter.transform);
+                break;
+            case Difficulty.HARD:
+                Instantiate(m_Timer, new Vector3(993, 80, 0), Quaternion.identity, m_Canvas.transform);
+                break;
+        }
     }
 
     public void CheckAlternative(string alternative) {
@@ -133,7 +143,9 @@ public class Quiz : MonoBehaviour {
     private void WrongAnswer() {
         mWrongQuestionsCount++;
 
-        m_PlayerBehavior.DecrementScore();
+        if (m_PlayerBehavior.m_Player.points > 0)
+            m_PlayerBehavior.DecrementScore();
+
         m_AudioManager.PlayWrongAnswerAudio();
         m_QuestionScreenBehavior.ShowWrongAnswerMessege();
         m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.points);

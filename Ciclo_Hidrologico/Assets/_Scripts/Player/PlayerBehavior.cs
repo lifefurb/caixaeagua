@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerBehavior: MonoBehaviour{
 
@@ -11,17 +10,16 @@ public class PlayerBehavior: MonoBehaviour{
     }
 
     public void IncrementScore() {
-        Scene currentScene = SceneManager.GetActiveScene();
-        switch (currentScene.name) {
-            case "Scene_Easy":
+        switch (QuestionSingleTon.Instance.m_Difficulty) {
+            case Difficulty.EASY:
                 m_Player.points += 10;
                 m_QuestionScreenBehavior.ShowAddScoreAnimation(10);
                 break;
-            case "Scene_Normal":
+            case Difficulty.NORMAL:
                 m_Player.points += 30;
                 m_QuestionScreenBehavior.ShowAddScoreAnimation(30);
                 break;
-            case "Scene_Hard":
+            case Difficulty.HARD:
                 m_Player.points += 50;
                 m_QuestionScreenBehavior.ShowAddScoreAnimation(50);
                 break;
@@ -29,18 +27,16 @@ public class PlayerBehavior: MonoBehaviour{
     }
 
     public void DecrementScore() {
-        Scene currentScene = SceneManager.GetActiveScene();
-        switch (currentScene.name)
-        {
-            case "Scene_Easy":
+        switch (QuestionSingleTon.Instance.m_Difficulty) {
+            case Difficulty.EASY:
                 m_Player.points -= 2;
                 m_QuestionScreenBehavior.ShowSubScoreAnimation(2);
                 break;
-            case "Scene_Normal":
+            case Difficulty.NORMAL:
                 m_Player.points -= 5;
                 m_QuestionScreenBehavior.ShowSubScoreAnimation(5);
                 break;
-            case "Scene_Hard":
+            case Difficulty.HARD:
                 m_Player.points -= 10;
                 m_QuestionScreenBehavior.ShowSubScoreAnimation(10);
                 break;

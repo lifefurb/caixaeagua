@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 //Responsável pela apresentação dos pontos conseguidos no CanvasFinal
@@ -17,14 +16,17 @@ public class ScoreBar : MonoBehaviour {
 	private float mSpeed = 50f;
 	private float mCount = 0f;
 
-	void Start(){
-        Scene currentScene = SceneManager.GetActiveScene();
-        switch (currentScene.name) {
-            case "Scene_Easy": mFullScore = 80;
+	void Start() {
+        Debug.Log("Quantidade de perguntas: " + QuestionSingleTon.Instance.m_QuestionsAmount);
+        switch (QuestionSingleTon.Instance.m_Difficulty) {
+            case Difficulty.EASY:
+                mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * 10;
                 break;
-            case "Scene_Normal": mFullScore = 240;
+            case Difficulty.NORMAL:
+                mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * 30;
                 break;
-            case "Scene_Hard": mFullScore = 400;
+            case Difficulty.HARD:
+                mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * 50;
                 break;
         }
 
