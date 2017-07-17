@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour {
 	void Awake(){
 		m_StartTime = 120f;		//armazena o valor inicial do cronômetro em segundos
 		m_Time = 0f;
+        m_QuestionScreenBehavior = GameObject.Find("Canvas").GetComponent<QuestionScreenBehavior>();
 	}
 
 	void FixedUpdate(){

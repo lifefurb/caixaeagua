@@ -225,6 +225,7 @@
     <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
     <Compile Include="Assets\_Scripts\Book\BookController.cs" />
+    <Compile Include="Assets\_Scripts\Book\BookGameManager.cs" />
     <Compile Include="Assets\_Scripts\Book\IObserver.cs" />
     <Compile Include="Assets\_Scripts\Book\ISubject.cs" />
     <Compile Include="Assets\_Scripts\Book\TurnPage.cs" />
@@ -248,6 +249,7 @@
     <Compile Include="Assets\_Scripts\Utilities\AudioManager.cs" />
     <Compile Include="Assets\_Scripts\Utilities\Book.cs" />
     <Compile Include="Assets\_Scripts\Utilities\FPS.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\LevelLoader.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ResultServer.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreBar.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreText.cs" />

@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject m_MainMenuPanel;
     public GameObject m_InstructionsPanel;
     public GameObject m_DiffucultyPanel;
-    public GameObject m_QuestionsListPanel;
+    //public GameObject m_QuestionsListPanel;
     public GameObject m_QuestionnairePanel;
     public GameObject m_MessegePanel;
     public GameObject m_PlayPanel;
@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void EnableDifficultyPanel() {
-        m_MainMenuPanel.SetActive(false);
+        m_PlayPanel.SetActive(false);
         m_DiffucultyPanel.SetActive(true);
     }
 
@@ -34,30 +34,30 @@ public class MainMenu : MonoBehaviour {
         m_MainMenuPanel.SetActive(false);
         m_QuestionnairePanel.SetActive(true);
     }
-
+    /*
     public void EnableQuestionsListPanel() {
         m_MainMenuPanel.SetActive(false);
         m_QuestionsListPanel.SetActive(true);
     }
-
+    
     public void BackFromQuestionsListPanel() {
         m_QuestionsListPanel.SetActive(false);
         m_MainMenuPanel.SetActive(true);
     }
-
+    */
     public void LoadScene(string scene) {
         SceneManager.LoadScene(scene);
     }
 
     public void ChooseDifficultyButton(Button bt) {
         switch (bt.name) {
-            case "ButtonEasy":
+            case "EasyButton":
                 QuestionSingleTon.Instance.m_Difficulty = Difficulty.EASY;
                 break;
-            case "ButtonNormal":
+            case "NormalButton":
                 QuestionSingleTon.Instance.m_Difficulty = Difficulty.NORMAL;
                 break;
-            case "ButtonHard":
+            case "HardButton":
                 QuestionSingleTon.Instance.m_Difficulty = Difficulty.HARD;
                 break;
         }
@@ -83,7 +83,7 @@ public class MainMenu : MonoBehaviour {
         m_PlayPanel.SetActive(false);
         m_InstructionsPanel.SetActive(false);
         m_DiffucultyPanel.SetActive(false);
-        m_QuestionsListPanel.SetActive(false);
+        //m_QuestionsListPanel.SetActive(false);
         m_QuestionnairePanel.SetActive(false);
         m_MessegePanel.SetActive(false);
         m_MainMenuPanel.SetActive(true);

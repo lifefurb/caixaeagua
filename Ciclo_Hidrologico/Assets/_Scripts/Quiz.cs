@@ -94,6 +94,7 @@ public class Quiz : MonoBehaviour {
             alternatives[i] = alternatives[randomIndex];
             alternatives[randomIndex] = temp;
         }
+
         mQuestions[mQuestionAmount].m_AnswerA = alternatives[0];
         mQuestions[mQuestionAmount].m_AnswerB = alternatives[1];
         mQuestions[mQuestionAmount].m_AnswerC = alternatives[2];
