@@ -233,7 +233,6 @@
     <Compile Include="Assets\_Scripts\MainMenu\ButtonQuestionPreview.cs" />
     <Compile Include="Assets\_Scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\_Scripts\MainMenu\MoveOffSet.cs" />
-    <Compile Include="Assets\_Scripts\Player\MyDefaultTrackableEventHandler.cs" />
     <Compile Include="Assets\_Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerBehavior.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerCollisionsController.cs" />
@@ -250,6 +249,7 @@
     <Compile Include="Assets\_Scripts\Utilities\Book.cs" />
     <Compile Include="Assets\_Scripts\Utilities\FPS.cs" />
     <Compile Include="Assets\_Scripts\Utilities\LevelLoader.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\MyDefaultTrackableEventHandler.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ResultServer.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreBar.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreText.cs" />

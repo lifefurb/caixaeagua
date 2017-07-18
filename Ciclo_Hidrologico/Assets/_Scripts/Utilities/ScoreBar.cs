@@ -29,7 +29,6 @@ public class ScoreBar : MonoBehaviour {
                 mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * 50;
                 break;
         }
-
 	}
 
 	// Update is called once per frame
@@ -37,12 +36,10 @@ public class ScoreBar : MonoBehaviour {
 		mCurrentScore = m_PlayerBehavior.m_Player.points;			//variavel da classe Game que é incrementada/decrementada a cada acerto/erro
 
 		mCurrentTime += mSpeed * Time.deltaTime;
-		//m_CurrentTime += m_Speed * m_Count;
 
 		if(mCurrentTime <= mCurrentScore){
 			m_TextIndicator.GetComponent<Text>().text = ((int)mCurrentTime).ToString();
 			m_LoadingBar.GetComponent<Image>().fillAmount = mCurrentTime / mFullScore;
-			//m_Count += 0.01f;
 		}
 	}
 }

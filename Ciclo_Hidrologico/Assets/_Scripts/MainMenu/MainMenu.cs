@@ -61,7 +61,7 @@ public class MainMenu : MonoBehaviour {
                 QuestionSingleTon.Instance.m_Difficulty = Difficulty.HARD;
                 break;
         }
-        SceneManager.LoadScene("Game");
+        //SceneManager.LoadScene("Game");
     }
 
     public void Quit() {
