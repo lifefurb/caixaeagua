@@ -22,6 +22,7 @@ namespace Vuforia
         #endregion // PRIVATE_MEMBER_VARIABLES
 
         public GameObject m_Character;
+        //private bool mSecondTime = false;
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -84,7 +85,7 @@ namespace Vuforia
                 component.enabled = true;
             }
             
-           m_Character.GetComponent<Rigidbody>().isKinematic = false;
+            m_Character.GetComponent<Rigidbody>().isKinematic = false;
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
         }

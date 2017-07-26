@@ -4,15 +4,10 @@ using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour {
 
-    public Text m_QuestionText;
-    public Text m_AnswerAText;
-    public Text m_AnswerBText;
-    public Text m_AnswerCText;
-    public Text m_AnswerDText;
     public QuestionScreenBehavior m_QuestionScreenBehavior;
     public GameObject m_QuestionPrefab;
     public GameObject m_ImageTarget;
-    public PlayerBehavior m_PlayerBehavior = new PlayerBehavior();
+    public PlayerBehavior m_PlayerBehavior;
     public AudioManager m_AudioManager;
     public static List<string> m_TipSplit = new List<string>();
     public static bool m_FlagArrow = false;
@@ -30,8 +25,12 @@ public class Quiz : MonoBehaviour {
     private int mWrongQuestionsCount = 0;
 
     void Awake() {
+        QuestionSingleTon.Instance.PopulateQuestionsFromQuestionnaireJson();
         mQuestions = QuestionSingleTon.Instance.m_Questions;
         mQuestionAmount = mQuestions.Count - 1;
+
+        Debug.Log(QuestionSingleTon.Instance.m_Questions.Count);
+        Debug.Log(mQuestions.Count);
     }
 
     void Start() {
@@ -49,13 +48,13 @@ public class Quiz : MonoBehaviour {
 
     public void CheckAlternative(string alternative) {
         switch (alternative) {
-            case "A": CheckAnswer(m_AnswerAText.text);
+            case "A": CheckAnswer(m_QuestionScreenBehavior.m_AlternativeAText.text);
                 break;
-            case "B": CheckAnswer(m_AnswerBText.text);
+            case "B": CheckAnswer(m_QuestionScreenBehavior.m_AlternativeBText.text);
                 break;
-            case "C": CheckAnswer(m_AnswerCText.text);
+            case "C": CheckAnswer(m_QuestionScreenBehavior.m_AlternativeCText.text);
                 break;
-            case "D": CheckAnswer(m_AnswerDText.text);
+            case "D": CheckAnswer(m_QuestionScreenBehavior.m_AlternativeDText.text);
                 break;
         }
     }
@@ -99,15 +98,15 @@ public class Quiz : MonoBehaviour {
         mQuestions[mQuestionAmount].m_AnswerB = alternatives[1];
         mQuestions[mQuestionAmount].m_AnswerC = alternatives[2];
         mQuestions[mQuestionAmount].m_AnswerD = alternatives[3];
-        
+
         //Exibe a pergunta que está na última posição de mQuestions
-        m_QuestionText.text = mQuestions[mQuestionAmount].m_Question;
-        
+        m_QuestionScreenBehavior.m_QuestionText.text = mQuestions[mQuestionAmount].m_Question;
+
         //Exibe as alternativas da pergunta que está na última posição de mQuestions
-        m_AnswerAText.text = mQuestions[mQuestionAmount].m_AnswerA;
-        m_AnswerBText.text = mQuestions[mQuestionAmount].m_AnswerB;
-        m_AnswerCText.text = mQuestions[mQuestionAmount].m_AnswerC;
-        m_AnswerDText.text = mQuestions[mQuestionAmount].m_AnswerD;
+        m_QuestionScreenBehavior.m_AlternativeAText.text = mQuestions[mQuestionAmount].m_AnswerA;
+        m_QuestionScreenBehavior.m_AlternativeBText.text = mQuestions[mQuestionAmount].m_AnswerB;
+        m_QuestionScreenBehavior.m_AlternativeCText.text = mQuestions[mQuestionAmount].m_AnswerC;
+        m_QuestionScreenBehavior.m_AlternativeDText.text = mQuestions[mQuestionAmount].m_AnswerD;
 
         //Seta a página da apostila para a página onde está a dica da pergunta
         //m_TurnPageLeft.m_Count = mQuestions[mQuestionAmount].m_Tip;
@@ -174,12 +173,12 @@ public class Quiz : MonoBehaviour {
     }
 
     public InputField m_PlayerName;
-    private List<string> mNames = new List<string>();
-    private List<string> mNotSent = new List<string>();
+    //private List<string> mNames = new List<string>();
+    //private List<string> mNotSent = new List<string>();
 
     public void SendButtom() {
         
-        if ((m_PlayerName.text != "") && !(mNames.Contains(m_PlayerName.text))) {
+        if ((m_PlayerName.text != "")/* && !(mNames.Contains(m_PlayerName.text))*/) {
             
             m_PlayerBehavior.m_Player.name = m_PlayerName.text;
             string json = JsonUtility.ToJson(m_PlayerBehavior.m_Player);
@@ -187,29 +186,33 @@ public class Quiz : MonoBehaviour {
 
             StartCoroutine(SendScore.saveScore(json, CallBackSaveScore));
             
-            mNames.Add(m_PlayerName.text);
+            //mNames.Add(m_PlayerName.text);
             
-        }
-        else {
-            m_QuestionScreenBehavior.EnableMessegePanel("Nome inválido. Tente novamente!");
+        } else {
+            m_QuestionScreenBehavior.EnableMessegePanelError("Nome inválido. Tente novamente!");
         }
     }
 
-    //Envia a pontuação para o servidor
+    /// <summary>
+    /// Envia a pontuação para o servidor.
+    /// </summary>
+    /// <param name="err"></param>
+    /// <param name="resultStr"></param>
+    /// <returns></returns>
     public int CallBackSaveScore(string err, string resultStr) {
 
         ResultServer result = new ResultServer();
         JsonUtility.FromJsonOverwrite(resultStr, result);
 
         if (err != null) {
-            mNotSent.Add(resultStr);
-            m_QuestionScreenBehavior.EnableMessegePanel(result.msg);
+            //mNotSent.Add(resultStr);
+            m_QuestionScreenBehavior.EnableMessegePanelError("Erro ao enviar a pontuação. Tente novamente.");
             Debug.Log(result.msg);
             Debug.Log(result.err);
         }else {
-            m_QuestionScreenBehavior.EnableMessegePanel(result.msg);
+            m_QuestionScreenBehavior.EnableMessegePanelResult("Pontuação enviada com sucesso!");
             Debug.Log(result.msg);
-            m_PlayerBehavior.m_Player.id = result.idUser;
+            //m_PlayerBehavior.m_Player.id = result.idUser;
         }
         return 0;
     }

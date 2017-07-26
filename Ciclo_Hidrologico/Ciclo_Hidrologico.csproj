@@ -251,6 +251,7 @@
     <Compile Include="Assets\_Scripts\Utilities\LevelLoader.cs" />
     <Compile Include="Assets\_Scripts\Utilities\MyDefaultTrackableEventHandler.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ResultServer.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\RotateObject.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreBar.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreText.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ScoreTextManager.cs" />
@@ -367,6 +368,7 @@
     <None Include="Assets\SampleAssets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Environment\Skyboxes\SkyboxGuidelines.txt" />
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_Vuforia.xml" />
     <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_VuforiaFull.xml" />
     <None Include="Assets\StreamingAssets\QCAR\FlakesBox.xml" />

@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject m_MessegePanel;
     public GameObject m_PlayPanel;
     public InputField m_QuestionnaireCode;
+    public Text m_QuestionnaireCodeText;
     public Text m_Messege;
     
     public void EnablePlayPanel() {
@@ -91,10 +92,12 @@ public class MainMenu : MonoBehaviour {
 
     public void SendCodeQuestionnaire() {
 
-        if (m_QuestionnaireCode.text != "")
-            StartCoroutine(SendScore.requestQuestion(m_QuestionnaireCode.text, CallBackRequestQuestion));
-        else
-            EnableMessegePanel("Código inválido. Tente novamente!");
+        if (m_QuestionnaireCodeText.text == "") {
+            EnableMessegePanel("Informe algum código!");
+        } else {
+            Debug.Log("Código: " + m_QuestionnaireCodeText.text);
+            StartCoroutine(SendScore.requestQuestion(m_QuestionnaireCodeText.text, CallBackRequestQuestion));
+        }
     }
 
     //Recebe as perguntas do servidor. Incompleto
@@ -102,11 +105,13 @@ public class MainMenu : MonoBehaviour {
         if (err == null) {
             Debug.Log("Json antigo");
             Debug.Log(PlayerPrefs.GetString("Questionnaire"));
-            PlayerPrefs.SetString("Questionnaire", resultStr);
+            PlayerPrefs.SetString("Questionnaire", "{\"m_Questionnaire\":" + resultStr + "}"); //precisa fazer isso para ficar no formato certo para gerar o objeto
+            Debug.Log(PlayerPrefs.GetString("Questionnaire"));
             QuestionSingleTon.Instance.PopulateQuestionsFromQuestionnaireJson();
             Debug.Log("Json novo");
             Debug.Log(PlayerPrefs.GetString("Questionnaire"));
         }else {
+            Debug.Log(err);
             EnableMessegePanel("Código inválido. Tente novamente!");
         }
         return 0;

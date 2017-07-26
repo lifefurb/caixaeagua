@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreTextManager : MonoBehaviour {
-
-
+    
 	public GameObject m_TextPrefab;
     public RectTransform m_CanvasMain;
 	public float m_Speed;

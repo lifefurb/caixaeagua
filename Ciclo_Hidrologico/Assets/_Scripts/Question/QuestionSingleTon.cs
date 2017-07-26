@@ -10,19 +10,28 @@ public class QuestionSingleTon : MonoBehaviour {
     public List<Question> m_Questions;
     public ResponseToQuestionnaire m_Questionnaire;
     public int m_QuestionsAmount;
-    public static QuestionSingleTon Instance;
     public Difficulty m_Difficulty = Difficulty.NORMAL;
 
     private QuestionFromJson mJsonQuestions;
-    private long mId = 0;
+    private static QuestionSingleTon mInstance;
+
+    public static QuestionSingleTon Instance {
+        get {
+            if (mInstance == null) {
+                mInstance = FindObjectOfType<QuestionSingleTon>();
+            }
+            return mInstance;
+        }
+    }
 
     void Awake() {
-
+        /*
         if (Instance == null)
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
-        
+        */
+
         QuestionFromJson.LoadPlayerPrefs();
         PopulateQuestionsFromQuestionnaireJson();
 
@@ -33,6 +42,8 @@ public class QuestionSingleTon : MonoBehaviour {
     public void PopulateQuestionsFromQuestionnaireJson() {
         m_Questions = new List<Question>();
         mJsonQuestions = QuestionFromJson.CreateQuestionnaireFromJson();
+        Debug.Log("QuestionSingleton.mJsonQuestions");
+        
         foreach (Question p in mJsonQuestions.m_Questionnaire.result.questions) {
             p.m_RightAlternative = p.m_AnswerA;
             m_Questions.Add(p);
