@@ -16,20 +16,23 @@ public class ScoreBar : MonoBehaviour {
 	private float mSpeed = 50f;
 	private float mCount = 0f;
 
+    private int mScore;
+
 	void Start() {
         Debug.Log("Quantidade de perguntas: " + QuestionSingleTon.Instance.m_QuestionsAmount);
         switch (QuestionSingleTon.Instance.m_Difficulty) {
             case Difficulty.EASY:
-                mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * 10;
+                mScore = 10;
                 break;
             case Difficulty.NORMAL:
-                mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * 30;
+                mScore = 30;
                 break;
             case Difficulty.HARD:
-                mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * 50;
+                mScore = 50;
                 break;
         }
-	}
+        mFullScore = QuestionSingleTon.Instance.m_QuestionsAmount * mScore;
+    }
 
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -38,7 +41,7 @@ public class ScoreBar : MonoBehaviour {
 		mCurrentTime += mSpeed * Time.deltaTime;
 
 		if(mCurrentTime <= mCurrentScore){
-			m_TextIndicator.GetComponent<Text>().text = ((int)mCurrentTime).ToString();
+			m_TextIndicator.GetComponent<Text>().text = ((int)mCurrentTime).ToString() + "/" + (QuestionSingleTon.Instance.m_QuestionsAmount * mScore).ToString();
 			m_LoadingBar.GetComponent<Image>().fillAmount = mCurrentTime / mFullScore;
 		}
 	}

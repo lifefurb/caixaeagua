@@ -28,9 +28,6 @@ public class Quiz : MonoBehaviour {
         QuestionSingleTon.Instance.PopulateQuestionsFromQuestionnaireJson();
         mQuestions = QuestionSingleTon.Instance.m_Questions;
         mQuestionAmount = mQuestions.Count - 1;
-
-        Debug.Log(QuestionSingleTon.Instance.m_Questions.Count);
-        Debug.Log(mQuestions.Count);
     }
 
     void Start() {
@@ -38,10 +35,10 @@ public class Quiz : MonoBehaviour {
 
         switch (QuestionSingleTon.Instance.m_Difficulty) {
             case Difficulty.EASY:
-                Instantiate(m_Arrow, new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), m_ThirdPersonCharacter.transform);
+                m_Arrow.SetActive(true);
                 break;
             case Difficulty.HARD:
-                Instantiate(m_Timer, new Vector3(993, 80, 0), Quaternion.identity, m_Canvas.transform);
+                m_Timer.SetActive(true);
                 break;
         }
     }
@@ -160,7 +157,7 @@ public class Quiz : MonoBehaviour {
         float randomPositionX = Random.Range(wall1 - 0.5f, wall2 - 0.5f);
         float randomPositionZ = Random.Range(wall3 - 0.5f, wall4 - 0.5f);
 
-        GameObject temp = Instantiate(m_QuestionPrefab, new Vector3(randomPositionX, 60, randomPositionZ), Quaternion.identity);
+        GameObject temp = Instantiate(m_QuestionPrefab, new Vector3(randomPositionX, 0, randomPositionZ), Quaternion.identity);
         temp.transform.parent = m_ImageTarget.transform;
         temp.transform.localScale = new Vector3(0.5f, 0.01f, 0.5f);
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SendScore : MonoBehaviour {
 
-    private const string URL_SERVER = "http://201.54.204.18:3000";
+    private const string URL_SERVER = "http://201.54.204.11:3000";
 
     //private const string URL_SERVER = "http://10.13.3.198:3000";
 

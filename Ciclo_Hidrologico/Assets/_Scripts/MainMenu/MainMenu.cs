@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
@@ -7,47 +6,47 @@ public class MainMenu : MonoBehaviour {
     public GameObject m_MainMenuPanel;
     public GameObject m_InstructionsPanel;
     public GameObject m_DiffucultyPanel;
-    //public GameObject m_QuestionsListPanel;
+    public GameObject m_ConfigurationsPanel;
     public GameObject m_QuestionnairePanel;
     public GameObject m_MessegePanel;
-    public GameObject m_PlayPanel;
     public InputField m_QuestionnaireCode;
+
     public Text m_QuestionnaireCodeText;
+    public Text m_CurrentQuestionnaireCodeText;
     public Text m_Messege;
-    
-    public void EnablePlayPanel() {
-        m_InstructionsPanel.SetActive(false);
-        m_MainMenuPanel.SetActive(false);
-        m_PlayPanel.SetActive(true);
+    public Text m_QuestionnairePanelTitleText;
+    public Text m_DifficultyPanelTitleText;
+
+    public void EnableInstructionsPanel(bool active) {
+        m_ConfigurationsPanel.SetActive(!active);
+        m_InstructionsPanel.SetActive(active);
     }
 
-    public void EnableInstructionsPanel() {
-        m_MainMenuPanel.SetActive(false);
-        m_InstructionsPanel.SetActive(true);
+    public void EnableDifficultyPanel(bool active) {
+        m_MainMenuPanel.SetActive(!active);
+        m_DifficultyPanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
+        m_DiffucultyPanel.SetActive(active);
     }
 
-    public void EnableDifficultyPanel() {
-        m_PlayPanel.SetActive(false);
-        m_DiffucultyPanel.SetActive(true);
-    }
-
-    public void EnableQuestionnairePanel() {
-        m_MainMenuPanel.SetActive(false);
-        m_QuestionnairePanel.SetActive(true);
-    }
-    /*
-    public void EnableQuestionsListPanel() {
-        m_MainMenuPanel.SetActive(false);
-        m_QuestionsListPanel.SetActive(true);
+    public void EnableQuestionnairePanel(bool active) {
+        m_ConfigurationsPanel.SetActive(!active);
+        m_QuestionnairePanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
+        m_QuestionnairePanel.SetActive(active);
+        m_CurrentQuestionnaireCodeText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
     }
     
-    public void BackFromQuestionsListPanel() {
-        m_QuestionsListPanel.SetActive(false);
-        m_MainMenuPanel.SetActive(true);
+    public void OnValueChangedInput() {
+        m_CurrentQuestionnaireCodeText.text = "";
     }
-    */
-    public void LoadScene(string scene) {
-        SceneManager.LoadScene(scene);
+
+    /// <summary>
+    /// Ativa ou desativa o ConfigurationsPanel.
+    /// Chamado no método OnClick do objeto ConfigurationsButton na interface da Unity.
+    /// </summary>
+    /// <param name="active">True (checkbox marcado) para ativar o painel ou False (checkbox desmarcado) para desativar</param>
+    public void EnableConfigurationsPanel(bool active) {
+        m_MainMenuPanel.SetActive(!active);
+        m_ConfigurationsPanel.SetActive(active);
     }
 
     public void ChooseDifficultyButton(Button bt) {
@@ -62,46 +61,52 @@ public class MainMenu : MonoBehaviour {
                 QuestionSingleTon.Instance.m_Difficulty = Difficulty.HARD;
                 break;
         }
-        //SceneManager.LoadScene("Game");
     }
 
     public void Quit() {
         Application.Quit();
     }
 
-    public void EnableMessegePanel(string messege) {
-        m_QuestionnairePanel.SetActive(false);
+    public void OpenLink(string link) {
+        Application.OpenURL(link);
+    }
+    
+    public void EnableMessegePanel(bool active) {
+        m_QuestionnairePanel.SetActive(!active);
+        m_MessegePanel.SetActive(active);
+    }
+    
+    private void EnableMessegePanel(string messege, bool active) {
+        m_QuestionnairePanel.SetActive(!active);
         m_Messege.text = messege;
-        m_MessegePanel.SetActive(true);
-    }
-
-    public void BackToSendQuestionnaireCode() {
-        m_MessegePanel.SetActive(false);
-        m_QuestionnairePanel.SetActive(true);
-    }
-
-    public void BackToMainMenu(){
-        m_PlayPanel.SetActive(false);
-        m_InstructionsPanel.SetActive(false);
-        m_DiffucultyPanel.SetActive(false);
-        //m_QuestionsListPanel.SetActive(false);
-        m_QuestionnairePanel.SetActive(false);
-        m_MessegePanel.SetActive(false);
-        m_MainMenuPanel.SetActive(true);
+        m_MessegePanel.SetActive(active);
     }
 
     public void SendCodeQuestionnaire() {
+        string code = "";
 
-        if (m_QuestionnaireCodeText.text == "") {
-            EnableMessegePanel("Informe algum código!");
+        if (m_QuestionnaireCodeText.text == "")
+            code = m_CurrentQuestionnaireCodeText.text;
+        else
+            code = m_QuestionnaireCodeText.text;
+
+        if (code == "") {
+            EnableMessegePanel("Informe algum código!", true);
         } else {
-            Debug.Log("Código: " + m_QuestionnaireCodeText.text);
-            StartCoroutine(SendScore.requestQuestion(m_QuestionnaireCodeText.text, CallBackRequestQuestion));
+            Debug.Log("Código: " + code);
+            StartCoroutine(SendScore.requestQuestion(code, CallBackRequestQuestion));
         }
     }
 
-    //Recebe as perguntas do servidor. Incompleto
-    public int CallBackRequestQuestion(string err, string resultStr) {
+    /// <summary>
+    /// Salva o resultado do request no PlayerPrefs e 
+    /// preenche a lista m_Questions da classe QuestionSingleton com as perguntas do novo questionário.
+    /// É passada como parâmetro da função SendScore.requestQuestion().
+    /// </summary>
+    /// <param name="err">Erro da consulta ao servidor.</param>
+    /// <param name="resultStr">Resultado da consulta ao servidor.</param>
+    /// <returns>Retorna 0</returns>
+    private int CallBackRequestQuestion(string err, string resultStr) {
         if (err == null) {
             Debug.Log("Json antigo");
             Debug.Log(PlayerPrefs.GetString("Questionnaire"));
@@ -110,9 +115,11 @@ public class MainMenu : MonoBehaviour {
             QuestionSingleTon.Instance.PopulateQuestionsFromQuestionnaireJson();
             Debug.Log("Json novo");
             Debug.Log(PlayerPrefs.GetString("Questionnaire"));
-        }else {
+
+            m_QuestionnairePanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
+        } else {
             Debug.Log(err);
-            EnableMessegePanel("Código inválido. Tente novamente!");
+            EnableMessegePanel("Código inválido. Tente novamente!", true);
         }
         return 0;
     }

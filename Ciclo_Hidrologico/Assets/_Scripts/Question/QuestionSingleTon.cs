@@ -11,8 +11,8 @@ public class QuestionSingleTon : MonoBehaviour {
     public ResponseToQuestionnaire m_Questionnaire;
     public int m_QuestionsAmount;
     public Difficulty m_Difficulty = Difficulty.NORMAL;
+    public QuestionFromJson m_JsonQuestions;
 
-    private QuestionFromJson mJsonQuestions;
     private static QuestionSingleTon mInstance;
 
     public static QuestionSingleTon Instance {
@@ -25,13 +25,6 @@ public class QuestionSingleTon : MonoBehaviour {
     }
 
     void Awake() {
-        /*
-        if (Instance == null)
-            Instance = this;
-        else if (Instance != this)
-            Destroy(gameObject);
-        */
-
         QuestionFromJson.LoadPlayerPrefs();
         PopulateQuestionsFromQuestionnaireJson();
 
@@ -41,10 +34,10 @@ public class QuestionSingleTon : MonoBehaviour {
     //Preenche a lista m_Questions com as perguntas do vetor questions do objeto m_Questionnaire
     public void PopulateQuestionsFromQuestionnaireJson() {
         m_Questions = new List<Question>();
-        mJsonQuestions = QuestionFromJson.CreateQuestionnaireFromJson();
+        m_JsonQuestions = QuestionFromJson.CreateQuestionnaireFromJson();
         Debug.Log("QuestionSingleton.mJsonQuestions");
         
-        foreach (Question p in mJsonQuestions.m_Questionnaire.result.questions) {
+        foreach (Question p in m_JsonQuestions.m_Questionnaire.result.questions) {
             p.m_RightAlternative = p.m_AnswerA;
             m_Questions.Add(p);
         }
