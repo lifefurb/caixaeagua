@@ -133,7 +133,6 @@ public class Quiz : MonoBehaviour {
             m_AudioManager.PlayWinAudio();
             m_QuestionScreenBehavior.EnableMainPanel(false);
             m_QuestionScreenBehavior.EnableFinalPanel(true);
-            m_QuestionScreenBehavior.ShowTextScoreValue(m_PlayerBehavior.m_Player.points);
         }            
     }
 
@@ -170,28 +169,20 @@ public class Quiz : MonoBehaviour {
     }
 
     public InputField m_PlayerName;
-    //private List<string> mNames = new List<string>();
-    //private List<string> mNotSent = new List<string>();
-
-    public void SendButtom() {
-        
-        if ((m_PlayerName.text != "")/* && !(mNames.Contains(m_PlayerName.text))*/) {
-            
+    public void SendScoreButtom() {
+        if (m_PlayerName.text != "") {
             m_PlayerBehavior.m_Player.name = m_PlayerName.text;
+            m_PlayerBehavior.m_Player.questCode = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
             string json = JsonUtility.ToJson(m_PlayerBehavior.m_Player);
-            Debug.Log(json);
 
             StartCoroutine(SendScore.saveScore(json, CallBackSaveScore));
-            
-            //mNames.Add(m_PlayerName.text);
-            
         } else {
-            m_QuestionScreenBehavior.EnableMessegePanelError("Nome inválido. Tente novamente!");
+            m_QuestionScreenBehavior.EnableMessegePanel("Nome inválido. Tente novamente!");
         }
     }
 
     /// <summary>
-    /// Envia a pontuação para o servidor.
+    /// Envia a pontuação e nome do jogador para o servidor.
     /// </summary>
     /// <param name="err"></param>
     /// <param name="resultStr"></param>
@@ -202,13 +193,13 @@ public class Quiz : MonoBehaviour {
         JsonUtility.FromJsonOverwrite(resultStr, result);
 
         if (err != null) {
-            //mNotSent.Add(resultStr);
-            m_QuestionScreenBehavior.EnableMessegePanelError("Erro ao enviar a pontuação. Tente novamente.");
+            m_QuestionScreenBehavior.EnableMessegePanel("Erro ao enviar a pontuação. Tente novamente.");
             Debug.Log(result.msg);
             Debug.Log(result.err);
         }else {
-            m_QuestionScreenBehavior.EnableMessegePanelResult("Pontuação enviada com sucesso!");
+            //m_QuestionScreenBehavior.EnableMessegePanel("Pontuação enviada com sucesso!");
             Debug.Log(result.msg);
+            m_QuestionScreenBehavior.EnableRankingButton();
             //m_PlayerBehavior.m_Player.id = result.idUser;
         }
         return 0;

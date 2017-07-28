@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour {
     public InputField m_QuestionnaireCode;
 
     public Text m_QuestionnaireCodeText;
-    public Text m_CurrentQuestionnaireCodeText;
+    //public Text m_CurrentQuestionnaireCodeText;
     public Text m_Messege;
     public Text m_QuestionnairePanelTitleText;
     public Text m_DifficultyPanelTitleText;
@@ -32,11 +32,11 @@ public class MainMenu : MonoBehaviour {
         m_ConfigurationsPanel.SetActive(!active);
         m_QuestionnairePanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
         m_QuestionnairePanel.SetActive(active);
-        m_CurrentQuestionnaireCodeText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
+        //m_CurrentQuestionnaireCodeText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
     }
     
     public void OnValueChangedInput() {
-        m_CurrentQuestionnaireCodeText.text = "";
+        //m_CurrentQuestionnaireCodeText.text = "";
     }
 
     /// <summary>
@@ -83,19 +83,18 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void SendCodeQuestionnaire() {
-        string code = "";
+        //string code = "";
+
+        //if (m_QuestionnaireCodeText.text == "")
+        //    code = m_CurrentQuestionnaireCodeText.text;
+        //else
+        //    code = m_QuestionnaireCodeText.text;
 
         if (m_QuestionnaireCodeText.text == "")
-            code = m_CurrentQuestionnaireCodeText.text;
-        else
-            code = m_QuestionnaireCodeText.text;
-
-        if (code == "") {
             EnableMessegePanel("Informe algum código!", true);
-        } else {
-            Debug.Log("Código: " + code);
-            StartCoroutine(SendScore.requestQuestion(code, CallBackRequestQuestion));
-        }
+        else
+            StartCoroutine(SendScore.requestQuestion(m_QuestionnaireCodeText.text, CallBackRequestQuestion));
+        
     }
 
     /// <summary>

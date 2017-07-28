@@ -6,9 +6,7 @@ public class QuestionScreenBehavior : MonoBehaviour {
     public GameObject m_MainPanel;
     public GameObject m_QuestionsPanel;
     public GameObject m_FinalPanel;
-    public GameObject m_SendScorePanel;
-    public GameObject m_MessegePanelError;
-    public GameObject m_MessegePanelResult;
+    public GameObject m_MessegePanel;
     public GameObject m_PanelScoreText;
     public GameObject m_PressButtonPanel;
     public GameObject m_MobileSingleStickControlRig;
@@ -23,13 +21,24 @@ public class QuestionScreenBehavior : MonoBehaviour {
     public Text m_Messege;
     public Text m_TextRightScore;
     public Text m_TextWrongScore;
-    public Text m_TextScoreValue;
+    public Text m_ScoreSentText;
 
+    public Button m_SendButton;
+    public Button m_RankingButton;
     public Button m_ButtonQ;
+
+    public InputField m_PlayerNameInputField;
 
     public void EnableMainPanel(bool active) {
         m_MainPanel.SetActive(active);
     }
+
+    public void EnableRankingButton() {
+        m_SendButton.gameObject.SetActive(false);
+        m_PlayerNameInputField.gameObject.SetActive(false);
+        m_RankingButton.gameObject.SetActive(true);
+        m_ScoreSentText.gameObject.SetActive(true);
+    } 
 
     public void EnableQuestionPanel(bool active) {
         m_QuestionsPanel.SetActive(active);
@@ -71,20 +80,19 @@ public class QuestionScreenBehavior : MonoBehaviour {
         m_PressButtonPanel.SetActive(value);
     }
 
-    public void ShowTextScoreValue(int value) {
-        m_TextScoreValue.text = value.ToString();
+    public void EnableMessegePanel(string messege) {
+        m_FinalPanel.SetActive(false);
+        m_Messege.text = messege;
+        m_MessegePanel.SetActive(true);
     }
 
-    public void EnableMessegePanelError(string messege) {
-        m_SendScorePanel.SetActive(false);
-        m_Messege.text = messege;
-        m_MessegePanelError.SetActive(true);
+    public void BackFinalPanel() {
+        m_MessegePanel.SetActive(false);
+        m_FinalPanel.SetActive(true);
     }
 
-    public void EnableMessegePanelResult(string messege) {
-        m_SendScorePanel.SetActive(false);
-        m_Messege.text = messege;
-        m_MessegePanelResult.SetActive(true);
+    public void OpenLink(string link) {
+        Application.OpenURL(link);
     }
 
     public void ShowAddScoreAnimation(int value) {
@@ -93,20 +101,5 @@ public class QuestionScreenBehavior : MonoBehaviour {
 
     public void ShowSubScoreAnimation(int value) {
         ScoreTextManager.Instance.CreateText(m_PanelScoreText.transform.position, "-" + value.ToString() + " ", new Color(227f / 255f, 8f / 255f, 8f / 255f));
-    }
-
-    public void BackFinalPanel() {
-        m_SendScorePanel.SetActive(false);
-        m_FinalPanel.SetActive(true);
-    }
-
-    public void BackSendPanel() {
-        m_MessegePanelError.SetActive(false);
-        m_SendScorePanel.SetActive(true);
-    }
-
-    public void SendScorePanel() {
-        m_FinalPanel.SetActive(false);
-        m_SendScorePanel.SetActive(true);
     }
 }

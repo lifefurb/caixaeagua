@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SendScore : MonoBehaviour {
 
-    private const string URL_SERVER = "http://201.54.204.11:3000";
+    private const string URL_SERVER = "http://201.54.204.10:3000";
 
     //private const string URL_SERVER = "http://10.13.3.198:3000";
 
@@ -21,27 +21,11 @@ public class SendScore : MonoBehaviour {
         //Debug.Log(i);
         Debug.Log("HAVE RESULTS");
         //.. process results from WWW request here...
-        
-        CallBackSaveScore(www.error, www.text);
-        
-    }
-    /*
-    public static IEnumerator requestQuestion(string codigo, Func<string, string, int> CallBackRequestQuestion) {
-        Debug.Log("POSTING");
-        Dictionary<string, string> headers = new Dictionary<string, string>();
-        headers["cod-professor"] = codigo;
-        // Post a request to an URL with our custom headers
-        Debug.Log("CREATING WWW");
-        WWW www = new WWW(URL_SERVER + "/api/caixa-e-agua/questions", new byte[1], headers);
-        yield return www;
-        //float i = www.uploadProgress;
-        //Debug.Log(i);
-        Debug.Log("HAVE RESULTS");
-        //.. process results from WWW request here...
 
-        CallBackRequestQuestion(www.error, www.text);
+        Debug.Log(www.text);
+        Debug.Log(www.error);
+        CallBackSaveScore(www.error, www.text);
     }
-    */
 
     public static IEnumerator requestQuestion(string codigo, Func<string, string, int> CallBackRequestQuestion) {
         Debug.Log(codigo);

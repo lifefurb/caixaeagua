@@ -19,7 +19,6 @@ public class ScoreBar : MonoBehaviour {
     private int mScore;
 
 	void Start() {
-        Debug.Log("Quantidade de perguntas: " + QuestionSingleTon.Instance.m_QuestionsAmount);
         switch (QuestionSingleTon.Instance.m_Difficulty) {
             case Difficulty.EASY:
                 mScore = 10;
