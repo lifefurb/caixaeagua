@@ -63,7 +63,7 @@ public class Quiz : MonoBehaviour {
         else
             WrongAnswer();
 
-        m_QuestionScreenBehavior.EnableQuestionPanel(false);
+        //m_QuestionScreenBehavior.EnableQuestionPanel(false);
         m_QuestionScreenBehavior.ShowQuestionsScore(mRightQuestionsCount, mWrongQuestionsCount);
     }
 
@@ -111,6 +111,8 @@ public class Quiz : MonoBehaviour {
     }
     
     private void RightAnswer() {
+        m_QuestionScreenBehavior.EnableQuestionPanel(false);
+
         mQuestions.Remove(mQuestions[mQuestionAmount]);
         mQuestionAmount--;
         mRightQuestionsCount++;
@@ -133,10 +135,12 @@ public class Quiz : MonoBehaviour {
             m_AudioManager.PlayWinAudio();
             m_QuestionScreenBehavior.EnableMainPanel(false);
             m_QuestionScreenBehavior.EnableFinalPanel(true);
-        }            
+        }
     }
 
     private void WrongAnswer() {
+        ShowQuestion();
+
         mWrongQuestionsCount++;
 
         if (m_PlayerBehavior.m_Player.points > 0)
@@ -158,14 +162,14 @@ public class Quiz : MonoBehaviour {
 
         GameObject temp = Instantiate(m_QuestionPrefab, new Vector3(randomPositionX, 0, randomPositionZ), Quaternion.identity);
         temp.transform.parent = m_ImageTarget.transform;
-        temp.transform.localScale = new Vector3(0.5f, 0.01f, 0.5f);
+        temp.transform.localScale = new Vector3(0.8f, 0.01f, 0.8f);
     }
 
     public void ButtonQ() {
         m_QuestionScreenBehavior.EraseAnswerMessege();
-        m_QuestionScreenBehavior.EnableQuestionPanel(true);
-        m_QuestionScreenBehavior.EnablePressButtonPanel(false);
         ShowQuestion();
+        m_QuestionScreenBehavior.EnableQuestionPanel(true);
+        //m_QuestionScreenBehavior.EnablePressButtonPanel(false);
     }
 
     public InputField m_PlayerName;
@@ -174,7 +178,7 @@ public class Quiz : MonoBehaviour {
             m_PlayerBehavior.m_Player.name = m_PlayerName.text;
             m_PlayerBehavior.m_Player.questCode = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
             string json = JsonUtility.ToJson(m_PlayerBehavior.m_Player);
-
+            Debug.Log(json);
             StartCoroutine(SendScore.saveScore(json, CallBackSaveScore));
         } else {
             m_QuestionScreenBehavior.EnableMessegePanel("Nome inválido. Tente novamente!");
@@ -189,16 +193,15 @@ public class Quiz : MonoBehaviour {
     /// <returns></returns>
     public int CallBackSaveScore(string err, string resultStr) {
 
-        ResultServer result = new ResultServer();
-        JsonUtility.FromJsonOverwrite(resultStr, result);
+        //ResultServer result = new ResultServer();
+        //JsonUtility.FromJsonOverwrite(resultStr, result);
 
         if (err != null) {
             m_QuestionScreenBehavior.EnableMessegePanel("Erro ao enviar a pontuação. Tente novamente.");
-            Debug.Log(result.msg);
-            Debug.Log(result.err);
-        }else {
+            //Debug.Log(resultStr);
+        } else {
             //m_QuestionScreenBehavior.EnableMessegePanel("Pontuação enviada com sucesso!");
-            Debug.Log(result.msg);
+            //Debug.Log(resultStr);
             m_QuestionScreenBehavior.EnableRankingButton();
             //m_PlayerBehavior.m_Player.id = result.idUser;
         }

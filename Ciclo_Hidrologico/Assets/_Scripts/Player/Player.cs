@@ -4,9 +4,9 @@ using UnityEngine;
 [Serializable]
 public class Player : MonoBehaviour {
 
-    public string _id;
-    public string name;
     public string questCode;
+    public string name;
     public int points;
+    //public string _id;
 
 }

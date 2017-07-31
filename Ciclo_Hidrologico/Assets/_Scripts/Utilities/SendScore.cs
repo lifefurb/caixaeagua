@@ -12,10 +12,11 @@ public class SendScore : MonoBehaviour {
     public static IEnumerator saveScore(string user, Func<string, string, int> CallBackSaveScore) {
         Debug.Log("POSTING");
         Dictionary<string, string> headers = new Dictionary<string, string>();
-        headers["user"] = user;
-        // Post a request to an URL with our custom headers
+        //headers["user"] = user;
+        headers["Content-Type"] = "application/json";
+        //Post a request to an URL with our custom headers
         Debug.Log("CREATING WWW");
-        WWW www = new WWW(URL_SERVER + "/api/caixa-e-agua/ranking/save", new byte[1], headers);
+        WWW www = new WWW(URL_SERVER + "/api/player/save-points", new byte[1]);
         yield return www;
         //float i = www.uploadProgress;
         //Debug.Log(i);

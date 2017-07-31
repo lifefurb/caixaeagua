@@ -189,6 +189,9 @@
     <Compile Include="Assets\SampleAssets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\SampleAssets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\SampleAssets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\Demo.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControl.cs" />
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />

@@ -29,6 +29,16 @@ public class QuestionScreenBehavior : MonoBehaviour {
 
     public InputField m_PlayerNameInputField;
 
+    private float mTimer;
+
+    void Update() {
+        if (mTimer > 0) {
+            mTimer -= Time.deltaTime;
+            if (mTimer <= 0)
+                m_TextFinalAnswer.text = "";
+        }
+    } 
+
     public void EnableMainPanel(bool active) {
         m_MainPanel.SetActive(active);
     }
@@ -52,11 +62,13 @@ public class QuestionScreenBehavior : MonoBehaviour {
     public void ShowRightAnswerMessege(int value) {
         m_TextFinalAnswer.color = new Color(18f / 255f, 218f / 255f, 0);
         m_TextFinalAnswer.text = "Você acertou!\n Faltam " + value + " perguntas.";
+        mTimer = 5;
     }
 
     public void ShowWrongAnswerMessege() {
         m_TextFinalAnswer.color = new Color(227f / 255f, 8f / 255f, 8f / 255f);
         m_TextFinalAnswer.text = "Você errou!\n Tente novamente.";
+        mTimer = 5;
     }
 
     public void EraseAnswerMessege() {

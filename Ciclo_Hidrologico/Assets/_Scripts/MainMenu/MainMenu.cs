@@ -107,13 +107,8 @@ public class MainMenu : MonoBehaviour {
     /// <returns>Retorna 0</returns>
     private int CallBackRequestQuestion(string err, string resultStr) {
         if (err == null) {
-            Debug.Log("Json antigo");
-            Debug.Log(PlayerPrefs.GetString("Questionnaire"));
             PlayerPrefs.SetString("Questionnaire", "{\"m_Questionnaire\":" + resultStr + "}"); //precisa fazer isso para ficar no formato certo para gerar o objeto
-            Debug.Log(PlayerPrefs.GetString("Questionnaire"));
             QuestionSingleTon.Instance.PopulateQuestionsFromQuestionnaireJson();
-            Debug.Log("Json novo");
-            Debug.Log(PlayerPrefs.GetString("Questionnaire"));
 
             m_QuestionnairePanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
         } else {
