@@ -7,6 +7,5 @@ public class Player : MonoBehaviour {
     public string questCode;
     public string name;
     public int points;
-    //public string _id;
 
 }

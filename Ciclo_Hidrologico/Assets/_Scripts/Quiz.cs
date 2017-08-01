@@ -198,10 +198,8 @@ public class Quiz : MonoBehaviour {
 
         if (err != null) {
             m_QuestionScreenBehavior.EnableMessegePanel("Erro ao enviar a pontuação. Tente novamente.");
-            //Debug.Log(resultStr);
         } else {
             //m_QuestionScreenBehavior.EnableMessegePanel("Pontuação enviada com sucesso!");
-            //Debug.Log(resultStr);
             m_QuestionScreenBehavior.EnableRankingButton();
             //m_PlayerBehavior.m_Player.id = result.idUser;
         }
