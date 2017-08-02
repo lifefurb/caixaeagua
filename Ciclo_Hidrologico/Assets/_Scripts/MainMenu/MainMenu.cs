@@ -17,6 +17,10 @@ public class MainMenu : MonoBehaviour {
     public Text m_QuestionnairePanelTitleText;
     public Text m_DifficultyPanelTitleText;
 
+    public GameObject m_SendIcon;
+    public Sprite m_Confirm;
+    public Sprite m_Error;
+
     public void EnableInstructionsPanel(bool active) {
         m_ConfigurationsPanel.SetActive(!active);
         m_InstructionsPanel.SetActive(active);
@@ -33,10 +37,6 @@ public class MainMenu : MonoBehaviour {
         m_QuestionnairePanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
         m_QuestionnairePanel.SetActive(active);
         //m_CurrentQuestionnaireCodeText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
-    }
-    
-    public void OnValueChangedInput() {
-        //m_CurrentQuestionnaireCodeText.text = "";
     }
 
     /// <summary>
@@ -82,6 +82,10 @@ public class MainMenu : MonoBehaviour {
         m_MessegePanel.SetActive(active);
     }
 
+    public void EnableSendIcon() {
+        m_SendIcon.gameObject.SetActive(false);
+    }
+
     public void SendCodeQuestionnaire() {
         //string code = "";
 
@@ -110,9 +114,14 @@ public class MainMenu : MonoBehaviour {
             PlayerPrefs.SetString("Questionnaire", "{\"m_Questionnaire\":" + resultStr + "}"); //precisa fazer isso para ficar no formato certo para gerar o objeto
             QuestionSingleTon.Instance.PopulateQuestionsFromQuestionnaireJson();
 
+            m_SendIcon.GetComponent<Image>().sprite = m_Confirm;
+            m_SendIcon.gameObject.SetActive(true);
+            EnableMessegePanel("Questionário substituído com sucesso!", true);
             m_QuestionnairePanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
         } else {
             Debug.Log(err);
+            m_SendIcon.GetComponent<Image>().sprite = m_Error;
+            m_SendIcon.gameObject.SetActive(true);
             EnableMessegePanel("Código inválido. Tente novamente!", true);
         }
         return 0;

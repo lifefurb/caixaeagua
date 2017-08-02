@@ -251,6 +251,7 @@
     <Compile Include="Assets\_Scripts\Utilities\AudioManager.cs" />
     <Compile Include="Assets\_Scripts\Utilities\Book.cs" />
     <Compile Include="Assets\_Scripts\Utilities\FPS.cs" />
+    <Compile Include="Assets\_Scripts\Utilities\ImageAnimation.cs" />
     <Compile Include="Assets\_Scripts\Utilities\LevelLoader.cs" />
     <Compile Include="Assets\_Scripts\Utilities\MyDefaultTrackableEventHandler.cs" />
     <Compile Include="Assets\_Scripts\Utilities\ResultServer.cs" />
