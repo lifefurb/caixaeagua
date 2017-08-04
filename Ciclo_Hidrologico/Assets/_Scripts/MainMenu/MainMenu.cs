@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
+    public AudioManager m_AudioManager;
+
     public GameObject m_MainMenuPanel;
     public GameObject m_InstructionsPanel;
     public GameObject m_DiffucultyPanel;
@@ -94,10 +96,13 @@ public class MainMenu : MonoBehaviour {
         //else
         //    code = m_QuestionnaireCodeText.text;
 
-        if (m_QuestionnaireCodeText.text == "")
+        if (m_QuestionnaireCodeText.text == "") {
             EnableMessegePanel("Informe algum código!", true);
-        else
+            m_AudioManager.PlayWrongAnswerAudio();
+        } else {
             StartCoroutine(SendScore.requestQuestion(m_QuestionnaireCodeText.text, CallBackRequestQuestion));
+        }
+            
         
     }
 
@@ -117,12 +122,14 @@ public class MainMenu : MonoBehaviour {
             m_SendIcon.GetComponent<Image>().sprite = m_Confirm;
             m_SendIcon.gameObject.SetActive(true);
             EnableMessegePanel("Questionário substituído com sucesso!", true);
+            m_AudioManager.PlayRightAnswerAudio();
             m_QuestionnairePanelTitleText.text = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.title;
-        } else {
+        }else {
             Debug.Log(err);
             m_SendIcon.GetComponent<Image>().sprite = m_Error;
             m_SendIcon.gameObject.SetActive(true);
             EnableMessegePanel("Código inválido. Tente novamente!", true);
+            m_AudioManager.PlayWrongAnswerAudio();
         }
         return 0;
     }

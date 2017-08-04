@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class QuestionScreenBehavior : MonoBehaviour {
@@ -47,7 +48,7 @@ public class QuestionScreenBehavior : MonoBehaviour {
         m_SendButton.gameObject.SetActive(false);
         m_PlayerNameInputField.gameObject.SetActive(false);
         m_RankingButton.gameObject.SetActive(true);
-        m_ScoreSentText.gameObject.SetActive(true);
+        //m_ScoreSentText.gameObject.SetActive(true);
     } 
 
     public void EnableQuestionPanel(bool active) {

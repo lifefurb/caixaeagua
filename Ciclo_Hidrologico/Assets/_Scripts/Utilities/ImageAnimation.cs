@@ -9,12 +9,12 @@ public class ImageAnimation : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if (!mMaxSize && transform.localScale.x < m_MaxSize)
+        if (!mMaxSize && (transform.localScale.x < m_MaxSize))
             transform.localScale = new Vector3(transform.localScale.x + Time.deltaTime * m_Speed, transform.localScale.y + Time.deltaTime * m_Speed, transform.localScale.z + Time.deltaTime * m_Speed);
         else
             mMaxSize = true;
 
-        if (mMaxSize && transform.localScale.x > 1)
+        if (mMaxSize && (transform.localScale.x > 1))
             transform.localScale = new Vector3(transform.localScale.x - Time.deltaTime * m_Speed, transform.localScale.y - Time.deltaTime * m_Speed, transform.localScale.z - Time.deltaTime * m_Speed);
         else
             mMaxSize = false;

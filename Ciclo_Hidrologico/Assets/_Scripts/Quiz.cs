@@ -178,10 +178,12 @@ public class Quiz : MonoBehaviour {
             m_PlayerBehavior.m_Player.name = m_PlayerName.text;
             m_PlayerBehavior.m_Player.questCode = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
             string json = JsonUtility.ToJson(m_PlayerBehavior.m_Player);
+            Debug.Log(m_PlayerName.text);
             Debug.Log(json);
             StartCoroutine(SendScore.saveScore(json, CallBackSaveScore));
         } else {
             m_QuestionScreenBehavior.EnableMessegePanel("Nome inválido. Tente novamente!");
+            m_AudioManager.PlayWrongAnswerAudio();
         }
     }
 
@@ -196,13 +198,15 @@ public class Quiz : MonoBehaviour {
         //ResultServer result = new ResultServer();
         //JsonUtility.FromJsonOverwrite(resultStr, result);
 
-        if (err != null) {
-            m_QuestionScreenBehavior.EnableMessegePanel("Erro ao enviar a pontuação. Tente novamente.");
-        } else {
-            //m_QuestionScreenBehavior.EnableMessegePanel("Pontuação enviada com sucesso!");
+        if (err == null) {
+            m_QuestionScreenBehavior.EnableMessegePanel("Pontuação enviada com sucesso!");
             m_QuestionScreenBehavior.EnableRankingButton();
-            //m_PlayerBehavior.m_Player.id = result.idUser;
+            m_AudioManager.PlayRightAnswerAudio();
+        } else {
+            m_QuestionScreenBehavior.EnableMessegePanel("Erro ao enviar a pontuação. Tente novamente.");
+            m_AudioManager.PlayWrongAnswerAudio();
         }
+        //Debug.Log(resultStr);
         return 0;
     }
 }
