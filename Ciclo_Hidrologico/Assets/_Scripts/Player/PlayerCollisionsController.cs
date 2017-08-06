@@ -2,23 +2,20 @@
 
 public class PlayerCollisionsController : MonoBehaviour {
 
-    public Quiz m_QuestionBehavior;
+    public Quiz m_Quiz;
     public QuestionScreenBehavior m_QuestionScreenBehavior;
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Question") {
             m_QuestionScreenBehavior.EraseAnswerMessege();
-            m_QuestionBehavior.ButtonQ();
-            //m_QuestionScreenBehavior.EnablePressButtonPanel(true);
-            //m_QuestionScreenBehavior.EnableButtonQ(true);
+            m_QuestionScreenBehavior.EnableQuestionPanel(true);
         }
     }
 
     void OnTriggerExit(Collider other) {
         if (other.tag == "Question") {
             m_QuestionScreenBehavior.EnableQuestionPanel(false);
-            //m_QuestionScreenBehavior.EnablePressButtonPanel(false);
-            //m_QuestionScreenBehavior.EnableButtonQ(false);
+            m_Quiz.ShowQuestion();
         }
     }
 

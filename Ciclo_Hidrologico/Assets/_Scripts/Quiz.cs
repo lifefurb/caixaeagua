@@ -31,8 +31,6 @@ public class Quiz : MonoBehaviour {
     }
 
     void Start() {
-        InstantiateQuestion();
-
         switch (QuestionSingleTon.Instance.m_Difficulty) {
             case Difficulty.EASY:
                 m_Arrow.SetActive(true);
@@ -41,6 +39,9 @@ public class Quiz : MonoBehaviour {
                 m_Timer.SetActive(true);
                 break;
         }
+
+        InstantiateQuestion();
+        ShowQuestion();
     }
 
     public void CheckAlternative(string alternative) {
@@ -63,12 +64,11 @@ public class Quiz : MonoBehaviour {
         else
             WrongAnswer();
 
-        //m_QuestionScreenBehavior.EnableQuestionPanel(false);
+        ShowQuestion();
         m_QuestionScreenBehavior.ShowQuestionsScore(mRightQuestionsCount, mWrongQuestionsCount);
     }
 
     public void ShowQuestion() {
-
         //randomiza as perguntas da lista m_Questions
         for (int i = 0; i < mQuestions.Count; i++) {
             Question temp = mQuestions[i];
@@ -139,8 +139,6 @@ public class Quiz : MonoBehaviour {
     }
 
     private void WrongAnswer() {
-        ShowQuestion();
-
         mWrongQuestionsCount++;
 
         if (m_PlayerBehavior.m_Player.points > 0)
@@ -164,14 +162,14 @@ public class Quiz : MonoBehaviour {
         temp.transform.parent = m_ImageTarget.transform;
         temp.transform.localScale = new Vector3(0.8f, 0.01f, 0.8f);
     }
-
+    /*
     public void ButtonQ() {
         m_QuestionScreenBehavior.EraseAnswerMessege();
         ShowQuestion();
         m_QuestionScreenBehavior.EnableQuestionPanel(true);
         //m_QuestionScreenBehavior.EnablePressButtonPanel(false);
     }
-
+    */
     public InputField m_PlayerName;
     public void SendScoreButtom() {
         if (m_PlayerName.text != "") {
@@ -188,16 +186,12 @@ public class Quiz : MonoBehaviour {
     }
 
     /// <summary>
-    /// Envia a pontuação e nome do jogador para o servidor.
+    /// Envia a pontuação e o nome do jogador para o servidor.
     /// </summary>
-    /// <param name="err"></param>
-    /// <param name="resultStr"></param>
-    /// <returns></returns>
+    /// <param name="err">Erro retornado da consulta ao servidor</param>
+    /// <param name="resultStr">Resultado retornado da consulta ao servidor</param>
+    /// <returns>Retorna 0</returns>
     public int CallBackSaveScore(string err, string resultStr) {
-
-        //ResultServer result = new ResultServer();
-        //JsonUtility.FromJsonOverwrite(resultStr, result);
-
         if (err == null) {
             m_QuestionScreenBehavior.EnableMessegePanel("Pontuação enviada com sucesso!");
             m_QuestionScreenBehavior.EnableRankingButton();
@@ -206,7 +200,6 @@ public class Quiz : MonoBehaviour {
             m_QuestionScreenBehavior.EnableMessegePanel("Erro ao enviar a pontuação. Tente novamente.");
             m_AudioManager.PlayWrongAnswerAudio();
         }
-        //Debug.Log(resultStr);
         return 0;
     }
 }
