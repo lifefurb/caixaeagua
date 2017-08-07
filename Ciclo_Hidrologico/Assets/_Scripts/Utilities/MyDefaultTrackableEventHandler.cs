@@ -21,8 +21,12 @@ namespace Vuforia
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
+        public QuestionScreenBehavior m_QuestionScreenBehavior;
         public GameObject m_Character;
-        //private bool mSecondTime = false;
+        public GameObject m_Arrow;
+        public GameObject m_Timer;
+
+        private bool mFirstTime = true;
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -84,8 +88,13 @@ namespace Vuforia
             {
                 component.enabled = true;
             }
-            
-            m_Character.GetComponent<Rigidbody>().isKinematic = false;
+
+            if (mFirstTime) {
+                m_Character.GetComponent<Rigidbody>().isKinematic = false;
+                m_QuestionScreenBehavior.DisableTargetPanel(true);
+                DifficultyHandler();
+                mFirstTime = false;
+            }
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
         }
@@ -110,11 +119,20 @@ namespace Vuforia
                 
             }
             
-            //m_Character.GetComponent<Rigidbody>().isKinematic = true;
-
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         }
 
         #endregion // PRIVATE_METHODS
+
+        private void DifficultyHandler() {
+            switch (QuestionSingleTon.Instance.m_Difficulty) {
+                case Difficulty.EASY:
+                    m_Arrow.SetActive(true);
+                    break;
+                case Difficulty.HARD:
+                    m_Timer.SetActive(true);
+                    break;
+            }
+        }
     }
 }

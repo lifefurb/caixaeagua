@@ -35,7 +35,6 @@ public class QuestionSingleTon : MonoBehaviour {
     public void PopulateQuestionsFromQuestionnaireJson() {
         m_Questions = new List<Question>();
         m_JsonQuestions = QuestionFromJson.CreateQuestionnaireFromJson();
-        Debug.Log("QuestionSingleton.mJsonQuestions");
         
         foreach (Question p in m_JsonQuestions.m_Questionnaire.result.questions) {
             p.m_RightAlternative = p.m_AnswerA;

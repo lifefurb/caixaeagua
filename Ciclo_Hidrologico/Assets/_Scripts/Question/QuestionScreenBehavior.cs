@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class QuestionScreenBehavior : MonoBehaviour {
@@ -9,8 +8,9 @@ public class QuestionScreenBehavior : MonoBehaviour {
     public GameObject m_FinalPanel;
     public GameObject m_MessegePanel;
     public GameObject m_PanelScoreText;
-    public GameObject m_PressButtonPanel;
+    //public GameObject m_PressButtonPanel;
     public GameObject m_MobileSingleStickControlRig;
+    public GameObject m_TargetPanel;
 
     public Text m_QuestionText;
     public Text m_AlternativeAText;
@@ -22,11 +22,11 @@ public class QuestionScreenBehavior : MonoBehaviour {
     public Text m_Messege;
     public Text m_TextRightScore;
     public Text m_TextWrongScore;
-    public Text m_ScoreSentText;
+    //public Text m_ScoreSentText;
 
     public Button m_SendButton;
     public Button m_RankingButton;
-    public Button m_ButtonQ;
+    //public Button m_ButtonQ;
 
     public InputField m_PlayerNameInputField;
 
@@ -38,7 +38,21 @@ public class QuestionScreenBehavior : MonoBehaviour {
             if (mTimer <= 0)
                 m_TextFinalAnswer.text = "";
         }
-    } 
+    }
+
+    public void BackMainMenu() {
+        m_MainPanel.SetActive(false);
+        m_QuestionsPanel.SetActive(false);
+        m_MobileSingleStickControlRig.SetActive(false);
+        m_FinalPanel.SetActive(false);
+        m_TargetPanel.SetActive(false);
+    }
+
+    public void DisableTargetPanel(bool active) {
+        m_TargetPanel.SetActive(!active);
+        m_MainPanel.SetActive(true);
+        m_MobileSingleStickControlRig.SetActive(true);
+    }
 
     public void EnableMainPanel(bool active) {
         m_MainPanel.SetActive(active);
@@ -48,7 +62,6 @@ public class QuestionScreenBehavior : MonoBehaviour {
         m_SendButton.gameObject.SetActive(false);
         m_PlayerNameInputField.gameObject.SetActive(false);
         m_RankingButton.gameObject.SetActive(true);
-        //m_ScoreSentText.gameObject.SetActive(true);
     } 
 
     public void EnableQuestionPanel(bool active) {
@@ -85,13 +98,15 @@ public class QuestionScreenBehavior : MonoBehaviour {
         m_TextWrongScore.text = wrongQuestionsCount.ToString();
     }
 
+    /*
     public void EnableButtonQ(bool value) {
         m_ButtonQ.interactable = value;
     }
-
+    
     public void EnablePressButtonPanel(bool value) {
         m_PressButtonPanel.SetActive(value);
     }
+    */
 
     public void EnableMessegePanel(string messege) {
         m_FinalPanel.SetActive(false);

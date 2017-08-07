@@ -8,7 +8,7 @@ public class ScoreBar : MonoBehaviour {
 
 	public Transform m_LoadingBar;
 	public Transform m_TextIndicator;
-	public PlayerBehavior m_PlayerBehavior;
+	public Quiz m_Quiz;
 
 	private float mCurrentScore;
 	private float mCurrentTime;
@@ -35,7 +35,7 @@ public class ScoreBar : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		mCurrentScore = m_PlayerBehavior.m_Player.points;			//variável da classe Game que é incrementada/decrementada a cada acerto/erro
+		mCurrentScore = m_Quiz.m_Score;			//variável da classe Game que é incrementada/decrementada a cada acerto/erro
 
 		mCurrentTime += mSpeed * Time.deltaTime;
 

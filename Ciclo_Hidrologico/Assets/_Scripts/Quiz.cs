@@ -7,15 +7,12 @@ public class Quiz : MonoBehaviour {
     public QuestionScreenBehavior m_QuestionScreenBehavior;
     public GameObject m_QuestionPrefab;
     public GameObject m_ImageTarget;
-    public PlayerBehavior m_PlayerBehavior;
     public AudioManager m_AudioManager;
     public static List<string> m_TipSplit = new List<string>();
     public static bool m_FlagArrow = false;
     public static bool m_GameOver = false;
-    public GameObject m_Arrow;
-    public GameObject m_Timer;
     public GameObject m_Canvas;
-    public GameObject m_ThirdPersonCharacter;
+    public int m_Score;
     //public TurnPage m_TurnPageLeft;
     //public TurnPage m_TurnPageRight;
 
@@ -31,15 +28,6 @@ public class Quiz : MonoBehaviour {
     }
 
     void Start() {
-        switch (QuestionSingleTon.Instance.m_Difficulty) {
-            case Difficulty.EASY:
-                m_Arrow.SetActive(true);
-                break;
-            case Difficulty.HARD:
-                m_Timer.SetActive(true);
-                break;
-        }
-
         InstantiateQuestion();
         ShowQuestion();
     }
@@ -64,7 +52,9 @@ public class Quiz : MonoBehaviour {
         else
             WrongAnswer();
 
-        ShowQuestion();
+        if(mQuestionAmount >= 0)
+            ShowQuestion();
+
         m_QuestionScreenBehavior.ShowQuestionsScore(mRightQuestionsCount, mWrongQuestionsCount);
     }
 
@@ -117,13 +107,11 @@ public class Quiz : MonoBehaviour {
         mQuestionAmount--;
         mRightQuestionsCount++;
 
-        m_PlayerBehavior.IncrementScore();
+        IncrementScore();
         m_AudioManager.PlayRightAnswerAudio();
 
         m_QuestionScreenBehavior.ShowRightAnswerMessege(mQuestionAmount + 1);
-        m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.points);
-        m_QuestionScreenBehavior.EnablePressButtonPanel(false);
-        m_QuestionScreenBehavior.EnableButtonQ(false);
+        m_QuestionScreenBehavior.ShowScore(m_Score);
 
         Destroy(GameObject.Find("Question(Clone)"));
         m_FlagArrow = true;
@@ -141,12 +129,40 @@ public class Quiz : MonoBehaviour {
     private void WrongAnswer() {
         mWrongQuestionsCount++;
 
-        if (m_PlayerBehavior.m_Player.points > 0)
-            m_PlayerBehavior.DecrementScore();
+        if (m_Score > 0)
+            DecrementScore();
 
         m_AudioManager.PlayWrongAnswerAudio();
         m_QuestionScreenBehavior.ShowWrongAnswerMessege();
-        m_QuestionScreenBehavior.ShowScore(m_PlayerBehavior.m_Player.points);
+        m_QuestionScreenBehavior.ShowScore(m_Score);
+    }
+
+    private void IncrementScore() {
+        int score = 0;
+        switch (QuestionSingleTon.Instance.m_Difficulty) {
+            case Difficulty.EASY: score = 10;
+                break;
+            case Difficulty.NORMAL: score = 30;
+                break;
+            case Difficulty.HARD: score = 50;
+                break;
+        }
+        m_Score += score;
+        m_QuestionScreenBehavior.ShowAddScoreAnimation(score);
+    }
+
+    private void DecrementScore() {
+        int score = 0;
+        switch (QuestionSingleTon.Instance.m_Difficulty) {
+            case Difficulty.EASY: score = 2;
+                break;
+            case Difficulty.NORMAL: score = 5;
+                break;
+            case Difficulty.HARD: score = 10;
+                break;
+        }
+        m_Score -= score;
+        m_QuestionScreenBehavior.ShowSubScoreAnimation(score);
     }
 
     private void InstantiateQuestion() {
@@ -162,23 +178,18 @@ public class Quiz : MonoBehaviour {
         temp.transform.parent = m_ImageTarget.transform;
         temp.transform.localScale = new Vector3(0.8f, 0.01f, 0.8f);
     }
-    /*
-    public void ButtonQ() {
-        m_QuestionScreenBehavior.EraseAnswerMessege();
-        ShowQuestion();
-        m_QuestionScreenBehavior.EnableQuestionPanel(true);
-        //m_QuestionScreenBehavior.EnablePressButtonPanel(false);
-    }
-    */
+
     public InputField m_PlayerName;
     public void SendScoreButtom() {
+        Player player = new Player();
         if (m_PlayerName.text != "") {
-            m_PlayerBehavior.m_Player.name = m_PlayerName.text;
-            m_PlayerBehavior.m_Player.questCode = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
-            string json = JsonUtility.ToJson(m_PlayerBehavior.m_Player);
+            player.points = m_Score;
+            player.name = m_PlayerName.text;
+            player.questCode = QuestionSingleTon.Instance.m_JsonQuestions.m_Questionnaire.result.code;
+            string json = JsonUtility.ToJson(player);
             Debug.Log(m_PlayerName.text);
             Debug.Log(json);
-            StartCoroutine(SendScore.saveScore(json, CallBackSaveScore));
+            StartCoroutine(ServerConnection.SaveScore(json, CallBackSaveScore));
         } else {
             m_QuestionScreenBehavior.EnableMessegePanel("Nome inválido. Tente novamente!");
             m_AudioManager.PlayWrongAnswerAudio();
