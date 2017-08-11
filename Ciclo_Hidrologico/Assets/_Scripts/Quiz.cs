@@ -58,7 +58,7 @@ public class Quiz : MonoBehaviour {
         m_QuestionScreenBehavior.ShowQuestionsScore(mRightQuestionsCount, mWrongQuestionsCount);
     }
 
-    public void ShowQuestion() {
+    private void RandomizeQuestion() {
         //randomiza as perguntas da lista m_Questions
         for (int i = 0; i < mQuestions.Count; i++) {
             Question temp = mQuestions[i];
@@ -85,6 +85,10 @@ public class Quiz : MonoBehaviour {
         mQuestions[mQuestionAmount].m_AnswerB = alternatives[1];
         mQuestions[mQuestionAmount].m_AnswerC = alternatives[2];
         mQuestions[mQuestionAmount].m_AnswerD = alternatives[3];
+    }
+
+    public void ShowQuestion() {
+        RandomizeQuestion();
 
         //Exibe a pergunta que está na última posição de mQuestions
         m_QuestionScreenBehavior.m_QuestionText.text = mQuestions[mQuestionAmount].m_Question;
@@ -174,7 +178,7 @@ public class Quiz : MonoBehaviour {
         float randomPositionX = Random.Range(wall1 - 0.5f, wall2 - 0.5f);
         float randomPositionZ = Random.Range(wall3 - 0.5f, wall4 - 0.5f);
 
-        GameObject temp = Instantiate(m_QuestionPrefab, new Vector3(randomPositionX, 0, randomPositionZ), Quaternion.identity);
+        GameObject temp = Instantiate(m_QuestionPrefab, new Vector3(randomPositionX, 20f, randomPositionZ), Quaternion.identity);
         temp.transform.parent = m_ImageTarget.transform;
         temp.transform.localScale = new Vector3(0.8f, 0.01f, 0.8f);
     }

@@ -23,6 +23,7 @@ namespace UnitySampleAssets.Characters.ThirdPerson
         // Use this for initialization
         private void Start()
         {
+
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -41,7 +42,9 @@ namespace UnitySampleAssets.Characters.ThirdPerson
 
         void Update()
         {
-            if(!jump)
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+            if (!jump)
                 jump = CrossPlatformInputManager.GetButtonDown("Jump");
         }
 

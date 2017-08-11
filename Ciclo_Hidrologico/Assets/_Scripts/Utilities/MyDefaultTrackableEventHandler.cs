@@ -26,7 +26,7 @@ namespace Vuforia
         public GameObject m_Arrow;
         public GameObject m_Timer;
 
-        private bool mFirstTime = true;
+        public static bool mFirstTime = true;
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -109,16 +109,14 @@ namespace Vuforia
             {
                 component.enabled = false;
             }
-
+            
             // Disable colliders:
             foreach (Collider component in colliderComponents)
             {
-                if (component.tag != "Ground") {
+                if ((component.tag != "Ground") || (component.tag != "Player"))
                     component.enabled = false;
-                }
                 
             }
-            
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         }
 

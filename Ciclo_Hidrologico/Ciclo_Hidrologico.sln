@@ -1,11 +1,11 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciclo_Hidrologico.Plugins", "Ciclo_Hidrologico.Plugins.csproj", "{1551EE26-F399-291F-69BC-23ADDAF26601}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{7D762FB9-6047-2DEC-B467-550697CD8958}") = "Ciclo_Hidrologico", "Assembly-CSharp-firstpass.csproj", "{1FF89294-1B88-F1F1-3146-1B77A3A2DABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciclo_Hidrologico", "Ciclo_Hidrologico.csproj", "{A44592CB-66B7-A5D8-4E5F-310E7032932B}"
+Project("{7D762FB9-6047-2DEC-B467-550697CD8958}") = "Ciclo_Hidrologico", "Assembly-CSharp.csproj", "{5EB1B6EF-08CC-201D-6D94-E9AC3147CBB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciclo_Hidrologico.Editor", "Ciclo_Hidrologico.Editor.csproj", "{7D01E415-EEBE-D656-BD1A-A81151C8957F}"
+Project("{7D762FB9-6047-2DEC-B467-550697CD8958}") = "Ciclo_Hidrologico", "Assembly-CSharp-Editor.csproj", "{132D087D-6566-8933-19EB-B319299A5D4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,20 +13,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1551EE26-F399-291F-69BC-23ADDAF26601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1551EE26-F399-291F-69BC-23ADDAF26601}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1551EE26-F399-291F-69BC-23ADDAF26601}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1551EE26-F399-291F-69BC-23ADDAF26601}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A44592CB-66B7-A5D8-4E5F-310E7032932B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A44592CB-66B7-A5D8-4E5F-310E7032932B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A44592CB-66B7-A5D8-4E5F-310E7032932B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A44592CB-66B7-A5D8-4E5F-310E7032932B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D01E415-EEBE-D656-BD1A-A81151C8957F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D01E415-EEBE-D656-BD1A-A81151C8957F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D01E415-EEBE-D656-BD1A-A81151C8957F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D01E415-EEBE-D656-BD1A-A81151C8957F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF89294-1B88-F1F1-3146-1B77A3A2DABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF89294-1B88-F1F1-3146-1B77A3A2DABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF89294-1B88-F1F1-3146-1B77A3A2DABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF89294-1B88-F1F1-3146-1B77A3A2DABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB1B6EF-08CC-201D-6D94-E9AC3147CBB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB1B6EF-08CC-201D-6D94-E9AC3147CBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB1B6EF-08CC-201D-6D94-E9AC3147CBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB1B6EF-08CC-201D-6D94-E9AC3147CBB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132D087D-6566-8933-19EB-B319299A5D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132D087D-6566-8933-19EB-B319299A5D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132D087D-6566-8933-19EB-B319299A5D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132D087D-6566-8933-19EB-B319299A5D4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

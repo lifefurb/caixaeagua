@@ -63,26 +63,6 @@
      <Compile Include="Assets\SampleAssets\Cameras\Scripts\PivotBasedCameraRig.cs" />
      <Compile Include="Assets\SampleAssets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
      <Compile Include="Assets\SampleAssets\Cameras\Scripts\TargetFieldOfView.cs" />
-     <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
-     <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
-     <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\SampleAssets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
-     <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
-     <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
-     <Compile Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\CameraSwitch.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\Joystick.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\LevelReset.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\TiltInput.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\TouchPad.cs" />
-     <Compile Include="Assets\SampleAssets\CrossPlatformInput\Scripts\VirtualInput.cs" />
      <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\AmbientObscurance.cs" />
      <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\AntialiasingAsPostEffect.cs" />
      <Compile Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Scripts\Bloom.cs" />
@@ -171,6 +151,9 @@
      <Compile Include="Assets\SampleAssets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\SampleAssets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\SampleAssets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
+     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\Demo.cs" />
+     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControl.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -206,26 +189,39 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\_Main\Scripts\Arrow.cs" />
-     <Compile Include="Assets\_Main\Scripts\Book.cs" />
-     <Compile Include="Assets\_Main\Scripts\FPS.cs" />
-     <Compile Include="Assets\_Main\Scripts\GCCamera.cs" />
-     <Compile Include="Assets\_Main\Scripts\Game.cs" />
-     <Compile Include="Assets\_Main\Scripts\GameManager.cs" />
-     <Compile Include="Assets\_Main\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\_Main\Scripts\MoveOffSet.cs" />
-     <Compile Include="Assets\_Main\Scripts\MyDefaultTrackableEventHandler.cs" />
-     <Compile Include="Assets\_Main\Scripts\Player.cs" />
-     <Compile Include="Assets\_Main\Scripts\Question.cs" />
-     <Compile Include="Assets\_Main\Scripts\ResultServer.cs" />
-     <Compile Include="Assets\_Main\Scripts\Score.cs" />
-     <Compile Include="Assets\_Main\Scripts\ScoreBar.cs" />
-     <Compile Include="Assets\_Main\Scripts\ScoreText.cs" />
-     <Compile Include="Assets\_Main\Scripts\ScoreTextManager.cs" />
-     <Compile Include="Assets\_Main\Scripts\SendScore.cs" />
-     <Compile Include="Assets\_Main\Scripts\Timer.cs" />
-     <Compile Include="Assets\_Main\Scripts\VirtualButtonController.cs" />
-     <Compile Include="Assets\_Main\Scripts\VirtualButtonHelp.cs" />
+     <Compile Include="Assets\_Scripts\Book\BookController.cs" />
+     <Compile Include="Assets\_Scripts\Book\BookGameManager.cs" />
+     <Compile Include="Assets\_Scripts\Book\IObserver.cs" />
+     <Compile Include="Assets\_Scripts\Book\ISubject.cs" />
+     <Compile Include="Assets\_Scripts\Book\TurnPage.cs" />
+     <Compile Include="Assets\_Scripts\Book\UpdateData.cs" />
+     <Compile Include="Assets\_Scripts\MainMenu\ButtonQuestionPreview.cs" />
+     <Compile Include="Assets\_Scripts\MainMenu\MainMenu.cs" />
+     <Compile Include="Assets\_Scripts\MainMenu\MoveOffSet.cs" />
+     <Compile Include="Assets\_Scripts\Player\Player.cs" />
+     <Compile Include="Assets\_Scripts\Player\QuestionTriggerController.cs" />
+     <Compile Include="Assets\_Scripts\Player\ScoreManager.cs" />
+     <Compile Include="Assets\_Scripts\Question\Question.cs" />
+     <Compile Include="Assets\_Scripts\Question\QuestionFromJson.cs" />
+     <Compile Include="Assets\_Scripts\Question\QuestionPreview.cs" />
+     <Compile Include="Assets\_Scripts\Question\QuestionScreenBehavior.cs" />
+     <Compile Include="Assets\_Scripts\Question\QuestionSingleTon.cs" />
+     <Compile Include="Assets\_Scripts\Questionnaire\Questionnaire.cs" />
+     <Compile Include="Assets\_Scripts\Questionnaire\ResponseToQuestionnaire.cs" />
+     <Compile Include="Assets\_Scripts\Quiz.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\Arrow.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\AudioManager.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\Book.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\FPS.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\ImageAnimation.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\LevelLoader.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\MyDefaultTrackableEventHandler.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\RotateObject.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\ScoreBar.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\ScoreText.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\ScoreTextManager.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\ServerConnection.cs" />
+     <Compile Include="Assets\_Scripts\Utilities\Timer.cs" />
      <None Include="Assets\SampleAssets\Effects\Projectors\ProjectorGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -267,6 +263,7 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastStretch\Apply.shader" />
      <None Include="Assets\SampleAssets\Environment\Water (Pro Only)\Shaders\FXWaterV4Simple.shader" />
      <None Include="Assets\SampleAssets\Effects\Projectors\Shaders\ProjectorAdditive.shader" />
+     <None Include="Assets\Standard Assets\Environment\Skyboxes\SkyboxGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\FragAO.cginc" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\InterpolateAlongRays.shader" />
@@ -288,9 +285,10 @@
      <None Include="Assets\SampleAssets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\CreaseApply.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\LivrinhoCaixaEAgua.xml" />
      <None Include="Assets\SampleAssets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ChromaticAberrationShader.shader" />
-     <None Include="Assets\SampleAssets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\GlobalFog.shader" />
      <None Include="Assets\SampleAssets\Effects\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\SampleAssets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
@@ -322,7 +320,7 @@
      <None Include="Assets\SampleAssets\Effects\Shaders\MobileSpec.shader" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\VignettingShader.shader" />
-     <None Include="Assets\SampleAssets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\Tonemapper.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
@@ -331,11 +329,11 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\Raymarch.shader" />
+     <None Include="Assets\Note about Editor Folder.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\EdgeDetectNormals.shader" />
      <None Include="Assets\StreamingAssets\QCAR\CaixaDeAreia_VuforiaFull.xml" />
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\FinalInterpolation.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\PrepareSunShaftsBlur.shader" />
-     <None Include="Assets\SampleAssets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\SampleAssets\Effects\LightShafts\Shaders\Depth.shader" />
@@ -354,6 +352,9 @@
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -369,12 +370,19 @@
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
  <HintPath>C:/Users/Alequis/Documents/Repository/CaixaE-Agua/Ciclo_Hidrologico/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{1FF89294-1B88-F1F1-3146-1B77A3A2DABF}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

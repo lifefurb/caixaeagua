@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnitySampleAssets.CrossPlatformInput;
+using Vuforia;
 
 public class SimpleCharacterControl : MonoBehaviour {
 
@@ -83,6 +84,8 @@ public class SimpleCharacterControl : MonoBehaviour {
     }
 
     void Update() {
+        transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
+
         m_animator.SetBool("Grounded", m_isGrounded);
 
         switch (m_controlMode) {

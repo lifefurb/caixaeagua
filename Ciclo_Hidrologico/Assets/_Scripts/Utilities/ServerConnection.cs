@@ -8,7 +8,8 @@ using UnityEngine;
 /// </summary>
 public class ServerConnection : MonoBehaviour {
 
-    private const string URL_SERVER = "http://201.54.204.8:3000";
+    //private const string URL_SERVER = "http://201.54.204.8:3000";
+    private const string URL_SERVER = "http://10.9.30.85:3000";
 
     /// <summary>
     /// 
